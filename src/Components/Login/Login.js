@@ -25,10 +25,10 @@ function Login() {
   const navigateToSignup = () => {
     navigate('/signup');
   };
-  const navigateToHome = () => {
-    navigate('/Home');
-  };
 
+  const navigateToHome = () => {
+    navigate('/home'); // Make sure '/home' route is defined in your router
+  };
 
   return (
     <Container>
@@ -71,8 +71,8 @@ function Login() {
             value={user.password}
           />
         </InputField>
-        <ForgotPassword  onClick={navigateToSignup}>Forget Password?</ForgotPassword>
-        <SubmitButton  onClick={navigateToHome}>Login</SubmitButton>
+        <ForgotPassword onClick={navigateToSignup}>Forget Password?</ForgotPassword>
+        <SubmitButton onClick={navigateToHome}>Login</SubmitButton>
         <SignupPrompt>
           <span style={{ fontWeight: 500, color: "rgba(0,0,0,1)" }}>
             Don’t have an account?
@@ -120,6 +120,9 @@ const FeatureIcon = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 20px;
+  img {
+    width: 42px; /* Adjust width as needed */
+  }
 `;
 
 const Badge = styled.div`
@@ -169,7 +172,7 @@ const InputField = styled.div`
   background-color: #fff;
   display: flex;
   margin-top: 25px;
-  align-items: flex-start;
+  align-items: center; /* Centering items vertically */
   gap: 6px;
   font-size: 16px;
   color: #000;
@@ -180,9 +183,14 @@ const InputField = styled.div`
     font-family: Lato, sans-serif;
     flex-grow: 1;
     flex-basis: auto;
-    margin: auto 0;
-    border: none; /* Removing the default border for the input */
-    outline: none; /* Removing the default outline for the input */
+    border: none;
+    outline: none;
+    padding-left: 10px; /* Adding padding to the left for better spacing */
+  }
+
+  img {
+    width: 24px; /* Adjust the size of the icon */
+    height: 24px; /* Adjust the size of the icon */
   }
 `;
 
@@ -190,9 +198,10 @@ const ForgotPassword = styled.div`
   align-self: end;
   margin-top: 17px;
   font: 500 12px Lato, sans-serif;
+  cursor: pointer;
 `;
 
-const SubmitButton = styled.div`
+const SubmitButton = styled.button`
   font-family: Lato, sans-serif;
   border-radius: 12px;
   background-color: #007bfe;
@@ -206,6 +215,8 @@ const SubmitButton = styled.div`
   text-align: center;
   justify-content: center;
   padding: 18px 60px;
+  cursor: pointer;
+  border: none;
 `;
 
 const SignupPrompt = styled.div`
@@ -216,11 +227,8 @@ const SignupPrompt = styled.div`
 `;
 
 const FooterImage = styled.img`
-  aspect-ratio: 5.26;
-  object-fit: auto;
-  object-position: center;
+  object-fit: cover;
   width: 100%;
-  fill: #007bfe;
   margin-top: 90px;
 `;
 
