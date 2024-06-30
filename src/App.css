@@ -8,3 +8,273 @@
   background-repeat: no-repeat;
   background-image: url("https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png");
 } */
+/* App.css */
+
+/* Basic Styling */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Header */
+.App-header {
+  background-color: #f0f0f0;
+  padding: 20px 0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  margin-right: 30px;
+}
+
+.logo img {
+  width: 150px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.buttons {
+  display: flex;
+}
+
+.login-button, .signup-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* Main */
+.App-main {
+  padding: 40px 0;
+}
+
+.hero {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.learn-more-button {
+  background-color: #007bff;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.about-us {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.about-us-content {
+  flex: 1;
+  margin-right: 40px;
+}
+
+.about-us-image {
+  flex: 1;
+}
+
+.about-us-image img {
+  width: 100%;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 40px 0;
+}
+
+.features-card {
+  flex: 1 0 25%;
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.features-card-content {
+  margin-bottom: 20px;
+}
+
+.features-card-image img {
+  width: 100%;
+  height: auto;
+}
+
+.call-to-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.call-to-action-content {
+  flex: 1;
+  margin-right: 40px;
+}
+
+.call-to-action-form {
+  flex: 1;
+  text-align: right;
+}
+
+.call-to-action-form h3 {
+  margin-bottom: 20px;
+}
+
+.call-to-action-form form {
+  display: flex;
+}
+
+.call-to-action-form input[type="email"] {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.call-to-action-form button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Footer */
+.App-footer {
+  background-color: #f0f0f0;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  margin-right: 40px;
+}
+
+.footer-logo img {
+  width: 150px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.footer-nav li {
+  margin-right: 20px;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.footer-social-media ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.footer-social-media li {
+  margin-right: 10px;
+}
+
+.footer-social-media a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.5em;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .about-us {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-us-content {
+    margin-bottom: 20px;
+  }
+
+  .features {
+    flex-direction: column;
+  }
+
+  .features-card {
+    flex: 1 0 100%;
+  }
+
+  .call-to-action {
+    flex-direction: column;
+  }
+
+  .call-to-action-content {
+    margin-bottom: 20px;
+  }
+}
+
+/* Font Awesome Icons */
+.fab {
+  font-size: 1.5em;
+}

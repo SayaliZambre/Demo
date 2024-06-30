@@ -6,7 +6,7 @@ import image4 from '../../Images/Group 1000001801.png';
 
 function Login() {
   const navigate = useNavigate();
-  
+
   const [user, setUserDetails] = useState({
     email: "",
     password: "",
@@ -40,10 +40,10 @@ function Login() {
         <InputField>
           {/* <img src={image3} alt="Password Icon" /> */}
           <input
-            type="Email"
-            name="Email"
-            id="Email"
-            placeholder="Email"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="email"
             onChange={changeHandler}
             value={user.email}
           />
@@ -102,6 +102,7 @@ const Right = styled.div`
 const Image = styled.img`
   flex-direction: column;
 `;
+
 
 const Container = styled.div`
   display: flex;
