@@ -1,197 +1,212 @@
 import * as React from "react";
 import styled from "styled-components";
-import image4 from '../../Images/Group 11.png';
-import Navbar from './Navbar';
-import Footer from './Footer';
+import image from '../../Images/carbon_arrow-up.png';
+import image1 from '../../Images/Group 11.png';
 
-function Home() {
+
+const Home = () => {
   return (
-    <>
-      <Navbar />
-      <Main>
-        <Container>
-          <Title>Introducing</Title>
-          <Subtitle>SEO Impact</Subtitle>
-          <Description>
-            Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
-            libero et velit interdum, ac aliquet odio mattis.
-          </Description>
-          <ActionSection>
-            <ButtonContainer>
+    <Container>
+      <Content>
+        <LeftColumn>
+          <TextContainer>
+            <Title>Introducing</Title>
+            <Subtitle>SEO Impact</Subtitle>
+            <Description>
+              Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+              vulputate libero et velit interdum, ac aliquet odio mattis.
+            </Description>
+            <CallToActionContainer>
               <Button>Get Started</Button>
-            </ButtonContainer>
-            <StyledImg
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/9011d9ca7314e9053250a7a6dfbde7038b3c6fb928203c0ae26cbeba732b5937?"
-            />
-            <LinkText>Click here to know more!</LinkText>
-          </ActionSection>
-          <InputBox placeholder="Enter your website here...."></InputBox>
-          <CheckButton>Check Score</CheckButton>
-        </Container>
-        <Right>
-          <Image src={image4} alt="Right Section Image" />
-        </Right>
-      </Main>
-      <Footer/>
-    </>
+              <Icon
+                  src={image} alt="Email Icon" />
+              <Link>Click here to know more!</Link>
+            </CallToActionContainer>
+            <InputContainer>Enter your website here....</InputContainer>
+            <SubmitButton>Check Score</SubmitButton>
+          </TextContainer>
+        </LeftColumn>
+        <RightColumn>
+          <Image
+          src={image1} alt="Email Icon" />
+        </RightColumn>
+      </Content>
+    </Container>
   );
-}
-
-const Main = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  gap: 20px;
-
-  @media (min-width: 768px) {
-    flex-direction: row;
-  }
-`;
-
-const Right = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  margin-top: 20px;
-
-  @media (min-width: 768px) {
-    margin-top: 0;
-  }
-`;
-
-const Image = styled.img`
-  /* max-width: 50%; */
-  height: auto;
-`;
+};
 
 const Container = styled.div`
+  padding: 20px;
+`;
+
+const Content = styled.div`
+  gap: 20px;
+  display: flex;
+  @media (max-width: 991px) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0px;
+  }
+`;
+
+const LeftColumn = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 467px;
+  line-height: normal;
+  width: 32%;
+  margin-left: 0px;
+  @media (max-width: 991px) {
+    width: 100%;
+  }
+`;
+
+const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
   font-size: 18px;
   font-weight: 500;
-  padding: 20px;
-  flex: 1;
-  margin-left: 20px;
-  margin-top: 20px;
-
-  @media (min-width: 768px) {
-    margin-left: 40px;
+  margin: auto 0;
+  padding: 0 20px;
+  @media (max-width: 991px) {
+    max-width: 100%;
     margin-top: 40px;
   }
 `;
 
 const Title = styled.div`
   color: #212121;
-  font-size: 48px;
-  font-family: 'Waltograph', sans-serif;
-
-  @media (min-width: 768px) {
-    font-size: 108px;
+  font: 108px Waltograph, sans-serif;
+  @media (max-width: 991px) {
+    max-width: 100%;
+    font-size: 40px;
   }
 `;
 
 const Subtitle = styled.div`
   color: #379fff;
-  margin-top: 20px;
-  font-size: 36px;
-  font-weight: 700;
-  font-family: 'Lato', sans-serif;
-
-  @media (min-width: 768px) {
-    margin-top: 52px;
-    font-size: 72px;
+  margin-top: 52px;
+  font: 700 72px Lato, sans-serif;
+  @media (max-width: 991px) {
+    max-width: 100%;
+    margin-top: 40px;
+    font-size: 40px;
   }
 `;
 
 const Description = styled.div`
   color: #000;
-  margin-top: 20px;
-  font-size: 18px;
-  font-family: 'Lato', sans-serif;
-
-  @media (min-width: 768px) {
-    margin-top: 45px;
-    font-size: 24px;
+  margin-top: 45px;
+  font: 24px Lato, sans-serif;
+  @media (max-width: 991px) {
+    max-width: 100%;
+    margin-top: 40px;
   }
 `;
 
-const ActionSection = styled.div`
+const CallToActionContainer = styled.div`
   display: flex;
-  margin-top: 20px;
+  margin-top: 49px;
   align-items: center;
   gap: 16px;
   font-weight: 600;
-
-  @media (min-width: 768px) {
-    margin-top: 49px;
+  @media (max-width: 991px) {
+    flex-wrap: wrap;
+    margin-top: 40px;
   }
 `;
 
-const ButtonContainer = styled.div`
+const Button = styled.div`
+  align-self: stretch;
   display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const Button = styled.button`
-  font-family: 'Lato', sans-serif;
-  border-radius: 12px;
-  background-color: #007bfe;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-
-  @media (min-width: 768px) {
-    padding: 21px 49px;
-  }
-`;
-
-const StyledImg = styled.img`
-  width: 24px;
-  height: 24px;
-`;
-
-const LinkText = styled.div`
-  color: #000;
-  font-family: 'Lato', sans-serif;
-`;
-
-const InputBox = styled.input`
-  font-family: 'Lato', sans-serif;
-  border-radius: 12px;
-  border: 1px solid #000;
-  background-color: #f5f5f7;
-  margin-top: 20px;
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-
-  @media (min-width: 768px) {
-    padding: 27px 48px;
-    margin-top: 49px;
-  }
-`;
-
-const CheckButton = styled.button`
-  font-family: 'Lato', sans-serif;
-  border-radius: 12px;
-  background-color: #007bfe;
-  color: #fff;
-  font-weight: 600;
-  margin-top: 20px;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
+  flex-direction: column;
+  color: #f5f5f7;
   text-align: center;
+  justify-content: center;
+  font-family: Lato, sans-serif;
+  border-radius: 12px;
+  background-color: #007bfe;
+  justify-content: center;
+  padding: 21px 49px;
+  @media (max-width: 991px) {
+    padding: 0 20px;
+  }
+`;
 
-  @media (min-width: 768px) {
-    padding: 21px 46px;
-    margin-top: 30px;
+const Icon = styled.img`
+  aspect-ratio: 1;
+  object-fit: auto;
+  object-position: center;
+  width: 24px;
+  align-self: stretch;
+  margin: auto 0;
+`;
+
+const Link = styled.div`
+  color: #000;
+  font-family: Lato, sans-serif;
+  align-self: stretch;
+  flex-grow: 1;
+  flex-basis: auto;
+  margin: auto 0;
+`;
+
+const InputContainer = styled.div`
+  font-family: Lato, sans-serif;
+  border-radius: 12px;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  background-color: #f5f5f7;
+  margin-top: 49px;
+  align-items: start;
+  color: #000;
+  justify-content: center;
+  padding: 27px 48px;
+  @media (max-width: 991px) {
+    max-width: 100%;
+    margin-top: 40px;
+    padding: 0 20px;
+  }
+`;
+
+const SubmitButton = styled.div`
+  font-family: Lato, sans-serif;
+  border-radius: 12px;
+  background-color: #007bfe;
+  align-self: center;
+  margin-top: 30px;
+  color: #f5f5f7;
+  font-weight: 600;
+  text-align: center;
+  justify-content: center;
+  padding: 21px 46px;
+  @media (max-width: 991px) {
+    padding: 0 20px;
+  }
+`;
+
+const RightColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  width: 68%;
+  margin-left: 20px;
+  @media (max-width: 991px) {
+    width: 100%;
+  }
+`;
+
+const Image = styled.img`
+  aspect-ratio: 1.11;
+  object-fit: auto;
+  object-position: center;
+  width: 100%;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  flex-grow: 1;
+  @media (max-width: 991px) {
+    max-width: 100%;
+    margin-top: 40px;
   }
 `;
 

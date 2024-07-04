@@ -1,184 +1,307 @@
 import * as React from "react";
 import styled from "styled-components";
+import image from '../../Images/Group 27.png';
+import image1 from '../../Images/Group 29.png';
 
-const Footer = () => {
+function Footer() {
   return (
     <FooterContainer>
-      <FooterContent>
-        <LogoContainer>
-          <Logo
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/3fa99d40416e727e7f2d3d0136190937cb356d01e59da6c79dfc7ce4884fc3d9?"
-          />
-          <Logo
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/72c20c4aee2348f0e424685ac58c78eb4fbeec56ed23110895e92efe55d77864?"
-          />
-        </LogoContainer>
-        <Separator />
-        <Navigation>
-          <NavSection>
-            <NavItem>SEO Impact</NavItem>
-            <NavItem>Home</NavItem>
-            <NavItem>Pricing</NavItem>
-          </NavSection>
-          <NavSection>
-            <NavItem>Resources</NavItem>
-            <NavItem>Keyword Checker</NavItem>
-            <NavItem>Ranking Checker</NavItem>
-            <NavItem>Backlink Checker</NavItem>
-            <NavItem>Snippet Generator</NavItem>
-            <NavItem>Keyword Research Tool</NavItem>
-          </NavSection>
-        </Navigation>
+      <LogoSection>
+        <Logo src={image} alt="Right Section Image" />
+        <SecondaryLogo src={image1} alt="Right Section Image" />
+      </LogoSection>
+      <Divider />
+      <ContentSection>
+        <MainLinks>
+          <MainLinkTitle>SEO Impact</MainLinkTitle>
+          <MainLink>Home</MainLink>
+          <MainLink>Pricing</MainLink>
+        </MainLinks>
+        <Resources>
+          <ResourceTitle>Resources</ResourceTitle>
+          <ResourceLink>Keyword Checker</ResourceLink>
+          <ResourceLink>Ranking Checker</ResourceLink>
+          <ResourceLink>Backlink Checker</ResourceLink>
+          <ResourceLink>Snippet Generator</ResourceLink>
+          <ResourceLink>Keyword Research Tool</ResourceLink>
+        </Resources>
         <ContactSection>
-          <ContactColumn>
-            <ContactItem>Contact</ContactItem>
-            <ContactItem>About Us</ContactItem>
-            <ContactItem>Contact Us</ContactItem>
-          </ContactColumn>
-          <CallToActionColumn>
-            <CallToAction>Try SEO Impact</CallToAction>
-          </CallToActionColumn>
+          <ContactContainer>
+            <ContactDetails>
+              <ContactColumn>
+                <ContactInfo>Contact</ContactInfo>
+                <ContactLink>About Us</ContactLink>
+                <ContactLink>Contact us</ContactLink>
+              </ContactColumn>
+              <SignupColumn>
+                <SignupButton>Try SEO Impact</SignupButton>
+              </SignupColumn>
+            </ContactDetails>
+          </ContactContainer>
+          <Newsletter>
+            <NewsletterText>Subscribe to our Newsletter and recommendations</NewsletterText>
+            <NewsletterForm>
+              <EmailInput placeholder="Enter your email address..." />
+              <SubmitButton>Send</SubmitButton>
+            </NewsletterForm>
+          </Newsletter>
         </ContactSection>
-        <NewsletterSection>
-          <NewsletterText>Subscribe to our Newsletter and recommendations</NewsletterText>
-          <NewsletterForm>
-            <Input placeholder="Enter your email address...." />
-            <Button>Send</Button>
-          </NewsletterForm>
-        </NewsletterSection>
-      </FooterContent>
+      </ContentSection>
     </FooterContainer>
   );
-};
+}
 
 const FooterContainer = styled.div`
-  background-color: #f5f5f7;
-  padding: 20px;
+  background-color: #fff;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 30px 20px; /* Reduced padding */
+  flex-wrap: wrap;
+  @media (max-width: 991px) {
+    padding: 15px;
+  }
+`;
+
+const LogoSection = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
-`;
-
-const FooterContent = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-`;
-
-const LogoContainer = styled.div`
-  display: flex;
-  flex: 0 1 auto;
-  gap: 10px;
+  width: 35%;
+  padding-left: 3rem;
+  padding-right: 5rem;
+  /* max-width: 35%; */
+  /* margin-top: 10; */
+  margin:3rem 0;
+  @media (max-width: 991px) {
+    max-width: 100%;
+    align-items: center;
+  }
 `;
 
 const Logo = styled.img`
-  width: 120px;
-  height: auto;
+  aspect-ratio: 3.85;
+  object-fit: auto;
+  object-position: center;
+  width: 100%;
+  align-self: start;
+  @media (max-width: 991px) {
+    max-width: 100%;
+  }
 `;
 
-const Separator = styled.div`
-  border-left: 1px solid #000;
-  height: 40px;
-  margin: 0 20px;
-  
-  @media (max-width: 768px) {
+const SecondaryLogo = styled.img`
+  aspect-ratio: 5.56;
+  object-fit: auto;
+  object-position: center;
+  width: 396px;
+  align-self: end;
+  margin-top: 40px; /* Reduced margin */
+  max-width: 100%;
+  @media (max-width: 991px) {
+    margin-top: 30px;
+  }
+`;
+
+const Divider = styled.div`
+  border-color: grey;
+  border-style: solid;
+  border-width: 1px;
+  background-color: grey;
+  align-self: start;
+  width: 1px;
+  height: 300px;
+  @media (max-width: 991px) {
     display: none;
   }
 `;
 
-const Navigation = styled.div`
+const ContentSection = styled.div`
   display: flex;
-  gap: 20px;
-  flex: 1 1 300px;
+  justify-content: space-between;
+  flex-grow: 1;
+  gap: 20px; /* Reduced gap */
+  @media (max-width: 991px) {
+    flex-direction: column;
+  }
 `;
 
-const NavSection = styled.div`
+const MainLinks = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  font-size: 18px; /* Smaller font size */
+  color: #000;
+  font-weight: 500;
 `;
 
-const NavItem = styled.div`
+const MainLinkTitle = styled.div`
   font-family: Lato, sans-serif;
   font-weight: 700;
 `;
 
+const MainLink = styled.div`
+  font-family: Lato, sans-serif;
+  margin-top: 30px; /* Reduced margin */
+`;
+
+const Resources = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-size: 18px; /* Smaller font size */
+  color: #000;
+  font-weight: 500;
+`;
+
+const ResourceTitle = styled.div`
+  font-family: Lato, sans-serif;
+  font-weight: 700;
+`;
+
+const ResourceLink = styled.div`
+  font-family: Lato, sans-serif;
+  margin-top: 30px; /* Reduced margin */
+  @media (max-width: 991px) {
+    margin-top: 20px;
+  }
+`;
+
 const ContactSection = styled.div`
   display: flex;
-  gap: 20px;
-  flex: 1 1 300px;
-  
-  @media (max-width: 768px) {
-    flex-wrap: wrap;
+  flex-direction: column;
+  @media (max-width: 991px) {
+    max-width: 100%;
+  }
+`;
+
+const ContactContainer = styled.div`
+  @media (max-width: 991px) {
+    max-width: 100%;
+  }
+`;
+
+const ContactDetails = styled.div`
+  gap: 1px; /* Reduced gap */
+  display: flex;
+  @media (max-width: 991px) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0px;
   }
 `;
 
 const ContactColumn = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  flex: 1 1 auto;
+  line-height: normal;
+  width: 25%;
+  margin-left: 0px;
+  @media (max-width: 991px) {
+    width: 100%;
+  }
 `;
 
-const ContactItem = styled.div`
+const ContactInfo = styled.div`
+  display: flex;
+  margin-top: 6px;
+  flex-grow: 1;
+  flex-direction: column;
+  font-size: 18px; /* Smaller font size */
+  color: #000;
+  font-weight: 500;
+  @media (max-width: 991px) {
+    margin-top: 20px;
+  }
+`;
+
+const ContactLink = styled.div`
   font-family: Lato, sans-serif;
+  margin-top: 30px; /* Reduced margin */
+  @media (max-width: 991px) {
+    margin-top: 20px;
+  }
 `;
 
-const CallToActionColumn = styled.div`
+const SignupColumn = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  flex: 1 1 auto;
+  line-height: normal;
+  width: 66%;
+  margin-left: 20px;
+  @media (max-width: 991px) {
+    width: 100%;
+  }
 `;
 
-const CallToAction = styled.div`
+const SignupButton = styled.div`
   border-radius: 12px;
   background-color: #007bfe;
-  color: #f5f5f7;
-  text-align: center;
-  padding: 15px 0;
-  font: 600 18px Lato, sans-serif;
+  color: #fff;
+  width: 100%;
+  justify-content: center;
+  padding: 20px 40px; /* Reduced padding */
+  font: 600 18px Lato, sans-serif; /* Smaller font size */
+  @media (max-width: 991px) {
+    margin-top: 20px;
+    padding: 15px;
+  }
 `;
 
-const NewsletterSection = styled.div`
+const Newsletter = styled.div`
+  border-radius: 12px;
+  background-color: #ebf5ff;
   display: flex;
+  margin-top: 50px; /* Reduced margin */
   flex-direction: column;
-  gap: 20px;
-  flex: 1 1 300px;
+  color: #000;
+  padding: 20px 30px; /* Reduced padding */
+  @media (max-width: 991px) {
+    max-width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+  }
 `;
 
 const NewsletterText = styled.div`
-  font-weight: 700;
-  font-size: 14px;
-  font-family: Lato, sans-serif;
+  font: 700 12px Lato, sans-serif; /* Smaller font size */
 `;
 
-const NewsletterForm = styled.form`
+const NewsletterForm = styled.div`
   display: flex;
-  gap: 10px;
-  align-items: center;
+  gap: 10px; /* Reduced gap */
+  font-weight: 500;
+  margin: 30px 20px 0; /* Reduced margin */
+  @media (max-width: 991px) {
+    flex-direction: column;
+    margin: 20px 0 0;
+  }
 `;
 
-const Input = styled.input`
+const EmailInput = styled.input`
+  border-radius: 12px;
+  background-color: #fff;
+  align-items: start;
+  justify-content: center;
   flex-grow: 1;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  font-size: 14px;
-  font-family: Lato, sans-serif;
+  width: fit-content;
+  padding: 15px 20px; /* Reduced padding */
+  font: 14px Lato, sans-serif;
+  @media (max-width: 991px) {
+    padding: 10px;
+  }
 `;
 
-const Button = styled.button`
-  border: none;
-  border-radius: 5px;
+const SubmitButton = styled.button`
+  margin: auto 0;
+  font: 18px Lato, sans-serif; /* Smaller font size */
+  padding: 10px 15px; /* Reduced padding */
   background-color: #007bfe;
   color: #fff;
-  padding: 10px 20px;
-  font-size: 14px;
-  font-family: Lato, sans-serif;
+  border: none;
+  border-radius: 12px;
   cursor: pointer;
+  @media (max-width: 991px) {
+    padding: 8px;
+  }
 `;
 
 export default Footer;

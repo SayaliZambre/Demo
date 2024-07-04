@@ -27,7 +27,7 @@ function Navbar() {
         </NavLinks>
       </NavLeft>
       <NavRight>
-        <Login>Login</Login>
+        <Login to="/Login">Login</Login>
         <Signup>Signup</Signup>
       </NavRight>
     </Nav>
