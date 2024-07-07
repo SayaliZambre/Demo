@@ -675,15 +675,6 @@ const DescriptionImg = styled.img`
   max-width: 600px;
 `;
 
-const Footer = styled.div`
-  height: 88px;
-  background: #fcfcfc;
-  border-top: 1px solid #e6e8ec;
-  margin-top: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
 
 
 export default Careers;
