@@ -24,7 +24,7 @@ const Signup = () => {
       navigate('/Login');
     };
     const navigateToHome = () => {
-      navigate('/home');
+      navigate('/');
     };
   return (
     <Main>

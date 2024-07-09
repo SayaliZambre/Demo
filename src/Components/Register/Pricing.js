@@ -26,7 +26,7 @@ function Pricing() {
         <PricingContainer>
           <PricingTitle>Pricing</PricingTitle>
           <StyledImg
-            src={image} alt="Email Icon"
+            src={image} alt=""
           />
         </PricingContainer>
       </ColumnWide>
@@ -417,6 +417,7 @@ const StyledImg = styled.img`
   object-fit: auto;
   object-position: center;
   width: 100%;
+  height: 100%;
   flex-grow: 1;
   @media (max-width: 991px) {
     max-width: 100%;

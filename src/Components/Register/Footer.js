@@ -67,7 +67,7 @@ const FooterContainer = styled.div`
 const LogoSection = styled.div`
   display: flex;
   flex-direction: column;
-  width: 35%;
+  width: 20%;
   padding-left: 3rem;
   padding-right: 5rem;
   /* max-width: 35%; */

@@ -1,7 +1,7 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, NavLink as RouterNavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { NavLink as RouterNavLink } from 'react-router-dom';
+import image1 from '../../Images/Navbar.png';
 
 function Navbar() {
   const navigate = useNavigate();
@@ -13,22 +13,24 @@ function Navbar() {
   return (
     <Nav>
       <NavLeft>
-        <Logo>
-          <span style={{ fontWeight: 700, color: 'rgba(0,123,254,1)' }}>SEO</span> Impact
-        </Logo>
+        <Logo src={image1} alt="Logo" />
         <Divider />
         <NavLinks>
           <StyledNavLink to="/">Home</StyledNavLink>
-          <StyledNavLink to="/pricing" >Pricing</StyledNavLink>
+          <StyledNavLink to="/pricing">Pricing</StyledNavLink>
           <StyledNavLink to="/careers">Careers</StyledNavLink>
           <StyledNavLink to="/resources">Resources</StyledNavLink>
-          <StyledNavLink to="/contact" >Contact Us</StyledNavLink>
+          <StyledNavLink to="/contact">Contact Us</StyledNavLink>
           <StyledNavLink to="/about">About Us</StyledNavLink>
         </NavLinks>
       </NavLeft>
       <NavRight>
-        <Login to="/Login">Login</Login>
-        <Signup>Signup</Signup>
+        <StyledNavLink to="/Login">
+          <Login>Login</Login>
+        </StyledNavLink>
+        <StyledNavLink to="/signup">
+          <Signup>Signup</Signup>
+        </StyledNavLink>
       </NavRight>
     </Nav>
   );
@@ -48,11 +50,12 @@ const Nav = styled.div`
 
 const NavLeft = styled.div`
   display: flex;
+  /* padding-left: 5rem; */
   align-items: center;
   gap: 20px;
-  font-size: 24px;
+  font-size: 20px;
   color: #000;
-  font-weight: 500;
+  font-weight: 300;
   @media (max-width: 991px) {
     width: 100%;
     flex-wrap: wrap;
@@ -60,20 +63,20 @@ const NavLeft = styled.div`
   }
 `;
 
-const Logo = styled.div`
-  font-family: 'Proxima Nova', sans-serif;
-  margin-top: 13px;
-  flex-grow: 1;
+const Logo = styled.img`
+  width: 100px;
+  height: auto;
   @media (max-width: 991px) {
-    margin-top: 0;
+    width: 80px;
   }
 `;
 
 const Divider = styled.div`
-  border-color: rgba(0, 0, 0, 1);
-  border-style: solid;
-  border-width: 1px;
-  background-color: #000;
+  /* border-color: rgba(0, 0, 0, 1); */
+  /* border-style: solid; */
+  border-width: 0.5px;
+  margin-left: 5rem;
+  background-color: grey;
   align-self: stretch;
   width: 1px;
   height: 38px;
@@ -85,6 +88,7 @@ const Divider = styled.div`
 const NavLinks = styled.div`
   display: flex;
   gap: 20px;
+  padding-left: 22rem;
   justify-content: space-between;
   @media (max-width: 991px) {
     flex-wrap: wrap;
@@ -97,10 +101,16 @@ const NavLinks = styled.div`
 const StyledNavLink = styled(RouterNavLink)`
   font-family: 'Lato', sans-serif;
   text-decoration: none;
-  color: inherit;
+  color: grey;
+  padding-left: ${(props) => (props.to === '/' ? '20px' : '0')};
+
+  &:hover {
+    color: blue;
+  }
 
   &.active {
     font-weight: bold;
+    color: blue;
   }
 `;
 

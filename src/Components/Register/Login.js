@@ -4,7 +4,7 @@ import styled from "styled-components";
 import image5 from '../../Images/Group 3.png';
 import image4 from '../../Images/Group 1000001801.png';
 
-function Login() {
+const Login = () => {
   const navigate = useNavigate();
 
   const [user, setUserDetails] = useState({
@@ -23,7 +23,7 @@ function Login() {
     navigate('/signup');
   };
   const navigateToHome = () => {
-    navigate('/home');
+    navigate('/');
   };
 
   return (
