@@ -19,9 +19,12 @@ const Login = () => {
       [name]: value,
     });
   };
+  
   const navigateToSignup = () => {
     navigate('/signup');
   };
+
+
   const navigateToHome = () => {
     navigate('/');
   };
