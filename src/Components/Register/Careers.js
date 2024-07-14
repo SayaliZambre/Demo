@@ -89,7 +89,7 @@ const Careers = () => {
       <StyledDiv3>
         <StyledDiv4>
           <StyledDiv5>
-            <StyledColumn>
+            {/* <StyledColumn> */}
               <StyledDiv6>
                 <StyledDiv7>Benefits</StyledDiv7>
                 <StyledDiv8>
@@ -105,8 +105,8 @@ const Careers = () => {
                   </StyledDiv10>
                 </StyledDiv8>
               </StyledDiv6>
-            </StyledColumn>
-            <StyledColumn2>
+            {/* </StyledColumn> */}
+            {/* <StyledColumn2> */}
               <StyledDiv13>
                 <StyledDiv14>
                   <img
@@ -119,7 +119,7 @@ const Careers = () => {
                   <StyledDiv17>Work From Home</StyledDiv17>
                 </StyledDiv16>
               </StyledDiv13>
-            </StyledColumn2>
+            {/* </StyledColumn2> */}
           </StyledDiv5>
         </StyledDiv4>
         <StyledDiv18>
@@ -168,8 +168,8 @@ const Careers = () => {
     <Container1>
           <Section1>
             <Column2>
+            <Title1>Job Openings</Title1>
               <JobCategory1>
-                <Title1>Job Openings</Title1>
                 <Subtitle>Business Development</Subtitle>
                 <Position>Associate Business Analyst</Position>
               </JobCategory1>
@@ -506,6 +506,7 @@ const ApplyText = styled.div`
 `;
 const StyledContainer = styled.div`
   background-color: #007bfe;
+  padding-top: 7rem;
   display: flex;
   align-items: center;
   gap: 20px;

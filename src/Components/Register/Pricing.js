@@ -255,7 +255,8 @@ const Column = styled.div`
 
 const TextContainer = styled.div`
   display: flex;
-  margin-top: 200px;
+  margin-top: 400px;
+  /* padding-top: 16rem; */
   flex-direction: column;
   color: #000;
   font-weight: 300;
@@ -322,6 +323,7 @@ const PricingContainer = styled.div`
 const PricingTitle = styled.div`
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   -webkit-text-stroke-width: 1;
+  padding-left: 10rem;
   -webkit-text-stroke-color: #000;
   font-family: Lato, sans-serif;
   /* border-color: rgba(0, 0, 0, 1); */
@@ -337,7 +339,7 @@ const StyledImg1 = styled.img`
   aspect-ratio: 1.15;
   object-fit: auto;
   object-position: center;
-  width: 910px;
+  width: 710px;
   fill: rgba(55, 159, 255, 0.07);
   align-self: end;
   margin-top: 204px;
@@ -362,7 +364,8 @@ const StyledColumn = styled.div`
   display: flex;
   flex-direction: column;
   line-height: normal;
-  width: 34%;
+  margin-top: 3rem;
+  width: 54%;
   margin-left: 0px;
   @media (max-width: 991px) {
     width: 100%;
@@ -375,7 +378,7 @@ const StyledDiv2 = styled.div`
   align-self: stretch;
   text-align: center;
   margin: auto 0;
-  padding: 0 20px;
+  /* padding: 0 20px; */
   @media (max-width: 991px) {
     max-width: 100%;
     margin-top: 40px;
@@ -383,8 +386,8 @@ const StyledDiv2 = styled.div`
 `;
 
 const StyledDiv3 = styled.div`
-  color: #000;
-  font: 700 48px Lato, sans-serif;
+  color: #A4A4A4;
+  font: 600 42px Lato, sans-serif;
   @media (max-width: 991px) {
     max-width: 100%;
     font-size: 40px;
@@ -416,8 +419,8 @@ const StyledImg = styled.img`
   aspect-ratio: 1.33;
   object-fit: auto;
   object-position: center;
-  width: 100%;
-  height: 100%;
+  width: 60rem;
+  height: 60rem;
   flex-grow: 1;
   @media (max-width: 991px) {
     max-width: 100%;
@@ -479,7 +482,7 @@ const PlanCard = styled.div`
 
 const PlanContent = styled.div`
   border-radius: 40px;
-  border: 1px solid rgba(0, 0, 0, 1);
+  border: 2px solid #d3d3d3;
   background-color: #fff;
   display: flex;
   flex-direction: column;
