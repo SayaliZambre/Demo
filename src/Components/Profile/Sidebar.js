@@ -66,7 +66,7 @@ function Sidebar({ activeSection, onSectionClick }) {
         onClick={() => onSectionClick && onSectionClick('Keyword Research Tool')}
       >
         <StyledImg src={image1} alt="Tools" />
-        <Link to="/Keywordresearch">
+        <Link to="/KeywordResearchTool">
           <Title>Keyword Research Tool</Title>
         </Link>    
           </Section>

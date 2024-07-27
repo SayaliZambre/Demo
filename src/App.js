@@ -13,6 +13,10 @@ import Sidebar from './Components/Profile/Sidebar';
 import Project from './Components/Profile/Project';
 import HomeProfile from './Components/Profile/HomeProfile';
 import Keyword from './Components/Profile/Keyword';
+import Backlink from './Components/Profile/Backlink';
+import Snippet from './Components/Profile/Snippet';
+import KeywordResearchTool from './Components/Profile/KeywordResearchTool';
+
 
 function App() {
   return (
@@ -32,6 +36,10 @@ function App() {
           <Route path="/Project" element={<Project />} />
           <Route path="/Keyword" element={<Keyword />} />
           <Route path="/HomeProfile" element={<HomeProfile />} />
+          <Route path="/Backlink" element={<Backlink />} />
+          <Route path="/KeywordResearchTool" element={<KeywordResearchTool />} />
+          <Route path="/Snippet" element={<Snippet />} />
+
         </Routes>
       </Router>
     </div>
