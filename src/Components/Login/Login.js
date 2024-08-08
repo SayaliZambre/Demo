@@ -27,7 +27,7 @@ function Login() {
   };
 
   const navigateToHome = () => {
-    navigate('/home'); // Make sure '/home' route is defined in your router
+    navigate('/home'); 
   };
 
   return (
