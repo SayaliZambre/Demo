@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './Components/Register/Login';
 import Signup from './Components/Register/Signup';
 import Home from './Components/Register/Home';
+import Main from './Components/Profile/Main';
 import Navbar from './Components/Register/Navbar';
 import Footer from './Components/Register/Footer';
 import Contact from './Components/Register/Contact';
@@ -15,6 +16,7 @@ import HomeProfile from './Components/Profile/HomeProfile';
 import Keyword from './Components/Profile/Keyword';
 import Backlink from './Components/Profile/Backlink';
 import Snippet from './Components/Profile/Snippet';
+import BackliteChesker from './Components/Profile/BackliteChesker';
 import KeywordResearchTool from './Components/Profile/KeywordResearchTool';
 
 
@@ -39,6 +41,9 @@ function App() {
           <Route path="/Backlink" element={<Backlink />} />
           <Route path="/KeywordResearchTool" element={<KeywordResearchTool />} />
           <Route path="/Snippet" element={<Snippet />} />
+          <Route path="/Main" element={<Main/>} />
+          <Route path="/BackliteChesker" element={<BackliteChesker/>} />
+
 
         </Routes>
       </Router>
