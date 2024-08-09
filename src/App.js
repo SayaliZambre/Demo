@@ -16,6 +16,7 @@ import HomeProfile from './Components/Profile/HomeProfile';
 import Keyword from './Components/Profile/Keyword';
 import Backlink from './Components/Profile/Backlink';
 import Snippet from './Components/Profile/Snippet';
+import SnippetGenerator from './Components/Profile/SnippetGenerator';
 import BackliteChesker from './Components/Profile/BackliteChesker';
 import KeywordResearchTool from './Components/Profile/KeywordResearchTool';
 
@@ -41,6 +42,7 @@ function App() {
           <Route path="/Backlink" element={<Backlink />} />
           <Route path="/KeywordResearchTool" element={<KeywordResearchTool />} />
           <Route path="/Snippet" element={<Snippet />} />
+          <Route path="/SnippetGenerator" element={<SnippetGenerator />} />
           <Route path="/Main" element={<Main/>} />
           <Route path="/BackliteChesker" element={<BackliteChesker/>} />
 
