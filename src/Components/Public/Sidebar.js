@@ -9,17 +9,6 @@ function Sidebar({ activeSection, onSectionClick }) {
 
   return (
     <Container>
-
-<Section
-        isActive={activeSection === 'My Projects'}
-        onClick={() => onSectionClick && onSectionClick('My Projects')}
-      >
-        <StyledImg src={image2} alt="Home" />
-        <Link to="/Homeapp">
-          <Title>Home</Title>
-        </Link>
-      </Section>
-
       <Section
         isActive={activeSection === 'My Projects'}
         onClick={() => onSectionClick && onSectionClick('My Projects')}

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
-import Footer from './Footer';
-import image1 from "../../Images/ic_round-plus.png";
-import image2 from "../../Images/Rectangle 147.png";
+import Navbar from '../../Public/Navbar';
+import Sidebar from '../../Public/Sidebar';
+import Footer from '../../Public/Footer';
+
+import image1 from "../../../Images/ic_round-plus.png";
+import image2 from "../../../Images/Rectangle 147.png";
 
 function Project() {
   const [activeSection, setActiveSection] = useState('My Projects');

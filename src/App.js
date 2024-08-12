@@ -11,7 +11,8 @@ import About from './Components/Register/About';
 import Pricing from './Components/Register/Pricing';
 import Careers from './Components/Register/Careers';
 import Sidebar from './Components/Profile/Sidebar';
-import Project from './Components/Profile/Project';
+
+import Project from './Components/Sidebar/Project/Project';
 import HomeProfile from './Components/Profile/HomeProfile';
 import Keyword from './Components/Profile/Keyword';
 import Backlink from './Components/Profile/Backlink';
@@ -19,6 +20,7 @@ import Snippet from './Components/Profile/Snippet';
 import SnippetGenerator from './Components/Profile/SnippetGenerator';
 import BackliteChesker from './Components/Profile/BackliteChesker';
 import KeywordResearchTool from './Components/Profile/KeywordResearchTool';
+import Homeapp from './Components/Sidebar/Home/Home';
 
 
 function App() {
@@ -40,6 +42,9 @@ function App() {
           <Route path="/Keyword" element={<Keyword />} />
           <Route path="/HomeProfile" element={<HomeProfile />} />
           <Route path="/Backlink" element={<Backlink />} />
+          <Route path="/Homeapp" element={<Homeapp />} />
+
+          {/* <Route path="/ProjectMain" element={<ProjectMain/>}/> */}
           <Route path="/KeywordResearchTool" element={<KeywordResearchTool />} />
           <Route path="/Snippet" element={<Snippet />} />
           <Route path="/SnippetGenerator" element={<SnippetGenerator />} />
