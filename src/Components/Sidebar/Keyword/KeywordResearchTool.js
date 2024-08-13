@@ -1,15 +1,29 @@
-import React from "react";
-import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
-import Footer from './Footer';
+import React, { useState } from "react";
+// import Navbar from "./Navbar
+import Navbar from '../../Public/Navbar';
+import Sidebar from '../../Public/Sidebar';
+import Footer from '../../Public/Footer';
+
 import styled from "styled-components";
 
+
 const KeywordResearchTool = () => {
+
+  const [activeSection, setActiveSection] = useState('My Projects');
+
+  const handleSectionClick = (section) => {
+    setActiveSection(section);
+    console.log(`Section clicked: ${section}`);
+  };
+
+  console.log('Rendering Project with handleSectionClick:', handleSectionClick);
+
+
   return (
     <>
       <Navbar />
       <Wrapper>
-        <Sidebar />
+      <Sidebar activeSection={activeSection} onSectionClick={handleSectionClick}/>
         <MainContent>
           <Container>
             <Title>Keyword Research tool</Title>

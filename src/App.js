@@ -14,12 +14,12 @@ import Sidebar from './Components/Profile/Sidebar';
 
 import Project from './Components/Sidebar/Project/Project';
 import HomeProfile from './Components/Profile/HomeProfile';
-import Keyword from './Components/Profile/Keyword';
+import Keyword from './Components/Sidebar/Keyword/Keyword';
 import Backlink from './Components/Profile/Backlink';
 import Snippet from './Components/Profile/Snippet';
 import SnippetGenerator from './Components/Profile/SnippetGenerator';
 import BackliteChesker from './Components/Profile/BackliteChesker';
-import KeywordResearchTool from './Components/Profile/KeywordResearchTool';
+import KeywordResearchTool from './Components/Sidebar/Keyword/KeywordResearchTool';
 import Homeapp from './Components/Sidebar/Home/Home';
 
 

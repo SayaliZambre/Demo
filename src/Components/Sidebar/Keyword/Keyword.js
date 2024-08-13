@@ -1,40 +1,52 @@
-import React from "react";
-import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
-import Footer from './Footer';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
+import Navbar from '../../Public/Navbar';
+import Sidebar from '../../Public/Sidebar';
+import Footer from '../../Public/Footer';
+
 const Keyword = () => {
+  const [activeSection, setActiveSection] = useState('My Projects');
+  const navigate = useNavigate();  // Initialize useNavigate
+
+  const handleSectionClick = (section) => {
+    setActiveSection(section);
+    console.log(`Section clicked: ${section}`);
+  };
+
+  const handleClick = () => {
+    navigate('/KeywordResearchTool');  // Navigate to the KeywordResearchTool page
+  };
+
+  console.log('Rendering Project with handleSectionClick:', handleSectionClick);
+
   return (
     <>
       <Navbar/>
       <Wrapper>
-        <Sidebar/>
+        <Sidebar activeSection={activeSection} onSectionClick={handleSectionClick}/>
         <MainContent>
           <ContentContainer>
             <ContentTitle>Keyword Checker</ContentTitle>
             <Form>
               <FormField>
-              <input
-            type="Enter Keyword"
-            name="Enter Keyword"
-            id="Enter Keyword"
-            placeholder="Enter your website here...."
-            // onChange={changeHandler}
-            // value={user.email}
-          />
+                <input
+                  type="text"
+                  name="keyword"
+                  id="keyword"
+                  placeholder="Enter your website here...."
+                />
               </FormField>
               <FormField>
-              <input
-            type="Enter your website...."
-            name="Enter your website...."
-            id="Enter your website...."
-            placeholder="Enter your website here...."
-            // onChange={changeHandler}
-            // value={user.email}
-          />
-          </FormField>
-              <SubmitButton>Check</SubmitButton>
+                <input
+                  type="text"
+                  name="website"
+                  id="website"
+                  placeholder="Enter your website here...."
+                />
+              </FormField>
+              <SubmitButton onClick={handleClick}>Check</SubmitButton>
             </Form>
           </ContentContainer>
         </MainContent>
@@ -46,45 +58,6 @@ const Keyword = () => {
 
 const Wrapper = styled.div`
   display: flex;
-`;
-
-const StyledSidebar = styled.div`
-  display: flex;
-  flex-direction: column;
-  line-height: normal;
-  width: 30%;
-  margin-left: 0px;
-  @media (max-width: 991px) {
-    width: 100%;
-  }
-`;
-
-const ProjectItem = styled.div`
-  border-radius: 12px;
-  border-color: rgba(128, 128, 128, 1);  /* Grey color */
-  border-style: solid;
-  border-width: 1px;
-  background-color: #fff;
-  display: flex;
-  margin-top: 24px;
-  gap: 18px;
-  padding: 24px 48px;
-  @media (max-width: 991px) {
-    padding: 0 20px;
-  }
-`;
-
-const ItemImage = styled.img`
-  aspect-ratio: 1;
-  object-fit: auto;
-  object-position: center;
-  width: 24px;
-`;
-
-const ItemText = styled.div`
-  font-family: Lato, sans-serif;
-  flex-grow: 1;
-  flex-basis: auto;
 `;
 
 const MainContent = styled.div`
@@ -103,7 +76,6 @@ const ContentContainer = styled.div`
   margin-top: 48px;
   flex-direction: column;
   color: #000;
-  /* padding: 0 20px; */
   @media (max-width: 991px) {
     max-width: 100%;
     margin-top: 40px;
@@ -137,7 +109,7 @@ const Form = styled.div`
 const FormField = styled.div`
   font-family: Lato, sans-serif;
   border-radius: 12px;
-  border-color: grey;  /* Grey color */
+  border-color: grey;  
   border-style: solid;
   border-width: 1px;
   background-color: #fff;
@@ -150,16 +122,14 @@ const FormField = styled.div`
   }
   &:not(:first-child) {
     margin-top: 48px;
-
   }
-
   input {
     font-family: Lato, sans-serif;
     flex-grow: 1;
     flex-basis: auto;
     margin: auto 0;
-    border: none; /* Removing the default border for the input */
-    outline: none; /* Removing the default outline for the input */
+    border: none;
+    outline: none;
   }
 `;
 
