@@ -8,15 +8,14 @@ import Footer from '../../Public/Footer';
 
 const Keyword = () => {
   const [activeSection, setActiveSection] = useState('My Projects');
-  const navigate = useNavigate();  // Initialize useNavigate
-
+  const navigate = useNavigate(); 
   const handleSectionClick = (section) => {
     setActiveSection(section);
     console.log(`Section clicked: ${section}`);
   };
 
   const handleClick = () => {
-    navigate('/KeywordResearchTool');  // Navigate to the KeywordResearchTool page
+    navigate('/KeywordResearchTool');  
   };
 
   console.log('Rendering Project with handleSectionClick:', handleSectionClick);

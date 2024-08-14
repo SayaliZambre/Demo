@@ -1,35 +1,41 @@
 import React from 'react';
-import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
-import Footer from './Footer';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
+import Navbar from '../../Public/Navbar';
+import Sidebar from '../../Public/Sidebar';
+import Footer from '../../Public/Footer';
+
 import styled from 'styled-components';
 
 const Snippet = () => {
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  const handleAnalyzeClick = () => {
+    navigate('/SnippetGenerator'); // Navigate to SnippetGenerator page
+  };
+
   return (
     <>
-    <Navbar/>
-    <Wrapper>
-      <Sidebar/>
-
-      <Container>
-      <Title>Snippet Generator</Title>
-      <Content>
-        {/* <WebsiteLink>cbb.coastalbroadband.in</WebsiteLink> */}
-        <WebsiteLink>
+      <Navbar />
+      <Wrapper>
+        <Sidebar />
+        <Container>
+          <Title>Snippet Generator</Title>
+          <Content>
+            <WebsiteLink>
               <input
-            type="Enter Keyword"
-            name="Enter Keyword"
-            id="Enter Keyword"
-            placeholder="Enter your website here...."
-            // onChange={changeHandler}
-            // value={user.email}
-          />
-              </WebsiteLink>
-        <AnalyzeButton>Analyze Website</AnalyzeButton>
-      </Content>
-    </Container>
-</Wrapper>
-    <Footer/>
+                type="text" // Changed to "text" instead of "Enter Keyword"
+                name="website"
+                id="website"
+                placeholder="Enter your website here...."
+                // onChange={changeHandler}
+                // value={user.email}
+              />
+            </WebsiteLink>
+            <AnalyzeButton onClick={handleAnalyzeClick}>Analyze Website</AnalyzeButton>
+          </Content>
+        </Container>
+      </Wrapper>
+      <Footer />
     </>
   );
 };
@@ -107,6 +113,7 @@ const AnalyzeButton = styled.div`
   text-align: center;
   justify-content: center;
   padding: 19px 28px;
+  cursor: pointer; // Added cursor style to indicate it's clickable
   @media (max-width: 991px) {
     margin-top: 40px;
     padding: 0 20px;
