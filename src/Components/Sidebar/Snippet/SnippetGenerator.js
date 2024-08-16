@@ -44,21 +44,22 @@ function SnippetGenerator() {
       <Card>
         <CardTitle>Title</CardTitle>
         <PixelInfo>205/280 Pixel</PixelInfo>
-      </Card>
 
-      <ProgressCard>
+        <ProgressCard>
         <ProgressBar />
       </ProgressCard>
+
+      </Card>
+
 
       <Card>
         <CardTitle>Google</CardTitle>
         <PixelInfo>400/900 Pixel</PixelInfo>
-      </Card>
-
-      <ProgressCard>
+        <ProgressCard>
         <ProgressBar wide />
       </ProgressCard>
-
+     
+     
       <DescriptionCard>
         Lorem ipsum dolor sit amet consectetur. Porttitor sollicitudin at
         laoreet donec. Non nunc a aliquam elit interdum sociis id. Lacus
@@ -72,16 +73,18 @@ function SnippetGenerator() {
         luctus mattis habitant felis.
       </DescriptionCard>
 
-      <Keyword>Keyword</Keyword>
-      <Card>
-        <CardTitle>Google</CardTitle>
-        <PixelInfo>400/900 Pixel</PixelInfo>
       </Card>
 
-      <DateContainer>
-        <RoundButton />
-        <DateText>Date</DateText>
-      </DateContainer>
+      <Keyword>Keyword</Keyword>
+      <Container1>
+      <Header1>Google</Header1>
+      <Content>
+        <Box>
+          <Circle />
+        </Box>
+        <DateText1>Date</DateText1>
+      </Content>
+    </Container1>
     </Container>
     </Wrapper>
     <Footer />
@@ -89,6 +92,72 @@ function SnippetGenerator() {
     </>
   );
 }
+
+const Container1 = styled.div`
+  border-radius: 0px 0px 0px 0px;
+  display: flex;
+  padding-top: 55px;
+  flex-direction: column;
+`;
+
+const Header1 = styled.div`
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 1);
+  width: 60rem;
+  color: rgba(0, 0, 0, 1);
+  white-space: nowrap;
+  padding: 24px 56px;
+  font: 500 24px Lato, sans-serif;
+  border: 1px solid grey;
+  @media (max-width: 991px) {
+    max-width: 100%;
+    white-space: initial;
+    padding: 0 20px;
+  }
+`;
+
+const Content = styled.div`
+  align-self: center;
+  display: flex;
+  width: 248px;
+  max-width: 100%;
+  gap: 36px;
+  margin: 36px 0 0 20px;
+`;
+
+const Box = styled.div`
+  border-radius: 38px;
+  background: var(--Main, #007bfe);
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  flex: 1;
+  margin: auto 0;
+  padding: 6px 22px;
+  @media (max-width: 991px) {
+    padding-left: 20px;
+  }
+`;
+
+const Circle = styled.div`
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 50%;
+  display: flex;
+  width: 36px;
+  height: 36px;
+`;
+
+const DateText1 = styled.div`
+  color: rgba(0, 0, 0, 1);
+  flex-grow: 1;
+  width: 82px;
+  font: 600 48px Lato, sans-serif;
+  @media (max-width: 991px) {
+    font-size: 40px;
+  }
+`;
+
 
 const Wrapper = styled.div`
   gap: 20px;
@@ -99,6 +168,8 @@ const Wrapper = styled.div`
     gap: 0px;
   }
 `;
+
+
 
 const Container = styled.div`
   display: flex;
@@ -137,14 +208,19 @@ const WebView = styled.div`
   font-size: 18px;
 `;
 
+
+
+
 const Card = styled.div`
-  border-radius: 12px;
+  border-radius: 10px;
   background-color: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
+  font-size: 22px;
   flex-direction: column;
-  margin-top: 72px;
-  padding: 24px 80px;
+  margin-top: 52px;
+  padding: 14px 50px;
+  width: 65rem;
 `;
 
 const Row = styled.div`
@@ -173,7 +249,8 @@ const ActionIcon = styled.img`
 const Title = styled.div`
   color: #180ea4;
   font-size: 36px;
-  text-align: center;
+  font-weight: 500;
+  /* text-align: center; */
   margin-top: 36px;
 `;
 
@@ -183,6 +260,7 @@ const Description = styled.div`
 
 const Highlight = styled.span`
   font-weight: 500;
+  /* padding-right: 20rem; */
 `;
 
 const MutedText = styled.span`
@@ -216,11 +294,12 @@ const ProgressBar = styled.div`
 
 const DescriptionCard = styled.div`
   border-radius: 12px;
+  color: grey;
   background-color: white;
   margin-top: 48px;
   padding: 24px 56px 66px;
   font-size: 24px;
-  border: 1px solid black;
+  border: 1px solid grey;
 `;
 
 const Keyword = styled.div`
