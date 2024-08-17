@@ -20,9 +20,12 @@ import Keyword from './Components/Sidebar/Keyword/Keyword';
 import Backlink from './Components/Sidebar/Backlink/Backlink';
 import Snippet from './Components/Sidebar/Snippet/Snippet';
 import SnippetGenerator from './Components/Sidebar/Snippet/SnippetGenerator';
-import BackliteChesker from './Components/Sidebar/Backlink/BackliteChesker';
+import Backlinkchecker from './Components/Sidebar/Backlink/Backlinkchecker';
 import Keywordresearchtool from './Components/Sidebar/KeywordResearchTool/Keywordresearchtool';
 import Keywordcheker from './Components/Sidebar/Keyword/Keywordcheker';
+
+import KeywordResearchToolmain from './Components/Sidebar/KeywordResearchTool/KeywordResearchToolmain';
+
 
 import Homeapp from './Components/Sidebar/Home/Home';
 import Homemain from './Components/Sidebar/Home/Homemain';
@@ -58,8 +61,9 @@ function App() {
           <Route path="/Snippet" element={<Snippet />} />
           <Route path="/SnippetGenerator" element={<SnippetGenerator />} />
           <Route path="/Main" element={<Main/>} />
-          <Route path="/BackliteChesker" element={<BackliteChesker/>} />
+          <Route path="/Backlinkchecker" element={<Backlinkchecker/>} />
 
+          <Route path="/KeywordResearchToolmain" element={<KeywordResearchToolmain/>} />
 
         </Routes>
       </Router>

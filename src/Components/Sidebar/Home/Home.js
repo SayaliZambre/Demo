@@ -54,7 +54,9 @@ const Homeapp = () => {
                             </ImageContainer>
                         </TextContainer>
                     </Content>
-                    <InputText>Enter your website...</InputText>
+                    <Input placeholder="Enter your website..." />
+
+                    {/* <InputText>Enter your website...</InputText> */}
                     <ActionButton onClick={handleClick}>Check Score</ActionButton>
                 </ContentContainer>
             </MainContainer>
@@ -98,14 +100,37 @@ const Logo = styled.img`
     object-position: center;
     width: 24px;
 `;
+const Input = styled.input`
+  font-family: Lato, sans-serif;
+  border-radius: 12px;
+  border-color: grey;
+  /* margin-bottom: 5rem; */
+  border: 2px solid grey;
+  background-color: #fff;
+  align-items: start;
+  color: #000;
+  margin-left: 20rem;
+  font-weight: 500;
+  justify-content: center;
+  padding: 22px 4px;
+  padding-left: 3rem;
+  width: 25rem;
+  @media (max-width: 991px) {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  &:not(:first-child) {
+    margin-top: 48px;
 
+  }
+`;
 const SearchInput = styled.div`
     flex-basis: auto;
     flex-grow: 1;
 `;
 
 const Content = styled.div`
-    margin-top: 48px;
+    margin-top: 40px;
     width: 100%;
     @media (max-width: 991px) {
         max-width: 100%;
@@ -126,7 +151,7 @@ const TextContainer = styled.div`
 
 const Title = styled.div`
     color: rgba(0, 0, 0, 1);
-    font: 700 72px Proxima Nova, sans-serif;
+    font: 600 72px Proxima Nova, sans-serif;
     @media (max-width: 991px) {
         max-width: 100%;
         margin-top: 4px;

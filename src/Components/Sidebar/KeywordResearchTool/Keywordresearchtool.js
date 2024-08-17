@@ -1,78 +1,154 @@
-
-import * as React from "react";
+import React, { useState } from "react"; // Import useState from React
+import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
 import styled from "styled-components";
+import Navbar from '../../Public/Navbar';
+import Sidebar from '../../Public/Sidebar';
+import Footer from '../../Public/Footer';
+import icon1 from './Keychecker.png';
+
+const KeywordResearchTool = () => {
+  const [activeSection, setActiveSection] = useState('My Projects');
+  const navigate = useNavigate(); 
+  const handleSectionClick = (section) => {
+    setActiveSection(section);
+    console.log(`Section clicked: ${section}`);
+  };
+
+  const handleClick = () => {
+    navigate('/KeywordResearchToolmain');  
+  };
+
+  console.log('Rendering Project with handleSectionClick:', handleSectionClick);
 
 
-const Keywordresearchtool = () => {
-// function KeywordResearchTool() {
   return (
-    <Div>
-      <KeywordResearchtool>Keyword Research tool</KeywordResearchtool>
-      <FindKeywordideaswithResearchtool>
-        <span style="color: rgba(0,123,254,1);">Find</span> Keyword ideas with
-        Research tool
-      </FindKeywordideaswithResearchtool>
-      <Div2>
+    <>
+    <Navbar/>
+    <Wrapper>
+      <Sidebar activeSection={activeSection} onSectionClick={handleSectionClick}/>
+      
+    <Container>
+      <Title>Keyword Research Tool</Title>
+      <Subtitle>
+        <HighlightedText>Find</HighlightedText> Keyword ideas with Research Tool
+      </Subtitle>
+      <Section>
         <RelatedSearches>Related Searches</RelatedSearches>
         <RelatedKeywords>Related Keywords</RelatedKeywords>
-      </Div2>
-      <KeywordAnalysis>Keyword Analysis</KeywordAnalysis>
-      <Text>Keyword</Text>
+      </Section>
+      <Section1>
+      <AnalysisTitle>Keyword Analysis</AnalysisTitle>
+      
+      <InputField>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Keyword"
+            
+          />
+        </InputField>
       <AnalysisType>Analysis Type</AnalysisType>
-      <Text2>Related searches</Text2>
-      <Searchengine>Search engine</Searchengine>
-      <div>Google.com</div>
-      <Text4>Keyword Research</Text4>
-      <Keywordideas>Keyword ideas</Keywordideas>
-      <Div3>
-        <div>Related Searches</div>
-        <AutoComplete>Auto Complete</AutoComplete>
-        <Div4>
-          <Div5 />
-          <Searchanythinghere>Search anything here</Searchanythinghere>
-        </Div4>
-      </Div3>
-      <KeywordsPerpage>Keywords Per page</KeywordsPerpage>
-      <Div6>
-        <Div7>
-          <Img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/ebec39556da60a04370ebe7902d26416c88c10b2a62fdcc5019b7ac50f4add24?placeholderIfAbsent=true&apiKey=70bbbe661cc747b893a0c12c47223d3a"
+      <InputField>
+          <input
+            // type="email"
+            // name="email"
+            // id="email"
+            placeholder="Related search "
+            
           />
-        </Div7>
-        <Div8>
-          <CsvExport>CSV Export</CsvExport>
-          <Img2
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/302760d0aefa0a6e44574ccbdf10dbcde0c936effc21c377a015915682c4f166?placeholderIfAbsent=true&apiKey=70bbbe661cc747b893a0c12c47223d3a"
+        </InputField>
+      <SearchEngine>Search Engine</SearchEngine>
+      <InputField>
+          <input
+            // type="email"
+            // name="email"
+            // id="email"
+            placeholder="Google.com "
+            
           />
-        </Div8>
-      </Div6>
-    </Div>
+        </InputField>
+      {/* <SearchEngineUrl>Google.com</SearchEngineUrl> */}
+      <ResearchKeywordText  onClick={handleClick} >Keyword Research</ResearchKeywordText>
+      </Section1 >
+ {/* <Image>
+  <img
+   loading="lazy"
+   src={icon1}  />
+ </Image> */}
+
+    </Container>
+    </Wrapper>
+      <Footer/>
+    </>
   );
 }
 
-const Div = styled.div`
-  border-radius: 0px 0px 0px 0px;
+const Wrapper = styled.div`
+  display: flex;
+`;
+const Image = styled.div`
+  display: flex;
+`;
+const Section1 = styled.div`
+  margin-top: 1px;
+  margin-left: 15rem;
+`;
+
+
+const Container = styled.div`
+  border-radius: 0;
+  margin-left: 3rem;
   display: flex;
   flex-direction: column;
 `;
 
-const KeywordResearchtool = styled.div`
+const Title = styled.div`
   color: rgba(0, 0, 0, 1);
   align-self: start;
-  font: 600 48px Lato, sans-serif;
+  font: 400 38px Lato, sans-serif;
   @media (max-width: 991px) {
     max-width: 100%;
     font-size: 40px;
   }
 `;
+const InputField = styled.div`
+  border-radius: 12px;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-style: solid;
+  border-width: 1px;
+  background-color: #fff;
+  display: flex;
+  margin-top: 25px;
+  align-items: center; /* Centering items vertically */
+  gap: 6px;
+  width: 35rem;
+  font-size: 16px;
+  color: #000;
+  font-weight: 700;
+  padding: 20px 24px;
 
-const FindKeywordideaswithResearchtool = styled.div`
+  input {
+    font-family: Lato, sans-serif;
+    flex-grow: 1;
+    flex-basis: auto;
+    border: none;
+    outline: none;
+    padding-left: 10px; /* Adding padding to the left for better spacing */
+  }
+
+  img {
+    width: 24px; /* Adjust the size of the icon */
+    height: 24px; /* Adjust the size of the icon */
+  }
+`;
+
+
+const Subtitle = styled.div`
   color: rgba(0, 0, 0, 1);
   margin-top: 72px;
-  width: 555px;
-  font: 700 72px Lato, sans-serif;
+  width: 355px;
+  font: 700 52px Lato, sans-serif;
   @media (max-width: 991px) {
     max-width: 100%;
     margin-top: 40px;
@@ -80,11 +156,15 @@ const FindKeywordideaswithResearchtool = styled.div`
   }
 `;
 
-const Div2 = styled.div`
+const HighlightedText = styled.span`
+  color: rgba(0, 123, 254, 1);
+`;
+
+const Section = styled.div`
   align-self: start;
   display: flex;
-  margin-top: 56px;
-  gap: 36px;
+  margin-top: 36px;
+  gap: 26px;
   flex-wrap: wrap;
   font: 500 18px Lato, sans-serif;
   @media (max-width: 991px) {
@@ -93,42 +173,42 @@ const Div2 = styled.div`
 `;
 
 const RelatedSearches = styled.div`
-  border-radius: 12px;
+  border-radius: 8px;
   background-color: rgba(0, 123, 254, 0.1);
   color: var(--Main, #007bfe);
-  background: var(--Main, #007bfe);
-  padding: 24px 48px;
+  background: var(--Main, #87CEEB);
+  padding: 14px 38px;
   @media (max-width: 991px) {
     padding: 0 20px;
   }
 `;
 
 const RelatedKeywords = styled.div`
-  border-radius: 12px;
+  border-radius: 8px;
   background-color: rgba(255, 255, 255, 1);
   color: rgba(0, 0, 0, 1);
-  padding: 24px 46px;
+  padding: 20px 36px;
   border: 1px solid rgba(0, 0, 0, 1);
   @media (max-width: 991px) {
     padding: 0 20px;
   }
 `;
 
-const KeywordAnalysis = styled.div`
+const AnalysisTitle = styled.div`
   color: rgba(0, 0, 0, 1);
   align-self: center;
-  margin-top: 96px;
-  font: 600 24px Lato, sans-serif;
+  margin-top: 56px;
+  font: 600 20px Lato, sans-serif;
   @media (max-width: 991px) {
     margin-top: 40px;
   }
 `;
 
-const Text = styled.div`
-  border-radius: 12px;
+const KeywordText = styled.div`
+  border-radius: 8px;
   background-color: rgba(255, 255, 255, 1);
   align-self: center;
-  margin-top: 18px;
+  margin-top: 15px;
   width: 467px;
   max-width: 100%;
   color: rgba(0, 0, 0, 1);
@@ -149,7 +229,7 @@ const AnalysisType = styled.div`
   font: 600 24px Lato, sans-serif;
 `;
 
-const Text2 = styled.div`
+const RelatedSearchesText = styled.div`
   border-radius: 12px;
   background-color: rgba(255, 255, 255, 1);
   align-self: center;
@@ -165,17 +245,34 @@ const Text2 = styled.div`
   }
 `;
 
-const Searchengine = styled.div`
+const SearchEngine = styled.div`
   color: rgba(0, 0, 0, 1);
   align-self: center;
   margin-top: 36px;
   font: 600 24px Lato, sans-serif;
 `;
 
-const Text4 = styled.div`
+const SearchEngineUrl = styled.div`
+border-radius: 12px;
+  background-color: rgba(255, 255, 255, 1);
+  align-self: center;
+  margin-top: 18px;
+  width: 467px;
+  max-width: 100%;
+  color: rgba(0, 0, 0, 1);
+  padding: 24px 59px;
+  font: 500 18px Lato, sans-serif;
+  border: 1px solid rgba(0, 0, 0, 1);
+  @media (max-width: 991px) {
+    padding: 0 20px;
+  }
+`;
+const ResearchKeywordText = styled.div`
   border-radius: 12px;
   background-color: rgba(0, 123, 254, 1);
   align-self: center;
+  margin-left: 10rem;
+  margin-bottom: 4rem;
   margin-top: 72px;
   width: 188px;
   max-width: 100%;
@@ -188,7 +285,7 @@ const Text4 = styled.div`
   }
 `;
 
-const Keywordideas = styled.div`
+const KeywordIdeas = styled.div`
   color: rgba(0, 0, 0, 1);
   align-self: start;
   margin-top: 48px;
@@ -198,7 +295,7 @@ const Keywordideas = styled.div`
   }
 `;
 
-const Div3 = styled.div`
+const SearchSection = styled.div`
   align-self: end;
   display: flex;
   margin-top: 48px;
@@ -215,7 +312,7 @@ const Div3 = styled.div`
   }
 `;
 
-const AutoComplete = styled.div`
+const AutoCompleteSection = styled.div`
   border-radius: 12px;
   background-color: rgba(255, 255, 255, 1);
   padding: 24px 46px;
@@ -225,14 +322,14 @@ const AutoComplete = styled.div`
   }
 `;
 
-const Div4 = styled.div`
+const SearchBar = styled.div`
   display: flex;
   @media (max-width: 991px) {
     max-width: 100%;
   }
 `;
 
-const Div5 = styled.div`
+const SearchInput = styled.div`
   border-radius: 12px;
   background-color: rgba(255, 255, 255, 1);
   display: flex;
@@ -241,7 +338,7 @@ const Div5 = styled.div`
   border: 1px solid rgba(0, 0, 0, 1);
 `;
 
-const Searchanythinghere = styled.div`
+const SearchPlaceholder = styled.div`
   border-radius: 12px;
   background-color: rgba(156, 156, 156, 1);
   flex-grow: 1;
@@ -253,7 +350,7 @@ const Searchanythinghere = styled.div`
   }
 `;
 
-const KeywordsPerpage = styled.div`
+const KeywordsPerPage = styled.div`
   color: rgba(0, 0, 0, 1);
   align-self: start;
   margin-top: 48px;
@@ -263,7 +360,7 @@ const KeywordsPerpage = styled.div`
   }
 `;
 
-const Div6 = styled.div`
+const ExportSection = styled.div`
   display: flex;
   margin-top: 24px;
   width: 507px;
@@ -272,7 +369,7 @@ const Div6 = styled.div`
   flex-wrap: wrap;
 `;
 
-const Div7 = styled.div`
+const ExportContainer = styled.div`
   border-radius: 12px;
   background-color: rgba(245, 245, 245, 1);
   display: flex;
@@ -285,14 +382,14 @@ const Div7 = styled.div`
   }
 `;
 
-const Img = styled.img`
+const ExportImage = styled.img`
   aspect-ratio: 1;
   object-fit: contain;
   object-position: center;
   width: 32px;
 `;
 
-const Div8 = styled.div`
+const ExportActions = styled.div`
   border-radius: 12px;
   background-color: rgba(245, 245, 245, 1);
   display: flex;
@@ -311,11 +408,12 @@ const CsvExport = styled.div`
   flex-basis: auto;
 `;
 
-const Img2 = styled.img`
+const ExportImage2 = styled.img`
   aspect-ratio: 1;
   object-fit: contain;
   object-position: center;
   width: 32px;
   margin: auto 0;
 `;
-export default Keywordresearchtool;
+
+export default KeywordResearchTool;

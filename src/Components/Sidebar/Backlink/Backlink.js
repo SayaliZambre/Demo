@@ -1,6 +1,7 @@
 // import { Sidebar } from "lucide-react";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";import Navbar from '../../Public/Navbar';
+import { useNavigate } from "react-router-dom";
+import Navbar from '../../Public/Navbar';
 import Sidebar from '../../Public/Sidebar'; 
 import Footer from '../../Public/Footer';
 import styled from "styled-components";
@@ -14,7 +15,7 @@ const Backlink = () => {
     };
   
     const handleClick = () => {
-      navigate('/Homemain');  
+      navigate('/Backlinkchecker');  
     };
   
     console.log('Rendering Project with handleSectionClick:', handleSectionClick);
