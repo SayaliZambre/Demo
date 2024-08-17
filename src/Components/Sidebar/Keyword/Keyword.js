@@ -15,7 +15,7 @@ const Keyword = () => {
   };
 
   const handleClick = () => {
-    navigate('/KeywordResearchTool');  
+    navigate('/Keywordcheker');  
   };
 
   console.log('Rendering Project with handleSectionClick:', handleSectionClick);

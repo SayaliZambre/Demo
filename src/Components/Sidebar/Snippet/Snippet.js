@@ -85,11 +85,13 @@ const Content = styled.div`
 const WebsiteLink = styled.div`
   font-family: Lato, sans-serif;
   border-radius: 12px;
-  border-color: rgba(0, 0, 0, 1);
+  border-color: grey;
   border-style: solid;
   border-width: 1px;
+  margin-left: 18rem;
   background-color: #fff;
   align-items: start;
+  width: 25rem;
   color: #000;
   font-weight: 500;
   white-space: nowrap;
@@ -111,6 +113,8 @@ const AnalyzeButton = styled.div`
   color: #fff;
   font-weight: 600;
   text-align: center;
+  margin-left: 40rem;
+  width: 15rem;
   justify-content: center;
   padding: 19px 28px;
   cursor: pointer; // Added cursor style to indicate it's clickable

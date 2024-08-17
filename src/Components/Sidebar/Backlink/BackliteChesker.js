@@ -1,4 +1,7 @@
 import React from "react";
+import Navbar from '../../Public/Navbar';
+import Sidebar from '../../Public/Sidebar'; 
+import Footer from '../../Public/Footer';
 import styled from "styled-components";
 
 // Styled-components

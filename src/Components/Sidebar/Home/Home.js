@@ -1,22 +1,26 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import image1 from "../../../Images/Search.png";
 import image2 from "../../../Images/Group 187.png";
-
 import Navbar from '../../Public/Navbar';
-import Sidebar from '../../Public/Sidebar'; // Importing the Sidebar component
+import Sidebar from '../../Public/Sidebar'; 
 import Footer from '../../Public/Footer';
-
 import styled from "styled-components";
 
 const Homeapp = () => {
     const [activeSection, setActiveSection] = useState('My Projects');
-
+    const navigate = useNavigate(); 
     const handleSectionClick = (section) => {
-        setActiveSection(section);
-        console.log(`Section clicked: ${section}`);
+      setActiveSection(section);
+      console.log(`Section clicked: ${section}`);
     };
-
+  
+    const handleClick = () => {
+      navigate('/Homemain');  
+    };
+  
     console.log('Rendering Project with handleSectionClick:', handleSectionClick);
+  
 
     return (
         <>
@@ -51,7 +55,7 @@ const Homeapp = () => {
                         </TextContainer>
                     </Content>
                     <InputText>Enter your website...</InputText>
-                    <ActionButton>Check Score</ActionButton>
+                    <ActionButton onClick={handleClick}>Check Score</ActionButton>
                 </ContentContainer>
             </MainContainer>
             <Footer />
@@ -62,7 +66,6 @@ const Homeapp = () => {
 // Styled components
 const MainContainer = styled.div`
     display: flex;
-
 `;
 
 const ContentContainer = styled.div`

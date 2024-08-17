@@ -15,12 +15,18 @@ import Sidebar from './Components/Profile/Sidebar';
 import Project from './Components/Sidebar/Project/Project';
 import HomeProfile from './Components/Profile/HomeProfile';
 import Keyword from './Components/Sidebar/Keyword/Keyword';
-import Backlink from './Components/Profile/Backlink';
+// import Backlink from './Components/Backlink/Backlink';
+
+import Backlink from './Components/Sidebar/Backlink/Backlink';
 import Snippet from './Components/Sidebar/Snippet/Snippet';
 import SnippetGenerator from './Components/Sidebar/Snippet/SnippetGenerator';
-import BackliteChesker from './Components/Profile/BackliteChesker';
-import KeywordResearchTool from './Components/Sidebar/Keyword/KeywordResearchTool';
+import BackliteChesker from './Components/Sidebar/Backlink/BackliteChesker';
+import Keywordresearchtool from './Components/Sidebar/KeywordResearchTool/Keywordresearchtool';
+import Keywordcheker from './Components/Sidebar/Keyword/Keywordcheker';
+
 import Homeapp from './Components/Sidebar/Home/Home';
+import Homemain from './Components/Sidebar/Home/Homemain';
+
 
 
 function App() {
@@ -43,9 +49,12 @@ function App() {
           <Route path="/HomeProfile" element={<HomeProfile />} />
           <Route path="/Backlink" element={<Backlink />} />
           <Route path="/Homeapp" element={<Homeapp />} />
+          <Route path="/Homemain" element={<Homemain />} />
+
+          <Route path="/Keywordcheker" element={<Keywordcheker />} />
 
           {/* <Route path="/ProjectMain" element={<ProjectMain/>}/> */}
-          <Route path="/KeywordResearchTool" element={<KeywordResearchTool />} />
+          <Route path="/Keywordresearchtool" element={<Keywordresearchtool />} />
           <Route path="/Snippet" element={<Snippet />} />
           <Route path="/SnippetGenerator" element={<SnippetGenerator />} />
           <Route path="/Main" element={<Main/>} />
