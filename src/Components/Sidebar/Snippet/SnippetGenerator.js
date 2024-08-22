@@ -15,7 +15,9 @@ function SnippetGenerator() {
         <Sidebar/>
     <Container>
       <Header>Snippet Generator</Header>
-      <Domain>cbb.coastalbroadband.in</Domain>
+      <Input placeholder="cbb.coastalbroadband.in" />
+
+      {/* <Domain>cbb.coastalbroadband.in</Domain> */}
       <WebView>Webview</WebView>
 
       <Card>
@@ -283,6 +285,30 @@ const ProgressCard = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 36px;
+`;
+
+const Input = styled.input`
+  font-family: Lato, sans-serif;
+  border-radius: 12px;
+  border-color: grey;
+  border: 1px solid ;
+  margin-left: 23rem;
+  background-color: #fff;
+  align-items: center;
+  color: #000;
+  font-weight: 500;
+  justify-content: center;
+  padding: 22px 4px;
+  padding-left: 3rem;
+  width: 25rem;
+  @media (max-width: 991px) {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  &:not(:first-child) {
+    margin-top: 48px;
+
+  }
 `;
 
 const ProgressBar = styled.div`

@@ -68,13 +68,20 @@ const Homeapp = () => {
 // Styled components
 const MainContainer = styled.div`
     display: flex;
+    flex-direction: column;
+    @media (min-width: 768px) {
+        flex-direction: row;
+    }
 `;
 
 const ContentContainer = styled.div`
     border-radius: 0px;
     display: flex;
-    width: 75%;
+    width: 100%;
     flex-direction: column;
+    @media (min-width: 768px) {
+        width: 75%;
+    }
 `;
 
 const Header = styled.div`
@@ -82,15 +89,15 @@ const Header = styled.div`
     background-color: rgba(229, 229, 229, 1);
     align-self: start;
     display: flex;
-    margin-top: 2rem;
-    margin-left: 3rem;
+    margin: 2rem 1rem 0 1rem;
     gap: 18px;
     color: rgba(0, 0, 0, 1);
     flex-wrap: wrap;
     padding: 14px 36px;
     font: 600 18px Lato, sans-serif;
     @media (max-width: 991px) {
-        padding: 0 20px;
+        padding: 14px 20px;
+        margin: 1rem;
     }
 `;
 
@@ -100,30 +107,25 @@ const Logo = styled.img`
     object-position: center;
     width: 24px;
 `;
+
 const Input = styled.input`
   font-family: Lato, sans-serif;
   border-radius: 12px;
   border-color: grey;
-  /* margin-bottom: 5rem; */
   border: 2px solid grey;
   background-color: #fff;
-  align-items: start;
   color: #000;
-  margin-left: 20rem;
+  margin: 2rem 1rem 0 1rem;
   font-weight: 500;
-  justify-content: center;
-  padding: 22px 4px;
-  padding-left: 3rem;
-  width: 25rem;
-  @media (max-width: 991px) {
-    max-width: 100%;
-    padding: 0 20px;
-  }
-  &:not(:first-child) {
-    margin-top: 48px;
-
+  padding: 22px 3rem;
+  width: 100%;
+  max-width: 25rem;
+  @media (max-width: 768px) {
+    margin-left: 0;
+    padding-left: 1rem;
   }
 `;
+
 const SearchInput = styled.div`
     flex-basis: auto;
     flex-grow: 1;
@@ -133,40 +135,37 @@ const Content = styled.div`
     margin-top: 40px;
     width: 100%;
     @media (max-width: 991px) {
-        max-width: 100%;
-        margin-top: 40px;
+        margin-top: 20px;
     }
 `;
 
 const TextContainer = styled.div`
     gap: 20px;
-    margin-left: 2rem;
+    margin: 0 1rem;
     display: flex;
-    @media (max-width: 991px) {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0px;
+    flex-direction: column;
+    @media (min-width: 768px) {
+        flex-direction: row;
     }
 `;
 
 const Title = styled.div`
     color: rgba(0, 0, 0, 1);
-    font: 600 72px Proxima Nova, sans-serif;
-    @media (max-width: 991px) {
-        max-width: 100%;
-        margin-top: 4px;
-        font-size: 40px;
+    font: 600 40px Proxima Nova, sans-serif;
+    margin-bottom: 20px;
+    @media (min-width: 768px) {
+        font-size: 72px;
+        margin-bottom: 0;
     }
 `;
 
 const ImageContainer = styled.div`
     display: flex;
     flex-direction: column;
-    line-height: normal;
-    width: 87%;
-    margin-left: 20px;
-    @media (max-width: 991px) {
-        width: 100%;
+    width: 100%;
+    @media (min-width: 768px) {
+        width: 87%;
+        margin-left: 20px;
     }
 `;
 
@@ -177,28 +176,9 @@ const FeatureImage = styled.img`
     width: 100%;
     border-radius: 0px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-top: 108px;
-    flex-grow: 1;
-    @media (max-width: 991px) {
-        max-width: 100%;
-        margin-top: 40px;
-    }
-`;
-
-const InputText = styled.div`
-    border-radius: 12px;
-    background-color: rgba(255, 255, 255, 1);
-    align-self: center;
-    margin-top: 144px;
-    width: 467px;
-    max-width: 100%;
-    color: rgba(0, 0, 0, 1);
-    padding: 24px 59px;
-    font: 500 18px Lato, sans-serif;
-    border: 1px solid grey;
-    @media (max-width: 991px) {
-        margin-top: 40px;
-        padding: 0 20px;
+    margin-top: 40px;
+    @media (min-width: 768px) {
+        margin-top: 108px;
     }
 `;
 
@@ -206,16 +186,15 @@ const ActionButton = styled.div`
     border-radius: 12px;
     background-color: rgba(0, 123, 254, 1);
     align-self: center;
-    margin-top: 72px;
-    width: 188px;
-    max-width: 100%;
+    margin: 40px 1rem;
+    width: 100%;
+    max-width: 188px;
     color: rgba(255, 255, 255, 1);
     text-align: center;
     padding: 16px 45px;
     font: 600 18px Lato, sans-serif;
     @media (max-width: 991px) {
-        margin-top: 40px;
-        padding: 0 20px;
+        margin-top: 20px;
     }
 `;
 

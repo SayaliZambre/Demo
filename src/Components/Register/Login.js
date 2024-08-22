@@ -24,7 +24,6 @@ const Login = () => {
     navigate('/signup');
   };
 
-
   const navigateToHome = () => {
     navigate('/');
   };
@@ -41,7 +40,6 @@ const Login = () => {
         </Header>
         <MainTitle>Login</MainTitle>
         <InputField>
-          {/* <img src={image3} alt="Password Icon" /> */}
           <input
             type="email"
             name="email"
@@ -50,14 +48,8 @@ const Login = () => {
             onChange={changeHandler}
             value={user.email}
           />
-        </InputField>        {/* <Input
-          type="email"
-          name="email"
-          value={user.email}
-          onChange={changeHandler}
-        /> */}
+        </InputField>
         <InputField>
-          {/* <img src={image3} alt="Password Icon" /> */}
           <input
             type="password"
             name="password"
@@ -67,12 +59,6 @@ const Login = () => {
             value={user.password}
           />
         </InputField>
-        {/* <Input
-          type="password"
-          name="password"
-          value={user.password}
-          onChange={changeHandler}
-        /> */}
         <Actions>
           <ForgotPassword>Forget your password?</ForgotPassword>
           <LoginButton onClick={navigateToHome}>Login</LoginButton>
@@ -80,7 +66,7 @@ const Login = () => {
             <span style={{ fontWeight: 500, color: "rgba(0,0,0,1)" }}>
               Don’t have an account?
             </span>{" "}
-            <span style={{ fontWeight: 700, color: "rgba(0,123,254,1)" }}  onClick={navigateToSignup}>
+            <span style={{ fontWeight: 700, color: "rgba(0,123,254,1)" }} onClick={navigateToSignup}>
               Signup
             </span>
           </SignupPrompt>
@@ -96,148 +82,142 @@ const Login = () => {
 const Main = styled.div`
   padding-left: 5%;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding-left: 0;
+  }
 `;
 
 const Right = styled.div`
-  flex-direction: column;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  @media (max-width: 768px) {
+    order: -1; /* Display image above the form on small screens */
+  }
 `;
 
 const Image = styled.img`
-  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
 `;
 
-
 const Container = styled.div`
-  display: flex;
-  padding-left: 5%;
+  flex: 1;
   max-width: 467px;
+  padding: 20px;
+  display: flex;
   flex-direction: column;
-  font-size: 18px;
-  color: #000;
-  font-weight: 500;
-  padding: 0 20px;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    padding: 20px 10px;
+  }
 `;
 
 const Header = styled.div`
-  align-self: start;
   display: flex;
-  margin-top: 10px;
-  font-size: 24px;
+  align-items: center;
+  margin-bottom: 20px;
 `;
 
 const Logo = styled.img`
-  aspect-ratio: 0.89;
-  object-fit: auto;
-  object-position: center;
   width: 42px;
 `;
 
 const Title = styled.div`
+  margin-left: 10px;
+  font-size: 24px;
   font-family: Proxima Nova, sans-serif;
-  flex-grow: 1;
-  flex-basis: auto;
-  margin: auto 0;
 `;
 
-const MainTitle = styled.div`
-  margin-top: 40px;
-  width: 100%;
-  font: 700 72px Lato, sans-serif;
-`;
+const MainTitle = styled.h1`
+  margin-top: 20px;
+  font-size: 36px;
+  font-weight: 700;
 
-const InputLabel = styled.div`
-  font-family: Lato, sans-serif;
-  border-radius: 12px;
-  border-color: rgba(0, 0, 0, 1);
-  border-style: solid;
-  border-width: 1px;
-  background-color: #fff;
-  margin-top: 48px;
-  width: 100%;
-  align-items: start;
-  white-space: nowrap;
-  justify-content: center;
-  padding: 29px 48px;
-
-  &:first-of-type {
-    margin-top: 74px;
+  @media (max-width: 768px) {
+    font-size: 28px;
   }
 `;
 
-const Input = styled.input`
-  font-family: Lato, sans-serif;
-  border-radius: 12px;
-  border-color: rgba(0, 0, 0, 1);
-  border-style: solid;
-  border-width: 1px;
-  background-color: #fff;
-  margin-top: 10px;
-  width: 100%;
-  align-items: start;
-  white-space: nowrap;
-  justify-content: center;
-  padding: 10px 20px;
-`;
-
-const Actions = styled.div`
-  align-self: center;
-  display: flex;
-  margin-top: 17px;
-  width: 100%;
-  max-width: 354px;
-  flex-direction: column;
-  color: #007bfe;
-  font-weight: 600;
-  text-align: center;
-`;
-
-const ForgotPassword = styled.div`
-  font-family: Lato, sans-serif;
-  align-self: end;
-`;
-
-const LoginButton = styled.div`
-  font-family: Lato, sans-serif;
-  border-radius: 12px;
-  background-color: #007bfe;
-  width: 188px;
-  max-width: 100%;
-  align-items: center;
-  color: #fff;
-  white-space: nowrap;
-  justify-content: center;
-  margin: 49px 0 0 27px;
-  padding: 19px 60px;
-`;
-
-const SignupPrompt = styled.div`
-  font-family: Lato, sans-serif;
-  margin-top: 40px;
-`;
 const InputField = styled.div`
+  margin-top: 20px;
   border-radius: 12px;
-  border-color: rgba(0, 0, 0, 0.2);
-  border-style: solid;
-  border-width: 1px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   background-color: #fff;
-  display: flex;
-  margin-top: 25px;
-  align-items: flex-start;
-  gap: 6px;
-  font-size: 16px;
-  color: #000;
-  font-weight: 500;
   padding: 16px 18px;
 
   input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
     font-family: Lato, sans-serif;
-    flex-grow: 1;
-    flex-basis: auto;
-    margin: auto 0;
-    border: none; /* Removing the default border for the input */
-    outline: none; /* Removing the default outline for the input */
+  }
+
+  @media (max-width: 768px) {
+    padding: 12px 14px;
+    font-size: 14px;
   }
 `;
 
+const Actions = styled.div`
+  margin-top: 20px;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    margin-top: 15px;
+  }
+`;
+
+const ForgotPassword = styled.div`
+  margin-bottom: 20px;
+  font-size: 14px;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+`;
+
+const LoginButton = styled.button`
+  margin-top: 20px;
+  width: 100%;
+  padding: 15px;
+  border-radius: 12px;
+  background-color: #007bfe;
+  color: white;
+  font-size: 16px;
+  font-family: Lato, sans-serif;
+  border: none;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    padding: 12px;
+    font-size: 14px;
+  }
+`;
+
+const SignupPrompt = styled.div`
+  margin-top: 20px;
+  font-size: 14px;
+
+  span {
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+`;
 
 export default Login;

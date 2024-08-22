@@ -57,51 +57,59 @@ const Keyword = () => {
 
 const Wrapper = styled.div`
   display: flex;
+  flex-direction: column;
+  @media (min-width: 992px) {
+    flex-direction: row;
+  }
 `;
 
 const MainContent = styled.div`
   display: flex;
   flex-direction: column;
   line-height: normal;
-  width: 70%;
-  margin-left: 20px;
-  @media (max-width: 991px) {
-    width: 100%;
+  width: 100%;
+  margin-left: 0;
+  @media (min-width: 992px) {
+    width: 70%;
+    margin-left: 20px;
   }
 `;
 
 const ContentContainer = styled.div`
   display: flex;
-  margin-top: 48px;
+  margin-top: 20px;
   flex-direction: column;
   color: #000;
-  @media (max-width: 991px) {
-    max-width: 100%;
-    margin-top: 40px;
+  padding: 0 1rem;
+  @media (min-width: 992px) {
+    margin-top: 48px;
   }
 `;
 
 const ContentTitle = styled.div`
-  font: 400 38px Lato, sans-serif;
-  padding-left: 1rem;
-  @media (max-width: 991px) {
-    max-width: 100%;
-    font-size: 40px;
+  font: 400 24px Lato, sans-serif;
+  padding-left: 0;
+  text-align: center;
+  @media (min-width: 992px) {
+    padding-left: 1rem;
+    font-size: 38px;
+    text-align: left;
   }
 `;
 
 const Form = styled.div`
-  align-self: end;
+  align-self: stretch;
   display: flex;
-  margin-top: 64px;
-  width: 467px;
-  padding-right: 20rem;
-  max-width: 50%;
+  margin-top: 24px;
+  width: 100%;
+  max-width: 100%;
   flex-direction: column;
   font-size: 15px;
   font-weight: 400;
-  @media (max-width: 991px) {
-    margin-top: 40px;
+  @media (min-width: 992px) {
+    margin-top: 64px;
+    width: 467px;
+    padding-right: 20rem;
   }
 `;
 
@@ -114,13 +122,15 @@ const FormField = styled.div`
   background-color: #fff;
   align-items: start;
   justify-content: center;
-  padding: 22px 4px;
-  @media (max-width: 991px) {
-    max-width: 100%;
-    padding: 0 20px;
+  padding: 10px;
+  @media (min-width: 992px) {
+    padding: 22px 4px;
   }
   &:not(:first-child) {
-    margin-top: 48px;
+    margin-top: 24px;
+    @media (min-width: 992px) {
+      margin-top: 48px;
+    }
   }
   input {
     font-family: Lato, sans-serif;
@@ -137,20 +147,19 @@ const SubmitButton = styled.div`
   border-radius: 12px;
   background-color: #007bfe;
   align-self: center;
-  margin-top: 72px;
-  width: 188px;
-  max-width: 100%;
+  margin-top: 40px;
+  width: 100%;
   align-items: center;
   color: #fff;
   font-weight: 600;
   white-space: nowrap;
   text-align: center;
   justify-content: center;
-  padding: 21px 60px;
-  @media (max-width: 991px) {
-    margin-top: 40px;
-    white-space: initial;
-    padding: 0 20px;
+  padding: 14px 0;
+  @media (min-width: 992px) {
+    width: 188px;
+    margin-top: 72px;
+    padding: 21px 60px;
   }
 `;
 

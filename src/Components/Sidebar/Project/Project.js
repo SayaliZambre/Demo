@@ -61,23 +61,41 @@ function Project() {
 
 const Wrapper = styled.div`
   display: flex;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const Content = styled.div`
   flex: 1;
   padding: 24px;
+
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
 `;
 
 const Header = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 24px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 const Logo = styled.img`
   width: 40px;
   height: 40px;
   margin-right: 16px;
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
 `;
 
 const SearchInput = styled.input`
@@ -86,6 +104,11 @@ const SearchInput = styled.input`
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 8px;
+  }
 `;
 
 const MainContent = styled.div`
@@ -93,17 +116,29 @@ const MainContent = styled.div`
   padding: 24px;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
 `;
 
 const Title = styled.h2`
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 16px;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 const ProjectContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const ProjectItem = styled.div`
@@ -112,16 +147,28 @@ const ProjectItem = styled.div`
   padding: 16px;
   background-color: #f5f5f5;
   border-radius: 8px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const ProjectName = styled.div`
   font-weight: bold;
   margin-bottom: 8px;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 const Actions = styled.div`
   display: flex;
   align-items: center;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 const Action = styled.div`
@@ -141,6 +188,10 @@ const ProjectDetails = styled.div`
   display: flex;
   align-items: center;
   margin-top: 16px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const ProjectImage = styled.img`
@@ -149,6 +200,11 @@ const ProjectImage = styled.img`
   object-fit: cover;
   border-radius: 8px;
   margin-right: 16px;
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
 `;
 
 const Details = styled.div`
@@ -157,6 +213,10 @@ const Details = styled.div`
 
 const Detail = styled.div`
   margin-bottom: 4px;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 export default Project;

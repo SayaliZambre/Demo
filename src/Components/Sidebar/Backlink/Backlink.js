@@ -1,4 +1,3 @@
-// import { Sidebar } from "lucide-react";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from '../../Public/Navbar';
@@ -9,61 +8,55 @@ import styled from "styled-components";
 const Backlink = () => {
     const [activeSection, setActiveSection] = useState('My Projects');
     const navigate = useNavigate(); 
+
     const handleSectionClick = (section) => {
-      setActiveSection(section);
-      console.log(`Section clicked: ${section}`);
+        setActiveSection(section);
+        console.log(`Section clicked: ${section}`);
     };
-  
+
     const handleClick = () => {
-      navigate('/Backlinkchecker');  
+        navigate('/Backlinkchecker');  
     };
-  
+
     console.log('Rendering Project with handleSectionClick:', handleSectionClick);
-  
 
-
-
-  return (
-    <>
-    <Navbar/>
-    <Wrapper>
-        <Sidebar/>
-
-        <RightColumn>
-        <BacklinkSection>
-          <BacklinkTitle>Backlink Checker</BacklinkTitle>
-          <BacklinkForm>
-            <BacklinkInput placeholder="Enter your website...." />
-            <CheckButton onClick={handleClick}>Check</CheckButton>
-          </BacklinkForm>
-        </BacklinkSection>
-      </RightColumn>
-
-
-    </Wrapper>
-    <Footer/>
-    </>
-  );
+    return (
+        <>
+        <Navbar/>
+        <Wrapper>
+            <Sidebar/>
+            <RightColumn>
+                <BacklinkSection>
+                    <BacklinkTitle>Backlink Checker</BacklinkTitle>
+                    <BacklinkForm>
+                        <BacklinkInput placeholder="Enter your website...." />
+                        <CheckButton onClick={handleClick}>Check</CheckButton>
+                    </BacklinkForm>
+                </BacklinkSection>
+            </RightColumn>
+        </Wrapper>
+        <Footer/>
+        </>
+    );
 };
 
 const Wrapper = styled.div`
-  gap: 20px;
   display: flex;
+  gap: 20px;
   @media (max-width: 991px) {
     flex-direction: column;
-    align-items: stretch;
-    gap: 0px;
+    gap: 0;
   }
 `;
 
 const RightColumn = styled.div`
   display: flex;
   flex-direction: column;
-  line-height: normal;
   width: 70%;
   margin-left: 20px;
   @media (max-width: 991px) {
     width: 100%;
+    margin-left: 0;
   }
 `;
 
@@ -71,8 +64,8 @@ const BacklinkSection = styled.div`
   margin-top: 38px;
   padding: 0 20px;
   @media (max-width: 991px) {
-    max-width: 100%;
-    margin-top: 40px;
+    margin-top: 20px;
+    padding: 0 15px;
   }
 `;
 
@@ -80,67 +73,51 @@ const BacklinkTitle = styled.div`
   color: #000;
   font: 550 32px Lato, sans-serif;
   @media (max-width: 991px) {
-    font-size: 40px;
+    font-size: 28px;
   }
 `;
 
 const BacklinkForm = styled.div`
   display: flex;
-  margin-top: 48px;
-  /* padding-left: 5rem; */
-  flex-grow: 1;
   flex-direction: column;
+  margin-top: 48px;
   font-size: 18px;
   @media (max-width: 991px) {
-    max-width: 100%;
-    margin-top: 40px;
+    margin-top: 20px;
   }
 `;
 
 const BacklinkInput = styled.input`
   font-family: Lato, sans-serif;
   border-radius: 12px;
-  border-color: grey;
-  border: 1px solid ;
+  border: 1px solid grey;
   background-color: #fff;
-  align-items: start;
   color: #000;
   font-weight: 500;
-  justify-content: center;
   padding: 22px 4px;
-  padding-left: 3rem;
-  width: 25rem;
+  padding-left: 1rem; /* Adjusted for better alignment */
+  width: 100%;
+  max-width: 500px; /* Set a max-width for larger screens */
   @media (max-width: 991px) {
-    max-width: 100%;
-    padding: 0 20px;
-  }
-  &:not(:first-child) {
-    margin-top: 48px;
-
+    padding-left: 20px;
   }
 `;
 
-const CheckButton = styled.div`
+const CheckButton = styled.button` /* Changed to button for better semantics */
   font-family: Lato, sans-serif;
   border-radius: 12px;
   background-color: #007bfe;
-  align-self: center;
-  margin-top: 72px;
-  width: 188px;
-  max-width: 100%;
-  align-items: center;
   color: #fff;
   font-weight: 600;
-  white-space: nowrap;
   text-align: center;
-  justify-content: center;
-  padding: 21px 60px;
+  padding: 14px 24px;
+  margin-top: 24px;
+  border: none;
+  cursor: pointer;
   @media (max-width: 991px) {
-    margin-top: 40px;
-    white-space: initial;
-    padding: 0 20px;
+    padding: 12px 20px;
+    margin-top: 20px;
   }
 `;
-
 
 export default Backlink;
