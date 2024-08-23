@@ -10,10 +10,10 @@ import Contact from './Components/Register/Contact';
 import About from './Components/Register/About';
 import Pricing from './Components/Register/Pricing';
 import Careers from './Components/Register/Careers';
-import Sidebar from './Components/Profile/Sidebar';
+import Sidebar from './Components/Register/Sidebar';
 
 import Project from './Components/Sidebar/Project/Project';
-import HomeProfile from './Components/Profile/HomeProfile';
+import HomeProfile from './Components/Register/HomeProfile';
 import Keyword from './Components/Sidebar/Keyword/Keyword';
 // import Backlink from './Components/Backlink/Backlink';
 

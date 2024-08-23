@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import image from '../../Images/pana.png';
 import Navbar from './Navbar';
+import Footer from './Footer';
+
 
 function About() {
   return (
@@ -30,9 +32,10 @@ function About() {
               </ImageColumn>
             </ContentWrapper>
           </Content>
-          <Footer />
+          {/* <Footer /> */}
         </Container>
       </Main>
+      <Footer/>
     </>
   );
 }
@@ -132,15 +135,15 @@ const StyledImg = styled.img`
   max-width: 100%;
 `;
 
-const Footer = styled.div`
-  background-color: #007bfe;
-  width: 100%;
-  min-height: 150px;
-  margin-top: 3rem;
-  @media (max-width: 768px) {
-    margin-top: 2rem;
-    min-height: 100px;
-  }
-`;
+// const Footer = styled.div`
+//   background-color: #007bfe;
+//   width: 100%;
+//   min-height: 150px;
+//   margin-top: 3rem;
+//   @media (max-width: 768px) {
+//     margin-top: 2rem;
+//     min-height: 100px;
+//   }
+// `;
 
 export default About;
