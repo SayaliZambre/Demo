@@ -7,442 +7,208 @@ import image2 from '../../Images/Pricedots.png';
 import Navbar from "./Navbar";
 import Footer from './Footer';
 
-
-
 function Pricing() {
   return (
-<>
-<Navbar/>
-<Main>
-    <Container>
-      <Column>
-        <TextContainer>
-          <Heading>Unlock</Heading>
-          <Subheading>success with our SEO tools.</Subheading>
-          <Description>Don’t wait just buy the plan and enjoy your success</Description>
-        </TextContainer>
-      </Column>
-      <ColumnWide>
-        <PricingContainer>
-          <PricingTitle>Pricing</PricingTitle>
-          <StyledImg
-            src={image} alt=""
-          />
-        </PricingContainer>
-      </ColumnWide>
-    </Container>
-    {/* <Container2> */}
-      <Image
-         src={image2} alt="Email Icon"
-      />
-      {/* <DotsContainer> */}
-        {/* {Array.from({ length: 9 }).map((_, index) => (
-          <Dot key={index} />
-        ))} */}
-      {/* </DotsContainer> */}
-    {/* </Container2> */}
+    <>
+      <Navbar />
+      <Main>
+        <Container>
+          <Column>
+            <TextContainer>
+              <Heading>Unlock</Heading>
+              <Subheading>success with our SEO tools.</Subheading>
+              <Description>Don’t wait just buy the plan and enjoy your success</Description>
+            </TextContainer>
+          </Column>
+          <ColumnWide>
+            <PricingContainer>
+              <PricingTitle>Pricing</PricingTitle>
+              <StyledImg src={image} alt="Pricing Image" />
+            </PricingContainer>
+          </ColumnWide>
+        </Container>
 
-    <Container1>
-      <PlansWrapper>
-        <PlanColumn>
-          <PlanCard>
-            <PlanContent>
-              <PlanHeader>
-                <PlanTitle>Basic</PlanTitle>
-                <PlanPrice>$350.00</PlanPrice>
-                <PlanDiscount>
-                  <OriginalPrice>$450.00</OriginalPrice>
-                  <Discount>35% OFF</Discount>
-                </PlanDiscount>
-              </PlanHeader>
-              <PlanDescription>
-                <Separator />
-                <PlanSummary>More data and insights for growing businesses</PlanSummary>
-                <FeaturesHeader>Top Features :</FeaturesHeader>
-                <FeatureItem>
-                  <FeatureIcon
-                   src={image3} alt="Email Icon"  />
-                  <FeatureText>1 Project to optimize your website</FeatureText>
-                </FeatureItem>
-                <FeatureItem>
-                  <FeatureIcon
-                                       src={image3} alt="Email Icon"  />
+        <Image src={image2} alt="Decorative Dots" />
 
-                  <FeatureText>Track 50 keywords</FeatureText>
-                </FeatureItem>
-                <FeatureItem>
-                  <FeatureIcon
-                                    src={image3} alt="Email Icon"  />
+        <Container1>
+          <PlansWrapper>
+            {plans.map((plan, index) => (
+              <PlanColumn key={index}>
+                <PlanCard>
+                  <PlanContent>
+                    <PlanHeader>
+                      <PlanTitle>{plan.title}</PlanTitle>
+                      <PlanPrice>{plan.price}</PlanPrice>
+                      <PlanDiscount>
+                        <OriginalPrice>{plan.originalPrice}</OriginalPrice>
+                        <Discount>{plan.discount}</Discount>
+                      </PlanDiscount>
+                    </PlanHeader>
+                    <PlanDescription>
+                      <Separator />
+                      <PlanSummary>{plan.summary}</PlanSummary>
+                      <FeaturesHeader>Top Features :</FeaturesHeader>
+                      {plan.features.map((feature, index) => (
+                        <FeatureItem key={index}>
+                          <FeatureIcon src={image3} alt="Feature Icon" />
+                          <FeatureText>{feature}</FeatureText>
+                        </FeatureItem>
+                      ))}
+                    </PlanDescription>
+                    <ActionButton>{`Try ${plan.title}`}</ActionButton>
+                  </PlanContent>
+                </PlanCard>
+              </PlanColumn>
+            ))}
+          </PlansWrapper>
+        </Container1>
 
-                  <FeatureText>Analyze up to 2500 pages</FeatureText>
-                </FeatureItem>
-                <FeatureItem>
-                  <FeatureIcon
-                                     src={image3} alt="Email Icon"  />
-
-                  <FeatureText>Unlimited PDF Reports</FeatureText>
-                </FeatureItem>
-              </PlanDescription>
-              <ActionButton>Try Basic</ActionButton>
-            </PlanContent>
-          </PlanCard>
-        </PlanColumn>
-        <PlanColumn>
-          <PlanCard>
-            <PlanContent>
-              <PlanHeader>
-                <PlanTitle>Premium</PlanTitle>
-                <PlanPrice>$850.00</PlanPrice>
-                <PlanDiscount>
-                  <OriginalPrice>$1050.00</OriginalPrice>
-                  <Discount>35% OFF</Discount>
-                </PlanDiscount>
-              </PlanHeader>
-              <PlanDescription>
-                <Separator />
-                <PlanSummary>More data and insights for growing businesses</PlanSummary>
-                <FeaturesHeader>Top Features :</FeaturesHeader>
-                <FeatureItem>
-                  <FeatureIcon
-                                     src={image3} alt="Email Icon"  />
-
-                  <FeatureText>3 Project to optimize your website</FeatureText>
-                </FeatureItem>
-                <FeatureItem>
-                  <FeatureIcon
-                                     src={image3} alt="Email Icon"  />
-
-                  <FeatureText>Track 200 keywords</FeatureText>
-                </FeatureItem>
-                <FeatureItem>
-                  <FeatureIcon
-                                    src={image3} alt="Email Icon"  />
-
-                  <FeatureText>Analyze up to 2500 pages</FeatureText>
-                </FeatureItem>
-                <FeatureItem>
-                  <FeatureIcon
-                                      src={image3} alt="Email Icon"  />
-
-                  <FeatureText>Unlimited PDF Reports</FeatureText>
-                </FeatureItem>
-              </PlanDescription>
-              <ActionButton>Try Premium</ActionButton>
-            </PlanContent>
-          </PlanCard>
-        </PlanColumn>
-
-        <PlanColumn>
-          <PlanCard>
-            <PlanContent>
-              <PlanHeader>
-                <PlanTitle>Enterprise</PlanTitle>
-                <PlanPrice>$2050.00</PlanPrice>
-                <PlanDiscount>
-                  <OriginalPrice>$2550.00</OriginalPrice>
-                  <Discount>35% OFF</Discount>
-                </PlanDiscount>
-              </PlanHeader>
-              <PlanDescription>
-                <Separator />
-                <PlanSummary>More data and insights for growing businesses</PlanSummary>
-                <FeaturesHeader>Top Features :</FeaturesHeader>
-                <FeatureItem>
-                  <FeatureIcon
-                                   src={image3} alt="Email Icon"  />
-
-                  <FeatureText>5 Project to optimize your website</FeatureText>
-                </FeatureItem>
-                <FeatureItem>
-                  <FeatureIcon
-                                      src={image3} alt="Email Icon"  />
-
-                  <FeatureText>Track 5000 keywords</FeatureText>
-                </FeatureItem>
-                <FeatureItem>
-                  <FeatureIcon
-                                     src={image3} alt="Email Icon"  />
-
-                  <FeatureText>Analyze up to 2500 pages</FeatureText>
-                </FeatureItem>
-                <FeatureItem>
-                  <FeatureIcon
-                                     src={image3} alt=""  />
-
-                  <FeatureText>Unlimited PDF Reports</FeatureText>
-                </FeatureItem>
-              </PlanDescription>
-              <ActionButton>Try Enterprise</ActionButton>
-            </PlanContent>
-          </PlanCard>
-        </PlanColumn>
-        {/* Repeat for Premium and Enterprise plans */}
-        
-      </PlansWrapper>
-    </Container1>
-
-
-        <div>
-      <StyledDiv>
-        <StyledColumn>
-          <StyledDiv2>
-            <StyledDiv3>Why you’re waiting for?? </StyledDiv3>
-            <StyledDiv4>Buy Now!!!</StyledDiv4>
-          </StyledDiv2>
-        </StyledColumn>
-        <StyledColumn2>
-          <StyledImg1
-           src={image5} alt="  "  />
-        </StyledColumn2>
-      </StyledDiv>
-    </div>
-<Img 
- src={image5} alt="Email Icon"
- />
-
-
-
-
-
- 
-    </Main>
-    <Footer/>
+        <StyledDiv>
+          <StyledColumn>
+            <StyledDiv2>
+              <StyledDiv3>Why are you waiting?</StyledDiv3>
+              <StyledDiv4>Buy Now!!!</StyledDiv4>
+            </StyledDiv2>
+          </StyledColumn>
+          <StyledColumn2>
+            <StyledImg1 src={image5} alt="Promotional Image" />
+          </StyledColumn2>
+        </StyledDiv>
+      </Main>
+      <Footer />
     </>
-
   );
 }
 
-const Img = styled.div`
-width: 100%;
-`;
+const plans = [
+  {
+    title: "Basic",
+    price: "$350.00",
+    originalPrice: "$450.00",
+    discount: "35% OFF",
+    summary: "More data and insights for growing businesses",
+    features: [
+      "1 Project to optimize your website",
+      "Track 50 keywords",
+      "Analyze up to 2500 pages",
+      "Unlimited PDF Reports",
+    ],
+  },
+  {
+    title: "Premium",
+    price: "$850.00",
+    originalPrice: "$1050.00",
+    discount: "35% OFF",
+    summary: "More data and insights for growing businesses",
+    features: [
+      "3 Projects to optimize your website",
+      "Track 200 keywords",
+      "Analyze up to 2500 pages",
+      "Unlimited PDF Reports",
+    ],
+  },
+  {
+    title: "Enterprise",
+    price: "$2050.00",
+    originalPrice: "$2550.00",
+    discount: "35% OFF",
+    summary: "More data and insights for growing businesses",
+    features: [
+      "5 Projects to optimize your website",
+      "Track 5000 keywords",
+      "Analyze up to 2500 pages",
+      "Unlimited PDF Reports",
+    ],
+  },
+];
 
-
-const Main = styled.div`
+const Main = styled.main`
   display: flex;
   flex-direction: column;
-  padding-left: 20rem;
   padding: 20px;
   gap: 20px;
-
-  /* @media (min-width: 768px) {
-    flex-direction: row;
-  } */
 `;
 
 const Container = styled.div`
-  gap: 0px;
-  padding-top: 2rem;
-  padding-left: 5rem;
-  padding-right: 5rem;
   display: flex;
-  @media (max-width: 991px) {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0px;
+  gap: 20px;
+  padding: 2rem 5rem;
+  flex-wrap: wrap;
+  @media (max-width: 768px) {
+    padding: 1rem;
   }
 `;
 
 const Column = styled.div`
-  display: flex;
-  flex-direction: column;
-  line-height: normal;
-  width: 31%;
-  margin-left: 0px;
-  @media (max-width: 991px) {
-    width: 100%;
-  }
+  flex: 1;
+  min-width: 300px;
+  margin-bottom: 2rem;
 `;
 
 const TextContainer = styled.div`
-  display: flex;
-  margin-top: 400px;
-  /* padding-top: 16rem; */
-  flex-direction: column;
-  color: #000;
-  font-weight: 300;
+  margin-top: 4rem;
   padding: 0 20px;
-  @media (max-width: 991px) {
-    margin-top: 40px;
+  color: #000;
+  @media (max-width: 768px) {
+    margin-top: 2rem;
   }
 `;
 
-const Heading = styled.div`
+const Heading = styled.h1`
   color: #007bfe;
-  font: 600 66px Lato, sans-serif;
-  @media (max-width: 991px) {
-    font-size: 40px;
+  font-size: 4rem;
+  margin: 0;
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
   }
 `;
 
-const Subheading = styled.div`
-  margin-top: 14px;
-  font: 46px Lato, sans-serif;
-  @media (max-width: 991px) {
-    font-size: 40px;
+const Subheading = styled.h2`
+  margin-top: 1rem;
+  font-size: 2.5rem;
+  @media (max-width: 768px) {
+    font-size: 2rem;
   }
 `;
 
-const Description = styled.div`
-  margin-top: 21px;
-  font: 300 36px Lato, sans-serif;
-  color: #A4A4A4;
-  @media (max-width: 991px) {
-    margin-top: 40px;
-    font-size: 40px;
+const Description = styled.p`
+  margin-top: 1.5rem;
+  font-size: 1.8rem;
+  color: #a4a4a4;
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
   }
 `;
 
 const ColumnWide = styled.div`
-  display: flex;
-  flex-direction: column;
-  line-height: normal;
-  width: 69%;
-  margin-left: 20px;
-  @media (max-width: 991px) {
-    width: 100%;
-  }
+  flex: 2;
+  min-width: 300px;
 `;
 
 const PricingContainer = styled.div`
-  display: flex;
-  /* flex-grow: 1; */
-  flex-direction: column;
-  font-size: 54px;
-  /* color: #000; */
-  font-weight: 700;
-  white-space: nowrap;
   padding: 0 20px;
-  @media (max-width: 991px) {
-    max-width: 100%;
-    margin-top: 40px;
-    font-size: 40px;
-    white-space: initial;
-  }
 `;
 
-const PricingTitle = styled.div`
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  -webkit-text-stroke-width: 1;
-  padding-left: 10rem;
-  -webkit-text-stroke-color: #000;
-  font-family: Lato, sans-serif;
-  /* border-color: rgba(0, 0, 0, 1); */
-  /* border-style: solid; */
-  border-width: 1px;
-  @media (max-width: 991px) {
-    max-width: 100%;
-    font-size: 40px;
-  }
-`;
-
-const StyledImg1 = styled.img`
-  aspect-ratio: 1.15;
-  object-fit: auto;
-  object-position: center;
-  width: 710px;
-  fill: rgba(55, 159, 255, 0.07);
-  align-self: end;
-  margin-top: 204px;
-  max-width: 100%;
-  @media (max-width: 991px) {
-    margin-top: 40px;
-  }
-`;
-const StyledDiv = styled.div`
-  gap: 20px;
-  padding-left: 3rem;
-  padding-right: 3rem;
-  display: flex;
-  @media (max-width: 991px) {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0px;
-  }
-`;
-
-const StyledColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-  line-height: normal;
-  margin-top: 3rem;
-  width: 54%;
-  margin-left: 0px;
-  @media (max-width: 991px) {
-    width: 100%;
-  }
-`;
-
-const StyledDiv2 = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-self: stretch;
+const PricingTitle = styled.h2`
   text-align: center;
-  margin: auto 0;
-  /* padding: 0 20px; */
-  @media (max-width: 991px) {
-    max-width: 100%;
-    margin-top: 40px;
-  }
-`;
-
-const StyledDiv3 = styled.div`
-  color: #A4A4A4;
-  font: 600 42px Lato, sans-serif;
-  @media (max-width: 991px) {
-    max-width: 100%;
-    font-size: 40px;
-  }
-`;
-
-const StyledDiv4 = styled.div`
-  color: #ff3737;
-  align-self: center;
-  margin-top: 40px;
-  font: 600 56px Lato, sans-serif;
-  @media (max-width: 991px) {
-    font-size: 40px;
-  }
-`;
-
-const StyledColumn2 = styled.div`
-  display: flex;
-  flex-direction: column;
-  line-height: normal;
-  width: 66%;
-  margin-left: 20px;
-  @media (max-width: 991px) {
-    width: 100%;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 3rem;
+  color: #000;
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
   }
 `;
 
 const StyledImg = styled.img`
-  aspect-ratio: 1.33;
-  object-fit: auto;
-  object-position: center;
-  width: 60rem;
-  height: 60rem;
-  flex-grow: 1;
-  @media (max-width: 991px) {
-    max-width: 100%;
-    margin-top: 40px;
-  }
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: block;
 `;
 
-
 const Image = styled.img`
-  aspect-ratio: 3.23;
-  object-fit: auto;
-  object-position: center;
   width: 100%;
-  /* stroke-width: 4px; */
-  /* stroke: #000; */
-  /* border-color: rgba(0, 0, 0, 1); */
-  /* border-style: dashed;
-  border-width: 4px; */
-
-  @media (max-width: 991px) {
-    max-width: 100%;
-  }
+  margin: 2rem 0;
 `;
 
 const Container1 = styled.div`
@@ -450,156 +216,166 @@ const Container1 = styled.div`
 `;
 
 const PlansWrapper = styled.div`
-  gap: 25px;
-  padding-left: 3rem;
-  padding-right: 3rem;
-  padding-top : 12rem;
   display: flex;
-  @media (max-width: 991px) {
+  gap: 25px;
+  flex-wrap: wrap;
+  @media (max-width: 768px) {
     flex-direction: column;
-    align-items: stretch;
-    gap: 0px;
   }
 `;
 
 const PlanColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 33%;
-  @media (max-width: 991px) {
-    width: 100%;
-  }
+  flex: 1;
+  min-width: 300px;
 `;
 
 const PlanCard = styled.div`
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
-  @media (max-width: 991px) {
-    margin-top: 40px;
-  }
+  background-color: #fff;
+  border-radius: 20px;
+  border: 2px solid #d3d3d3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 `;
 
 const PlanContent = styled.div`
-  border-radius: 40px;
-  border: 2px solid #d3d3d3;
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-weight: 700;
-  padding: 49px 0;
-  @media (max-width: 991px) {
-    max-width: 100%;
-  }
-`;
-
-const PlanHeader = styled.div`
+  padding: 2rem;
   text-align: center;
 `;
 
-const PlanTitle = styled.div`
+const PlanHeader = styled.div``;
+
+const PlanTitle = styled.h3`
   background-color: #007bfe;
-  border-radius: 50%;
-  width: 182px;
   color: #fff;
-  font: 600 32px Proxima Nova, sans-serif;
-  height: 182px;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
-  @media (max-width: 991px) {
-    padding: 0 20px;
-  }
+  font-size: 1.5rem;
+  margin: 0 auto;
 `;
 
-const PlanPrice = styled.div`
+const PlanPrice = styled.p`
+  font-size: 2rem;
   color: #007bfe;
-  margin-top: 25px;
-  font: 56px Proxima Nova, sans-serif;
-  @media (max-width: 991px) {
-    font-size: 40px;
-  }
+  margin-top: 1rem;
 `;
 
 const PlanDiscount = styled.div`
   display: flex;
-  margin-top: 9px;
-  gap: 20px;
-  font-size: 24px;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1rem;
   color: #d9d9d9;
 `;
 
-const OriginalPrice = styled.div`
-  font-family: Proxima Nova, sans-serif;
+const OriginalPrice = styled.span`
+  text-decoration: line-through;
 `;
 
-const Discount = styled.div`
-  font-family: Proxima Nova, sans-serif;
-`;
+const Discount = styled.span``;
 
 const PlanDescription = styled.div`
-  align-self: stretch;
-  display: flex;
-  margin-top: 38px;
-  flex-direction: column;
-  font-size: 18px;
-  color: #000;
-  font-weight: 500;
-  padding: 0 21px;
-  @media (max-width: 991px) {
-    padding-left: 20px;
-  }
+  margin-top: 1.5rem;
 `;
 
 const Separator = styled.div`
   border-top: 1px solid #000;
-  height: 1px;
+  margin: 1.5rem 0;
 `;
 
-const PlanSummary = styled.div`
-  font-family: Lato, sans-serif;
-  margin-top: 29px;
+const PlanSummary = styled.p`
+  font-size: 1rem;
 `;
 
-const FeaturesHeader = styled.div`
+const FeaturesHeader = styled.h4`
   color: #007bfe;
-  font-family: Lato, sans-serif;
-  font-weight: 600;
-  margin-top: 20px;
+  font-size: 1.2rem;
+  margin-top: 1rem;
 `;
 
 const FeatureItem = styled.div`
   display: flex;
-  margin-top: 14px;
-  gap: 19px;
   align-items: center;
-  @media (max-width: 991px) {
-    flex-wrap: wrap;
-  }
+  gap: 10px;
+  margin-top: 0.5rem;
 `;
 
 const FeatureIcon = styled.img`
-  width: 28px;
+  width: 20px;
 `;
 
-const FeatureText = styled.div`
-  font-family: Lato, sans-serif;
+const FeatureText = styled.p`
+  font-size: 1rem;
+  margin: 0;
 `;
 
-const ActionButton = styled.div`
+const ActionButton = styled.button`
+  margin-top: 2rem;
+  padding: 0.75rem 2rem;
   border-radius: 12px;
   background-color: #007bfe;
   color: #fff;
-  text-align: center;
-  justify-content: center;
-  padding: 19px 59px;
-  font: 600 18px Lato, sans-serif;
-  margin-top: 36px;
-  @media (max-width: 991px) {
-    padding: 0 20px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  
+  &:hover {
+    background-color: #005bb5;
   }
 `;
 
+const StyledDiv = styled.div`
+  display: flex;
+  gap: 20px;
+  padding: 3rem;
+  flex-wrap: wrap;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 1rem;
+  }
+`;
+
+const StyledColumn = styled.div`
+  flex: 1;
+  min-width: 300px;
+`;
+
+const StyledDiv2 = styled.div`
+  margin-top: 4rem;
+  color: #000;
+`;
+
+const StyledDiv3 = styled.h1`
+  color: #007bfe;
+  font-size: 4rem;
+  margin: 0;
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+`;
+
+const StyledDiv4 = styled.h2`
+  margin-top: 1rem;
+  font-size: 2.5rem;
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+`;
+
+const StyledColumn2 = styled.div`
+  flex: 2;
+  min-width: 300px;
+`;
+
+const StyledImg1 = styled.img`
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: block;
+`;
 
 export default Pricing;
