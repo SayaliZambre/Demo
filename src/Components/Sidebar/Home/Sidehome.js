@@ -7,7 +7,7 @@ import Sidebar from '../../Public/Sidebar';
 import Footer from '../../Public/Footer';
 import styled from "styled-components";
 
-const Homeapp = () => {
+const Sidehome = () => {
     const [activeSection, setActiveSection] = useState('My Projects');
     const navigate = useNavigate(); 
     const handleSectionClick = (section) => {
@@ -198,4 +198,4 @@ const ActionButton = styled.div`
     }
 `;
 
-export default Homeapp;
+export default Sidehome;

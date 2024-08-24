@@ -23,12 +23,10 @@ const Snippet = () => {
           <Content>
             <WebsiteLink>
               <input
-                type="text" // Changed to "text" instead of "Enter Keyword"
+                type="text"
                 name="website"
                 id="website"
                 placeholder="Enter your website here...."
-                // onChange={changeHandler}
-                // value={user.email}
               />
             </WebsiteLink>
             <AnalyzeButton onClick={handleAnalyzeClick}>Analyze Website</AnalyzeButton>
@@ -41,86 +39,81 @@ const Snippet = () => {
 };
 
 const Wrapper = styled.div`
-  gap: 20px;
   display: flex;
+  gap: 20px;
   @media (max-width: 991px) {
     flex-direction: column;
     align-items: stretch;
-    gap: 0px;
+    gap: 0;
   }
 `;
 
 const Container = styled.div`
   display: flex;
-  margin-top: 49px;
   flex-direction: column;
+  flex-grow: 1;
+  margin-top: 50px;
+  padding: 0 20px;
   @media (max-width: 991px) {
-    max-width: 100%;
     margin-top: 40px;
   }
 `;
 
-const Title = styled.div`
+const Title = styled.h1`
   color: #000;
-  font: 600 48px Lato, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
   @media (max-width: 991px) {
-    max-width: 100%;
-    font-size: 40px;
+    font-size: 2rem;
   }
 `;
 
 const Content = styled.div`
-  align-self: end;
   display: flex;
-  margin-top: 74px;
-  width: 467px;
-  max-width: 100%;
   flex-direction: column;
-  font-size: 18px;
+  align-items: center;
+  gap: 20px;
+  margin-top: 40px;
   @media (max-width: 991px) {
-    margin-top: 40px;
+    margin-top: 30px;
+    gap: 15px;
   }
 `;
 
 const WebsiteLink = styled.div`
+  width: 100%;
+  max-width: 400px;
   font-family: Lato, sans-serif;
   border-radius: 12px;
-  border-color: grey;
-  border-style: solid;
-  border-width: 1px;
-  margin-left: 18rem;
+  border: 1px solid grey;
   background-color: #fff;
-  align-items: start;
-  width: 25rem;
-  color: #000;
-  font-weight: 500;
-  white-space: nowrap;
-  justify-content: center;
-  padding: 29px 48px;
-  @media (max-width: 991px) {
-    max-width: 100%;
-    white-space: initial;
-    padding: 0 20px;
+  padding: 20px;
+  input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 10px;
   }
 `;
 
-const AnalyzeButton = styled.div`
+const AnalyzeButton = styled.button`
   font-family: Lato, sans-serif;
   border-radius: 12px;
   background-color: #007bfe;
-  align-self: center;
-  margin-top: 72px;
   color: #fff;
   font-weight: 600;
+  padding: 15px 25px;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  max-width: 200px;
   text-align: center;
-  margin-left: 40rem;
-  width: 15rem;
-  justify-content: center;
-  padding: 19px 28px;
-  cursor: pointer; // Added cursor style to indicate it's clickable
-  @media (max-width: 991px) {
-    margin-top: 40px;
-    padding: 0 20px;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: #005bb5;
   }
 `;
 

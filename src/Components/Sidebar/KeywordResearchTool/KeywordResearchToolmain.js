@@ -45,8 +45,9 @@ const KeywordResearchToolmain = () => {
             <RelatedSearchesText>Related Searches</RelatedSearchesText>
             <AutoCompleteSection>Auto Complete</AutoCompleteSection>
             <SearchBar>
-              <SearchInput />
-              <SearchPlaceholder>Search anything here</SearchPlaceholder>
+              <SearchInput>
+                <SearchPlaceholder>Search anything here</SearchPlaceholder>
+              </SearchInput>
             </SearchBar>
           </SearchSection>
           <KeywordsPerPage>Keywords Per Page</KeywordsPerPage>
@@ -96,6 +97,9 @@ const Container = styled.div`
   flex-direction: column;
   padding: 20px;
   flex-grow: 1;
+  @media (max-width: 991px) {
+    padding: 10px;
+  }
 `;
 
 const Title = styled.div`
@@ -127,6 +131,9 @@ const Section = styled.div`
   gap: 20px;
   flex-wrap: wrap;
   font: 500 18px Lato, sans-serif;
+  @media (max-width: 991px) {
+    gap: 10px;
+  }
 `;
 
 const RelatedSearches = styled.div`
@@ -137,6 +144,7 @@ const RelatedSearches = styled.div`
   flex: 1;
   @media (max-width: 991px) {
     padding: 10px;
+    flex: 100%;
   }
 `;
 
@@ -149,6 +157,7 @@ const RelatedKeywords = styled.div`
   flex: 1;
   @media (max-width: 991px) {
     padding: 10px;
+    flex: 100%;
   }
 `;
 
@@ -177,6 +186,9 @@ const AnalysisType = styled.div`
   color: rgba(0, 0, 0, 1);
   margin-top: 20px;
   font: 600 24px Lato, sans-serif;
+  @media (max-width: 991px) {
+    font-size: 20px;
+  }
 `;
 
 const RelatedSearchesText = styled.div`
@@ -195,6 +207,9 @@ const SearchEngine = styled.div`
   color: rgba(0, 0, 0, 1);
   margin-top: 20px;
   font: 600 24px Lato, sans-serif;
+  @media (max-width: 991px) {
+    font-size: 20px;
+  }
 `;
 
 const SearchEngineUrl = styled.div`
@@ -211,6 +226,9 @@ const ResearchKeywordText = styled.div`
   color: rgba(255, 255, 255, 1);
   text-align: center;
   font: 600 18px Lato, sans-serif;
+  @media (max-width: 991px) {
+    padding: 10px;
+  }
 `;
 
 const KeywordIdeas = styled.div`
@@ -229,6 +247,9 @@ const SearchSection = styled.div`
   flex-wrap: wrap;
   gap: 20px;
   font: 500 18px Lato, sans-serif;
+  @media (max-width: 991px) {
+    gap: 10px;
+  }
 `;
 
 const AutoCompleteSection = styled.div`
@@ -237,11 +258,18 @@ const AutoCompleteSection = styled.div`
   padding: 20px;
   border: 1px solid rgba(0, 0, 0, 1);
   flex: 1;
+  @media (max-width: 991px) {
+    padding: 10px;
+    flex: 100%;
+  }
 `;
 
 const SearchBar = styled.div`
   display: flex;
   flex-grow: 1;
+  @media (max-width: 991px) {
+    margin-top: 20px;
+  }
 `;
 
 const SearchInput = styled.div`
@@ -252,6 +280,9 @@ const SearchInput = styled.div`
   max-width: 300px;
   height: 70px;
   border: 1px solid rgba(0, 0, 0, 1);
+  @media (max-width: 991px) {
+    max-width: 100%;
+  }
 `;
 
 const SearchPlaceholder = styled.div`
@@ -280,6 +311,9 @@ const ExportSection = styled.div`
   width: 100%;
   flex-wrap: wrap;
   gap: 20px;
+  @media (max-width: 991px) {
+    gap: 10px;
+  }
 `;
 
 const ExportContainer = styled.div`
@@ -290,6 +324,10 @@ const ExportContainer = styled.div`
   justify-content: center;
   padding: 10px;
   flex: 1;
+  @media (max-width: 991px) {
+    padding: 5px;
+    flex: 100%;
+  }
 `;
 
 const ExportImage = styled.img`
@@ -306,6 +344,10 @@ const ExportActions = styled.div`
   padding: 10px;
   flex: 1;
   font: 600 18px Lato, sans-serif;
+  @media (max-width: 991px) {
+    padding: 5px;
+    flex: 100%;
+  }
 `;
 
 const CsvExport = styled.div`

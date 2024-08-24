@@ -27,7 +27,7 @@ import Keywordcheker from './Components/Sidebar/Keyword/Keywordcheker';
 import KeywordResearchToolmain from './Components/Sidebar/KeywordResearchTool/KeywordResearchToolmain';
 
 
-import Homeapp from './Components/Sidebar/Home/Home';
+import Sidehome from './Components/Sidebar/Home/Sidehome';
 import Homemain from './Components/Sidebar/Home/Homemain';
 
 
@@ -51,7 +51,7 @@ function App() {
           <Route path="/Keyword" element={<Keyword />} />
           <Route path="/HomeProfile" element={<HomeProfile />} />
           <Route path="/Backlink" element={<Backlink />} />
-          <Route path="/Homeapp" element={<Homeapp />} />
+          <Route path="/Sidehome" element={<Sidehome />} />
           <Route path="/Homemain" element={<Homemain />} />
 
           <Route path="/Keywordcheker" element={<Keywordcheker />} />

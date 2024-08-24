@@ -93,6 +93,17 @@ function Backlinkchecker() {
   );
 }
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  @media (max-width: 991px) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+`;
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -112,17 +123,6 @@ const Header = styled.h1`
   @media (max-width: 576px) {
     font-size: 32px;
     margin-bottom: 24px;
-  }
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  @media (max-width: 991px) {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
   }
 `;
 
@@ -162,6 +162,7 @@ const Content = styled.div`
 const StatsSection = styled.div`
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
   margin-bottom: 56px;
   @media (max-width: 991px) {
     flex-direction: column;
@@ -209,6 +210,7 @@ const Value = styled.div`
 const FollowStats = styled.div`
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
   margin-bottom: 94px;
   @media (max-width: 991px) {
     flex-direction: column;

@@ -15,7 +15,7 @@ function Sidebar({ activeSection, onSectionClick }) {
         onClick={() => onSectionClick && onSectionClick('My Projects')}
       >
         <StyledImg src={image2} alt="Home" />
-        <Link to="/Homeapp">
+        <Link to="/Sidehome">
           <Title>Home</Title>
         </Link>
       </Section>

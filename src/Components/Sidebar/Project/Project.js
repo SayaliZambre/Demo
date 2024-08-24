@@ -15,8 +15,6 @@ function Project() {
     console.log(`Section clicked: ${section}`);
   };
 
-  console.log('Rendering Project with handleSectionClick:', handleSectionClick);
-
   return (
     <>
       <Navbar />
@@ -61,113 +59,126 @@ function Project() {
 
 const Wrapper = styled.div`
   display: flex;
+  flex-direction: column;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
+  @media (min-width: 768px) {
+    flex-direction: row;
   }
 `;
 
 const Content = styled.div`
   flex: 1;
-  padding: 24px;
+  padding: 16px;
 
-  @media (max-width: 768px) {
-    padding: 16px;
+  @media (min-width: 768px) {
+    padding: 24px;
   }
 `;
 
 const Header = styled.div`
   display: flex;
-  align-items: center;
-  margin-bottom: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 16px;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 24px;
   }
 `;
 
 const Logo = styled.img`
   width: 40px;
   height: 40px;
-  margin-right: 16px;
+  margin-bottom: 8px;
 
-  @media (max-width: 768px) {
-    margin-right: 0;
-    margin-bottom: 8px;
+  @media (min-width: 768px) {
+    margin-right: 16px;
+    margin-bottom: 0;
   }
 `;
 
 const SearchInput = styled.input`
-  flex: 1;
+  width: 100%;
   padding: 8px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  margin-top: 8px;
 
-  @media (max-width: 768px) {
-    width: 100%;
-    margin-top: 8px;
+  @media (min-width: 768px) {
+    flex: 1;
+    margin-top: 0;
   }
 `;
 
 const MainContent = styled.div`
   background-color: #fff;
-  padding: 24px;
+  padding: 16px;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
-  @media (max-width: 768px) {
-    padding: 16px;
+  @media (min-width: 768px) {
+    padding: 24px;
   }
 `;
 
 const Title = styled.h2`
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 16px;
 
-  @media (max-width: 768px) {
-    font-size: 20px;
+  @media (min-width: 768px) {
+    font-size: 24px;
   }
 `;
 
 const ProjectContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 `;
 
 const ProjectItem = styled.div`
-  width: calc(50% - 16px);
+  width: 100%;
   margin-bottom: 16px;
   padding: 16px;
   background-color: #f5f5f5;
   border-radius: 8px;
 
-  @media (max-width: 768px) {
-    width: 100%;
+  @media (min-width: 768px) {
+    width: calc(50% - 16px);
+    margin-bottom: 16px;
+    margin-right: 16px;
+  }
+
+  &:nth-child(2n) {
+    margin-right: 0;
   }
 `;
 
 const ProjectName = styled.div`
   font-weight: bold;
   margin-bottom: 8px;
+  font-size: 18px;
 
-  @media (max-width: 768px) {
-    font-size: 18px;
+  @media (min-width: 768px) {
+    font-size: 20px;
   }
 `;
 
 const Actions = styled.div`
   display: flex;
   align-items: center;
+  font-size: 14px;
 
-  @media (max-width: 768px) {
-    font-size: 14px;
+  @media (min-width: 768px) {
+    font-size: 16px;
   }
 `;
 
@@ -186,24 +197,27 @@ const Divider = styled.div`
 
 const ProjectDetails = styled.div`
   display: flex;
-  align-items: center;
+  flex-direction: column;
   margin-top: 16px;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
   }
 `;
 
 const ProjectImage = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 8px;
-  margin-right: 16px;
+  margin-bottom: 8px;
 
-  @media (max-width: 768px) {
-    margin-right: 0;
-    margin-bottom: 8px;
+  @media (min-width: 768px) {
+    width: 100px;
+    height: 100px;
+    margin-right: 16px;
+    margin-bottom: 0;
   }
 `;
 
@@ -213,9 +227,10 @@ const Details = styled.div`
 
 const Detail = styled.div`
   margin-bottom: 4px;
+  font-size: 14px;
 
-  @media (max-width: 768px) {
-    font-size: 14px;
+  @media (min-width: 768px) {
+    font-size: 16px;
   }
 `;
 

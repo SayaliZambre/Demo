@@ -1,34 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate, NavLink as RouterNavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import image1 from '../../Images/Navbar.png';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+
 function Navbar() {
   const navigate = useNavigate();
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navigateToContact = () => {
-    navigate('/Contact');
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const navigateToSidebar = () => {
+    navigate('/Sidebar');
   };
 
   return (
     <Nav>
       <NavLeft>
-        <Logo src={image1} alt="Logo" />
+        <Logo src={image1} onClick={navigateToSidebar} alt="Logo" />
         <Divider />
-        <NavLinks>
-          <StyledNavLink to="/">Home</StyledNavLink>
-          <StyledNavLink to="/pricing">Pricing</StyledNavLink>
-          <StyledNavLink to="/careers">Careers</StyledNavLink>
-          <StyledNavLink to="/resources">Resources</StyledNavLink>
-          <StyledNavLink to="/contact">Contact Us</StyledNavLink>
-          <StyledNavLink to="/about">About Us</StyledNavLink>
+        <HamburgerIcon onClick={toggleMobileMenu}>
+          <FontAwesomeIcon icon={isMobileMenuOpen ? faTimes : faBars} />
+        </HamburgerIcon>
+        <NavLinks isMobileMenuOpen={isMobileMenuOpen}>
+          <StyledNavLink to="/" onClick={toggleMobileMenu}>Home</StyledNavLink>
+          <StyledNavLink to="/pricing" onClick={toggleMobileMenu}>Pricing</StyledNavLink>
+          <StyledNavLink to="/careers" onClick={toggleMobileMenu}>Careers</StyledNavLink>
+          <StyledNavLink to="/resources" onClick={toggleMobileMenu}>Resources</StyledNavLink>
+          <StyledNavLink to="/contact" onClick={toggleMobileMenu}>Contact Us</StyledNavLink>
+          <StyledNavLink to="/about" onClick={toggleMobileMenu}>About Us</StyledNavLink>
         </NavLinks>
       </NavLeft>
       <NavRight>
-        <StyledNavLink to="/Login">
+        <StyledNavLink to="/Login" onClick={toggleMobileMenu}>
           <Login>Login</Login>
         </StyledNavLink>
-        <StyledNavLink to="/signup">
+        <StyledNavLink to="/signup" onClick={toggleMobileMenu}>
           <Signup>Signup</Signup>
         </StyledNavLink>
       </NavRight>
@@ -50,7 +61,6 @@ const Nav = styled.div`
 
 const NavLeft = styled.div`
   display: flex;
-  /* padding-left: 5rem; */
   align-items: center;
   gap: 20px;
   font-size: 20px;
@@ -58,8 +68,7 @@ const NavLeft = styled.div`
   font-weight: 300;
   @media (max-width: 991px) {
     width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
   }
 `;
 
@@ -72,8 +81,6 @@ const Logo = styled.img`
 `;
 
 const Divider = styled.div`
-  /* border-color: rgba(0, 0, 0, 1); */
-  /* border-style: solid; */
   border-width: 0.5px;
   margin-left: 5rem;
   background-color: grey;
@@ -85,16 +92,33 @@ const Divider = styled.div`
   }
 `;
 
+const HamburgerIcon = styled.div`
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  @media (max-width: 991px) {
+    display: block;
+  }
+`;
+
 const NavLinks = styled.div`
   display: flex;
   gap: 20px;
   padding-left: 22rem;
   justify-content: space-between;
   @media (max-width: 991px) {
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
     width: 100%;
-    margin-top: 10px;
+    padding-left: 0;
+    display: ${({ isMobileMenuOpen }) => (isMobileMenuOpen ? 'flex' : 'none')};
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
   }
 `;
 
@@ -111,6 +135,10 @@ const StyledNavLink = styled(RouterNavLink)`
   &.active {
     font-weight: bold;
     color: blue;
+  }
+
+  @media (max-width: 991px) {
+    padding: 10px 0;
   }
 `;
 

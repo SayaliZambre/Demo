@@ -18,8 +18,6 @@ const Backlink = () => {
         navigate('/Backlinkchecker');  
     };
 
-    console.log('Rendering Project with handleSectionClick:', handleSectionClick);
-
     return (
         <>
         <Navbar/>
@@ -75,6 +73,9 @@ const BacklinkTitle = styled.div`
   @media (max-width: 991px) {
     font-size: 28px;
   }
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
 `;
 
 const BacklinkForm = styled.div`
@@ -84,6 +85,9 @@ const BacklinkForm = styled.div`
   font-size: 18px;
   @media (max-width: 991px) {
     margin-top: 20px;
+  }
+  @media (max-width: 768px) {
+    margin-top: 16px;
   }
 `;
 
@@ -95,15 +99,19 @@ const BacklinkInput = styled.input`
   color: #000;
   font-weight: 500;
   padding: 22px 4px;
-  padding-left: 1rem; /* Adjusted for better alignment */
+  padding-left: 1rem;
   width: 100%;
-  max-width: 500px; /* Set a max-width for larger screens */
+  max-width: 500px;
   @media (max-width: 991px) {
     padding-left: 20px;
   }
+  @media (max-width: 768px) {
+    padding: 16px 12px;
+    max-width: 100%;
+  }
 `;
 
-const CheckButton = styled.button` /* Changed to button for better semantics */
+const CheckButton = styled.button`
   font-family: Lato, sans-serif;
   border-radius: 12px;
   background-color: #007bfe;
@@ -117,6 +125,10 @@ const CheckButton = styled.button` /* Changed to button for better semantics */
   @media (max-width: 991px) {
     padding: 12px 20px;
     margin-top: 20px;
+  }
+  @media (max-width: 768px) {
+    padding: 10px 18px;
+    margin-top: 16px;
   }
 `;
 
