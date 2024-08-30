@@ -41,9 +41,11 @@ const Backlink = () => {
 const Wrapper = styled.div`
   display: flex;
   gap: 20px;
+  padding: 20px;
   @media (max-width: 991px) {
     flex-direction: column;
     gap: 0;
+    padding: 10px;
   }
 `;
 
@@ -69,12 +71,17 @@ const BacklinkSection = styled.div`
 
 const BacklinkTitle = styled.div`
   color: #000;
-  font: 550 32px Lato, sans-serif;
+  font-size: 32px;
+  font-weight: 550;
+  font-family: Lato, sans-serif;
   @media (max-width: 991px) {
     font-size: 28px;
   }
   @media (max-width: 768px) {
     font-size: 24px;
+  }
+  @media (max-width: 480px) {
+    font-size: 22px;
   }
 `;
 
@@ -88,6 +95,9 @@ const BacklinkForm = styled.div`
   }
   @media (max-width: 768px) {
     margin-top: 16px;
+  }
+  @media (max-width: 480px) {
+    margin-top: 12px;
   }
 `;
 
@@ -109,6 +119,9 @@ const BacklinkInput = styled.input`
     padding: 16px 12px;
     max-width: 100%;
   }
+  @media (max-width: 480px) {
+    padding: 14px 10px;
+  }
 `;
 
 const CheckButton = styled.button`
@@ -129,6 +142,10 @@ const CheckButton = styled.button`
   @media (max-width: 768px) {
     padding: 10px 18px;
     margin-top: 16px;
+  }
+  @media (max-width: 480px) {
+    padding: 8px 16px;
+    margin-top: 14px;
   }
 `;
 

@@ -97,10 +97,12 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   gap: 20px;
+  padding: 20px;
   @media (max-width: 991px) {
     flex-direction: column;
     align-items: stretch;
     gap: 0;
+    padding: 10px;
   }
 `;
 
@@ -112,16 +114,16 @@ const Container = styled.div`
 
 const Header = styled.h1`
   color: black;
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 600;
-  margin-bottom: 72px;
+  margin-bottom: 48px;
   text-align: center;
   @media (max-width: 991px) {
-    font-size: 40px;
-    margin-bottom: 40px;
+    font-size: 32px;
+    margin-bottom: 32px;
   }
   @media (max-width: 576px) {
-    font-size: 32px;
+    font-size: 28px;
     margin-bottom: 24px;
   }
 `;
@@ -133,10 +135,10 @@ const BacklinkInput = styled.input`
   background-color: #fff;
   color: #000;
   font-weight: 500;
-  padding: 22px;
+  padding: 16px;
   width: 100%;
   max-width: 25rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   @media (max-width: 991px) {
     padding: 12px;
     max-width: 100%;
@@ -149,10 +151,10 @@ const Content = styled.div`
   align-items: center;
   width: 100%;
   max-width: 873px;
-  margin: 72px auto;
+  margin: 48px auto;
   @media (max-width: 991px) {
     max-width: 100%;
-    margin-top: 40px;
+    margin-top: 32px;
   }
   @media (max-width: 576px) {
     margin-top: 24px;
@@ -163,10 +165,10 @@ const StatsSection = styled.div`
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  margin-bottom: 56px;
+  margin-bottom: 48px;
   @media (max-width: 991px) {
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
   }
 `;
 
@@ -175,6 +177,8 @@ const StatColumn = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 3rem;
+  margin-bottom: 20px; /* Add this line to create space between StatColumn and StatCard */
 `;
 
 const StatCard = styled.div`
@@ -182,9 +186,9 @@ const StatCard = styled.div`
   color: black;
   font-weight: 400;
   width: 100%;
-  max-width: 10rem;
-  height: 10rem;
-  padding: 11px 28px;
+  max-width: 9rem;
+  height: 9rem;
+  padding: 10px 24px;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
@@ -193,34 +197,35 @@ const StatCard = styled.div`
 `;
 
 const StatIcon = styled.img`
-  width: 36px;
+  width: 32px;
   aspect-ratio: 1;
   object-fit: contain;
 `;
 
 const Label = styled.div`
-  font-size: 18px;
+  font-size: 16px;
 `;
 
 const Value = styled.div`
-  font-size: 36px;
-  margin-top: 24px;
+  font-size: 28px;
+  margin-top: 16px;
 `;
 
 const FollowStats = styled.div`
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  margin-bottom: 94px;
+  margin-bottom: 72px;
   @media (max-width: 991px) {
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
   }
 `;
 
 const FollowColumn = styled.div`
   flex: 1;
   display: flex;
+  margin-left: 3rem;
   flex-direction: column;
   align-items: center;
 `;
@@ -229,22 +234,22 @@ const FollowCard = styled.div`
   background-color: #379fff;
   color: black;
   font-weight: 600;
-  padding: 24px;
+  padding: 20px;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   width: 100%;
-  max-width: 10rem;
-  height: 10rem;
+  max-width: 9rem;
+  height: 9rem;
 `;
 
 const Details = styled.div`
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 12px;
-  padding: 61px 44px;
+  padding: 48px 32px;
   width: 100%;
   max-width: 100%;
   display: flex;
@@ -258,65 +263,65 @@ const Details = styled.div`
 const DomainInfo = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 `;
 
 const DomainLabel = styled.div`
-  font-size: 32px;
+  font-size: 24px;
+  color: grey;
   font-weight: 500;
 `;
 
 const BacklinksLabel = styled.div`
-  font-size: 32px;
+  font-size: 24px;
+  color: grey;
   font-weight: 500;
 `;
 
 const DomainDetails = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 `;
 
 const DomainLink = styled.div`
   color: #379fff;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 500;
 `;
 
 const BacklinkDetails = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 20px;
-  gap: 20px;
+  margin-top: 16px;
+  gap: 16px;
 `;
 
 const DetailIcon = styled.img`
-  width: 36px;
+  width: 32px;
   aspect-ratio: 1;
   object-fit: contain;
 `;
 
 const DoFollowLabel = styled.div`
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 500;
-  margin-top: 20px;
-`;
-
-const DoFollowValue = styled.div`
-  font-size: 32px;
-  font-weight: 500;
+  color: grey;
+  margin-top: 16px;
 `;
 
 const FirstSeenLabel = styled.div`
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 500;
-  margin-top: 20px;
+  color: grey;
+  margin-top: 16px;
 `;
 
 const FirstSeenDate = styled.div`
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 500;
-  margin-top: 20px;
+  color: grey;
+  margin-top: 16px;
 `;
 
 export default Backlinkchecker;

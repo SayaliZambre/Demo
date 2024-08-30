@@ -408,7 +408,7 @@ const InsightsImage = styled.img`
 const FooterCallToAction = styled.div`
   text-align: center;
   padding: 60px 20px;
-  background-color: #007bfe;
+  background-color: #FF5C00;
   color: white;
 `;
 
