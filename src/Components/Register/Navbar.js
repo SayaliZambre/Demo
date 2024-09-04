@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+// import { useNavigate } from 'react-router-dom';
+
 import { useNavigate, NavLink as RouterNavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import image1 from '../../Images/Navbar.png';
@@ -7,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 function Navbar() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -18,10 +20,22 @@ function Navbar() {
     navigate('/Sidebar');
   };
 
+  const [activeSection, setActiveSection] = useState('My Projects');
+  const navigate = useNavigate(); 
+
+  const handleSectionClick = (section) => {
+    setActiveSection(section);
+    console.log(`Section clicked: ${section}`);
+  };
+
+
+
   return (
     <Nav>
       <NavLeft>
-        <Logo src={image1} onClick={navigateToSidebar} alt="Logo" />
+      <Logo activeSection={activeSection} onSectionClick={handleSectionClick}/>
+
+        {/* <Logo src={image1} onClick={navigateToSidebar} alt="Logo" /> */}
         <Divider />
         <HamburgerIcon onClick={toggleMobileMenu}>
           <FontAwesomeIcon icon={isMobileMenuOpen ? faTimes : faBars} />

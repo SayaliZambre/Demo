@@ -1,4 +1,5 @@
-import * as React from "react";
+import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import styled from "styled-components";
 import image from '../../Images/carbon_arrow-up.png';
 import image1 from '../../Images/Group 11.png';
@@ -12,14 +13,35 @@ import image8 from '../../Images/Quick.png';
 import image9 from '../../Images/Actionable.png';
 import image10 from '../../Images/Focussed.png';
 import image11 from '../../Images/Homelast.png';
+import Sidebar from '../Public/Sidebar';
+
 import Navbar from "./Navbar";
 import Footer from './Footer';
 
 const Home = () => {
+
+  const [activeSection, setActiveSection] = useState('My Projects');
+  const navigate = useNavigate(); 
+
+  const handleSectionClick = (section) => {
+    setActiveSection(section);
+    console.log(`Section clicked: ${section}`);
+  };
+
+  const handleClick = () => {
+    navigate('/KeywordResearchToolmain');  
+  };
+
+  console.log('Rendering Project with handleSectionClick:', handleSectionClick);
+
+
+
   return (
     <>
       <Navbar />
+      <Sidebar activeSection={activeSection} onSectionClick={handleSectionClick}/>
       <Main>
+
         <HeroSection>
           <HeroContent>
             <TitleSection>
