@@ -1,45 +1,38 @@
 import React, { useState } from "react";
-// import { useNavigate } from 'react-router-dom';
-
 import { useNavigate, NavLink as RouterNavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import Sidebar from "./Sidebar"; // Import Sidebar
 import image1 from '../../Images/Navbar.png';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 function Navbar() {
-  // const navigate = useNavigate();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isSidebarOpen, setSidebarOpen] = useState(false); // State for sidebar visibility
+  const navigate = useNavigate();
 
+  // Toggle mobile menu open/close
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const navigateToSidebar = () => {
-    navigate('/Sidebar');
+  // Toggle sidebar open/close
+  const handleLogoClick = () => {
+    setSidebarOpen(!isSidebarOpen);
   };
-
-  const [activeSection, setActiveSection] = useState('My Projects');
-  const navigate = useNavigate(); 
-
-  const handleSectionClick = (section) => {
-    setActiveSection(section);
-    console.log(`Section clicked: ${section}`);
-  };
-
-
 
   return (
-    <Nav>
-      <NavLeft>
-      <Logo src={image1} activeSection={activeSection} onSectionClick={handleSectionClick}/>
-
-        {/* <Logo  src={image1} onClick={navigateToSidebar} alt="Logo" /> */}
-        <Divider />
-        <HamburgerIcon onClick={toggleMobileMenu}>
-          <FontAwesomeIcon icon={isMobileMenuOpen ? faTimes : faBars} />
-        </HamburgerIcon>
+    <>
+      <Nav>
+        <NavLeft>
+          <Logo 
+            src={image1} 
+          />
+          <Divider />
+          <HamburgerIcon onClick={toggleMobileMenu}>
+            <FontAwesomeIcon icon={isMobileMenuOpen ? faTimes : faBars} />
+          </HamburgerIcon>
+        </NavLeft>
         <NavLinks isMobileMenuOpen={isMobileMenuOpen}>
           <StyledNavLink to="/" onClick={toggleMobileMenu}>Home</StyledNavLink>
           <StyledNavLink to="/pricing" onClick={toggleMobileMenu}>Pricing</StyledNavLink>
@@ -47,26 +40,32 @@ function Navbar() {
           <StyledNavLink to="/resources" onClick={toggleMobileMenu}>Resources</StyledNavLink>
           <StyledNavLink to="/contact" onClick={toggleMobileMenu}>Contact Us</StyledNavLink>
           <StyledNavLink to="/about" onClick={toggleMobileMenu}>About Us</StyledNavLink>
+          <StyledNavLink to="/login" onClick={toggleMobileMenu}>
+            <Login>Login</Login>
+          </StyledNavLink>
+          <StyledNavLink to="/signup" onClick={toggleMobileMenu}>
+            <Signup>Signup</Signup>
+          </StyledNavLink>
         </NavLinks>
-      </NavLeft>
-      <NavRight>
-        <StyledNavLink to="/Login" onClick={toggleMobileMenu}>
-          <Login>Login</Login>
-        </StyledNavLink>
-        <StyledNavLink to="/signup" onClick={toggleMobileMenu}>
-          <Signup>Signup</Signup>
-        </StyledNavLink>
-      </NavRight>
-    </Nav>
+      </Nav>
+
+      {/* Sidebar component as a floating window */}
+      <FloatingSidebar isSidebarOpen={isSidebarOpen}>
+        <CloseButton onClick={handleLogoClick}>×</CloseButton> {/* Button to close sidebar */}
+        <Sidebar /> {/* Render Sidebar content */}
+      </FloatingSidebar>
+    </>
   );
 }
 
+// Styled components for layout and styling
 const Nav = styled.div`
   background-color: rgba(55, 159, 255, 0.1);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 62px;
+
   @media (max-width: 991px) {
     flex-wrap: wrap;
     padding: 20px;
@@ -80,6 +79,7 @@ const NavLeft = styled.div`
   font-size: 20px;
   color: #000;
   font-weight: 300;
+
   @media (max-width: 991px) {
     width: 100%;
     justify-content: space-between;
@@ -89,6 +89,8 @@ const NavLeft = styled.div`
 const Logo = styled.img`
   width: 100px;
   height: auto;
+  cursor: pointer;
+
   @media (max-width: 991px) {
     width: 80px;
   }
@@ -101,6 +103,7 @@ const Divider = styled.div`
   align-self: stretch;
   width: 1px;
   height: 38px;
+
   @media (max-width: 991px) {
     display: none;
   }
@@ -108,18 +111,25 @@ const Divider = styled.div`
 
 const HamburgerIcon = styled.div`
   display: none;
-  font-size: 24px;
+  font-size: 28px; /* Increased font size */
+  font-weight: bold; /* Set font weight to bold */
   cursor: pointer;
+  text-align: center; /* Center align the icon */
+
   @media (max-width: 991px) {
     display: block;
+    width: 100%; /* Ensure it takes full width to center properly */
   }
 `;
 
 const NavLinks = styled.div`
   display: flex;
-  gap: 20px;
+  gap: 25px;
+  padding-top: 1rem;
+  padding-right: 1rem;
   padding-left: 22rem;
   justify-content: space-between;
+
   @media (max-width: 991px) {
     flex-direction: column;
     width: 100%;
@@ -139,8 +149,9 @@ const NavLinks = styled.div`
 const StyledNavLink = styled(RouterNavLink)`
   font-family: 'Lato', sans-serif;
   text-decoration: none;
+  font-size: 20px;
   color: grey;
-  padding-left: ${(props) => (props.to === '/' ? '20px' : '0')};
+  padding-left: ${(props) => (props.to === '/' ? '10px' : '0')}; // Adjusted padding for Home link
 
   &:hover {
     color: blue;
@@ -153,28 +164,43 @@ const StyledNavLink = styled(RouterNavLink)`
 
   @media (max-width: 991px) {
     padding: 10px 0;
+    width: 100%; // Make it full width in mobile
+    text-align: center; // Center align text
   }
 `;
 
-const NavRight = styled.div`
-  display: flex;
-  gap: 20px;
-  font-weight: 600;
-  justify-content: space-between;
-  @media (max-width: 991px) {
-    width: 100%;
-    justify-content: center;
-    margin-top: 10px;
-  }
+// Floating sidebar styles
+const FloatingSidebar = styled.div`
+  position: fixed;
+  top: 0;
+  left: ${({ isSidebarOpen }) => (isSidebarOpen ? '0' : '-300px')}; // Move in/out of view
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+  transition: left 0.3s ease;
+  z-index: 1000;
+`;
+
+const CloseButton = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
 `;
 
 const Login = styled.div`
   border-radius: 12px;
+  padding-left: 2rem;
   background-color: #007bfe;
   color: #f5f5f7;
   justify-content: center;
   padding: 13px 21px;
   font: 16px 'Lato', sans-serif;
+
   @media (max-width: 991px) {
     padding: 10px 20px;
   }
@@ -182,15 +208,14 @@ const Login = styled.div`
 
 const Signup = styled.div`
   border-radius: 12px;
-  border-color: rgba(0, 0, 0, 1);
-  border-style: solid;
-  border-width: 1px;
+  border: 1px solid rgba(0, 0, 0, 1);
   background-color: #f5f5f7;
   color: #000;
   white-space: nowrap;
   justify-content: center;
   padding: 14px 19px;
   font: 14px 'Lato', sans-serif;
+
   @media (max-width: 991px) {
     padding: 10px 20px;
     white-space: initial;

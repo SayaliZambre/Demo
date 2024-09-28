@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import image from '../../Images/pana.png';
-import Navbar from './Navbar';
+import Navbar from "../Public/Navbar";
 import Footer from './Footer';
 
 

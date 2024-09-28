@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import Navbar from "./Navbar";
+import Navbar from "../Public/Navbar";
 import Sidebar from "./Sidebar";
 import Footer from './Footer';
 import image1 from "../../Images/ic_round-plus.png";

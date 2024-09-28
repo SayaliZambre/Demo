@@ -4,7 +4,7 @@ import image from '../../Images/Group 1000001826.png';
 import image3 from '../../Images/click.png';
 import image5 from '../../Images/Price2img.png';
 import image2 from '../../Images/Pricedots.png';
-import Navbar from "./Navbar";
+import Navbar from "../Public/Navbar";
 import Footer from './Footer';
 
 function Pricing() {
@@ -12,17 +12,23 @@ function Pricing() {
     <>
       <Navbar />
       <Main>
+      <PricingTitle>Pricing</PricingTitle>
         <Container>
           <Column>
             <TextContainer>
               <Heading>Unlock</Heading>
-              <Subheading>success with our SEO tools.</Subheading>
-              <Description>Don’t wait just buy the plan and enjoy your success</Description>
+              <Subheading>success with 
+                <Sub>
+                      our SEO tools.
+                      </Sub></Subheading>
+              <Description>Don’t wait just buy 
+                <Dec>the plan and enjoy </Dec>
+                your success</Description>
             </TextContainer>
           </Column>
           <ColumnWide>
             <PricingContainer>
-              <PricingTitle>Pricing</PricingTitle>
+           
               <StyledImg src={image} alt="Pricing Image" />
             </PricingContainer>
           </ColumnWide>
@@ -55,9 +61,11 @@ function Pricing() {
                         </FeatureItem>
                       ))}
                     </PlanDescription>
-                    <ActionButton>{`Try ${plan.title}`}</ActionButton>
+                    {/* <ActionButton>{`Try ${plan.title}`}</ActionButton> */}
                   </PlanContent>
                 </PlanCard>
+                <ActionButton>{`Try ${plan.title}`}</ActionButton>
+
               </PlanColumn>
             ))}
           </PlansWrapper>
@@ -66,7 +74,7 @@ function Pricing() {
         <StyledDiv>
           <StyledColumn>
             <StyledDiv2>
-              <StyledDiv3>Why are you waiting?</StyledDiv3>
+              <StyledDiv3>Why you're waiting for??</StyledDiv3>
               <StyledDiv4>Buy Now!!!</StyledDiv4>
             </StyledDiv2>
           </StyledColumn>
@@ -146,7 +154,7 @@ const Column = styled.div`
 `;
 
 const TextContainer = styled.div`
-  margin-top: 4rem;
+  margin-top: 9rem;
   padding: 0 20px;
   color: #000;
   @media (max-width: 768px) {
@@ -156,24 +164,45 @@ const TextContainer = styled.div`
 
 const Heading = styled.h1`
   color: #007bfe;
-  font-size: 4rem;
+  font-size: 4.5rem;
   margin: 0;
+  font-weight: 600;
   @media (max-width: 768px) {
     font-size: 2.5rem;
   }
 `;
-
+const Sub = styled.h1`
+ margin-top: -0.2rem;
+  font-size: 48px;
+  font-weight: 600;
+  /* font-size: 2.5rem; */
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+`;
 const Subheading = styled.h2`
-  margin-top: 1rem;
-  font-size: 2.5rem;
+  margin-top: -0.7rem;
+  font-size: 48px;
+  font-weight: 600;
+  /* font-size: 2.5rem; */
   @media (max-width: 768px) {
     font-size: 2rem;
   }
 `;
 
 const Description = styled.p`
-  margin-top: 1.5rem;
+  margin-top: -1rem;
   font-size: 1.8rem;
+  color: #a4a4a4;
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+`;
+
+const Dec = styled.p`
+  margin-top: -0.2rem;
+  font-size: 1.8rem;
+  margin-bottom: -0.3rem;
   color: #a4a4a4;
   @media (max-width: 768px) {
     font-size: 1.5rem;
@@ -259,6 +288,7 @@ const PlanTitle = styled.h3`
 
 const PlanPrice = styled.p`
   font-size: 2rem;
+  font-weight: 700;
   color: #007bfe;
   margin-top: 1rem;
 `;
@@ -266,6 +296,7 @@ const PlanPrice = styled.p`
 const PlanDiscount = styled.div`
   display: flex;
   justify-content: center;
+  margin-top: -1rem;
   gap: 10px;
   font-size: 1rem;
   color: #d9d9d9;
@@ -283,15 +314,18 @@ const PlanDescription = styled.div`
 
 const Separator = styled.div`
   border-top: 1px solid #000;
-  margin: 1.5rem 0;
+  /* margin: 1.5rem 0; */
 `;
 
 const PlanSummary = styled.p`
   font-size: 1rem;
+  font-weight: 600;
 `;
 
 const FeaturesHeader = styled.h4`
   color: #007bfe;
+  justify-content: left;
+  margin-right: 12rem;
   font-size: 1.2rem;
   margin-top: 1rem;
 `;
@@ -315,6 +349,7 @@ const FeatureText = styled.p`
 const ActionButton = styled.button`
   margin-top: 2rem;
   padding: 0.75rem 2rem;
+  margin-left: 10rem;
   border-radius: 12px;
   background-color: #007bfe;
   color: #fff;
@@ -345,14 +380,18 @@ const StyledColumn = styled.div`
 `;
 
 const StyledDiv2 = styled.div`
-  margin-top: 4rem;
+  margin-top: 14rem;
+  align-items: center;
   color: #000;
 `;
 
 const StyledDiv3 = styled.h1`
-  color: #007bfe;
-  font-size: 4rem;
-  margin: 0;
+  color: grey;
+  font-size: 40px;
+  /* margin-left: 1rem; */
+  font-weight: 600;
+  /* font-size: 4rem; */
+  /* margin: 0; */
   @media (max-width: 768px) {
     font-size: 2.5rem;
   }
@@ -360,7 +399,10 @@ const StyledDiv3 = styled.h1`
 
 const StyledDiv4 = styled.h2`
   margin-top: 1rem;
+  font-weight: 500;
+  margin-left: 7rem;
   font-size: 2.5rem;
+  color: red;
   @media (max-width: 768px) {
     font-size: 2rem;
   }

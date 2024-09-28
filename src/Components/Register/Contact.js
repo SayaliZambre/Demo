@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import image from '../../Images/Contact.png';
-import Navbar from './Navbar';
+import Navbar from "../Public/Navbar";
 import Footer from './Footer';
 
 function Contact() {
@@ -27,12 +27,12 @@ function Contact() {
         <>
             <Navbar />
             <Main>
+            <Title>Contact Us</Title>
                 <PageContainer>
                     <Column>
-                        <TitleSection>
-                            <Title>Contact Us</Title>
+                        {/* <TitleSection> */}
                             <StyledImg src={image} alt="Contact" />
-                        </TitleSection>
+                        {/* </TitleSection> */}
                     </Column>
                     <Column2>
                         <FormSection>
@@ -100,9 +100,10 @@ const PageContainer = styled.div`
 
 const Column = styled.div`
   flex: 1;
+  margin-left: -10rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: flex-start;
   @media (max-width: 991px) {
     align-items: center;
@@ -113,8 +114,8 @@ const Column = styled.div`
 const TitleSection = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  /* align-items: center; */
+  /* text-align: center; */
   font-size: 2.5rem;
   color: #000;
   font-weight: 700;
@@ -126,12 +127,15 @@ const TitleSection = styled.div`
 
 const Title = styled.h1`
   font-family: Lato, sans-serif;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+  font-size: 3rem;
+  font-weight: 700;
 `;
 
 const StyledImg = styled.img`
-  width: 100%;
-  max-width: 400px;
+  width: 800px;
+  
+  /* /max-width: 400px; */ 
   object-fit: contain;
   @media (max-width: 768px) {
     max-width: 300px;
@@ -141,6 +145,7 @@ const StyledImg = styled.img`
 const Column2 = styled.div`
   flex: 1;
   display: flex;
+  max-width: 50%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -148,6 +153,7 @@ const Column2 = styled.div`
 
 const FormSection = styled.form`
   width: 100%;
+  margin-top: -3rem;
   max-width: 500px;
   display: flex;
   flex-direction: column;
@@ -158,7 +164,7 @@ const InputField = styled.div`
   display: flex;
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 12px 16px;
+  padding: 20px 20px;
   background-color: #fff;
 
   input {
@@ -175,7 +181,7 @@ const DescriptionField = styled.div`
   display: flex;
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 12px 16px;
+  padding: 20px 40px;
   background-color: #fff;
 
   textarea {
@@ -192,8 +198,7 @@ const SubmitButton = styled.button`
   background-color: #007bfe;
   color: #fff;
   font-weight: 600;
-  text-align: center;
-  padding: 16px;
+  text-align: center;  padding: 16px;
   border-radius: 12px;
   border: none;
   cursor: pointer;

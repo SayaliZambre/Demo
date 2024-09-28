@@ -4,9 +4,10 @@ import image1 from '../../Images/career1.png';
 import image2 from '../../Images/career2.png';
 import image3 from '../../Images/career3.png';
 import star from '../../Images/Star 1.png';
+import back from '../../Images/careereback.png';
 import vector from '../../Images/Vector 9.png';
 import icon from '../../Images/solar_user-bold.png';
-import Navbar from "./Navbar";
+import Navbar from "../Public/Navbar";
 import Footer from './Footer';
 
 const Careers = () => {

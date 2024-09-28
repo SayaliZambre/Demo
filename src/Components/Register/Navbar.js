@@ -1,41 +1,29 @@
 import React, { useState } from "react";
-// import { useNavigate } from 'react-router-dom';
-
 import { useNavigate, NavLink as RouterNavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import image1 from '../../Images/Navbar.png';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 function Navbar() {
-  // const navigate = useNavigate();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+  const navigate = useNavigate();
+  
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const navigateToSidebar = () => {
-    navigate('/Sidebar');
-  };
-
   const [activeSection, setActiveSection] = useState('My Projects');
-  const navigate = useNavigate(); 
 
   const handleSectionClick = (section) => {
     setActiveSection(section);
     console.log(`Section clicked: ${section}`);
   };
 
-
-
   return (
     <Nav>
       <NavLeft>
-      <Logo activeSection={activeSection} onSectionClick={handleSectionClick}/>
-
-        {/* <Logo src={image1} onClick={navigateToSidebar} alt="Logo" /> */}
+        <Logo src={image1} activeSection={activeSection} onClick={() => handleSectionClick('Logo')} />
         <Divider />
         <HamburgerIcon onClick={toggleMobileMenu}>
           <FontAwesomeIcon icon={isMobileMenuOpen ? faTimes : faBars} />
@@ -47,16 +35,14 @@ function Navbar() {
           <StyledNavLink to="/resources" onClick={toggleMobileMenu}>Resources</StyledNavLink>
           <StyledNavLink to="/contact" onClick={toggleMobileMenu}>Contact Us</StyledNavLink>
           <StyledNavLink to="/about" onClick={toggleMobileMenu}>About Us</StyledNavLink>
+          <StyledNavLink to="/login" onClick={toggleMobileMenu}>
+            <Login>Login</Login>
+          </StyledNavLink>
+          <StyledNavLink to="/signup" onClick={toggleMobileMenu}>
+            <Signup>Signup</Signup>
+          </StyledNavLink>
         </NavLinks>
       </NavLeft>
-      <NavRight>
-        <StyledNavLink to="/Login" onClick={toggleMobileMenu}>
-          <Login>Login</Login>
-        </StyledNavLink>
-        <StyledNavLink to="/signup" onClick={toggleMobileMenu}>
-          <Signup>Signup</Signup>
-        </StyledNavLink>
-      </NavRight>
     </Nav>
   );
 }
@@ -67,6 +53,7 @@ const Nav = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 20px 62px;
+
   @media (max-width: 991px) {
     flex-wrap: wrap;
     padding: 20px;
@@ -80,6 +67,7 @@ const NavLeft = styled.div`
   font-size: 20px;
   color: #000;
   font-weight: 300;
+
   @media (max-width: 991px) {
     width: 100%;
     justify-content: space-between;
@@ -89,6 +77,7 @@ const NavLeft = styled.div`
 const Logo = styled.img`
   width: 100px;
   height: auto;
+
   @media (max-width: 991px) {
     width: 80px;
   }
@@ -101,6 +90,7 @@ const Divider = styled.div`
   align-self: stretch;
   width: 1px;
   height: 38px;
+
   @media (max-width: 991px) {
     display: none;
   }
@@ -110,6 +100,7 @@ const HamburgerIcon = styled.div`
   display: none;
   font-size: 24px;
   cursor: pointer;
+
   @media (max-width: 991px) {
     display: block;
   }
@@ -120,6 +111,7 @@ const NavLinks = styled.div`
   gap: 20px;
   padding-left: 22rem;
   justify-content: space-between;
+
   @media (max-width: 991px) {
     flex-direction: column;
     width: 100%;
@@ -153,18 +145,8 @@ const StyledNavLink = styled(RouterNavLink)`
 
   @media (max-width: 991px) {
     padding: 10px 0;
-  }
-`;
-
-const NavRight = styled.div`
-  display: flex;
-  gap: 20px;
-  font-weight: 600;
-  justify-content: space-between;
-  @media (max-width: 991px) {
-    width: 100%;
-    justify-content: center;
-    margin-top: 10px;
+    width: 100%; // Make it full width in mobile
+    text-align: center; // Center align text
   }
 `;
 
@@ -175,6 +157,7 @@ const Login = styled.div`
   justify-content: center;
   padding: 13px 21px;
   font: 16px 'Lato', sans-serif;
+
   @media (max-width: 991px) {
     padding: 10px 20px;
   }
@@ -182,15 +165,14 @@ const Login = styled.div`
 
 const Signup = styled.div`
   border-radius: 12px;
-  border-color: rgba(0, 0, 0, 1);
-  border-style: solid;
-  border-width: 1px;
+  border: 1px solid rgba(0, 0, 0, 1);
   background-color: #f5f5f7;
   color: #000;
   white-space: nowrap;
   justify-content: center;
   padding: 14px 19px;
   font: 14px 'Lato', sans-serif;
+
   @media (max-width: 991px) {
     padding: 10px 20px;
     white-space: initial;

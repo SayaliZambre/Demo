@@ -13,9 +13,15 @@ import image8 from '../../Images/Quick.png';
 import image9 from '../../Images/Actionable.png';
 import image10 from '../../Images/Focussed.png';
 import image11 from '../../Images/Homelast.png';
+import icon1 from '../../Images/heart.png';
+import icon2 from '../../Images/daimond.png';
+import icon3 from '../../Images/starhome.png';
+import Home1 from '../../Images/Homeicon.png';
+import Home3 from '../../Images/Home3.png';
+
 import Sidebar from '../Public/Sidebar';
 
-import Navbar from "./Navbar";
+import Navbar from "../Public/Navbar";
 import Footer from './Footer';
 
 const Home = () => {
@@ -39,7 +45,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <Sidebar activeSection={activeSection} onSectionClick={handleSectionClick}/>
+      {/* <Sidebar activeSection={activeSection} onSectionClick={handleSectionClick}/> */}
       <Main>
 
         <HeroSection>
@@ -49,9 +55,10 @@ const Home = () => {
               <Subtitle>SEO Impact</Subtitle>
             </TitleSection>
             <Description>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-              vulputate libero et velit interdum, ac aliquet odio mattis.
-            </Description>
+            Korem ipsum dolor sit amet, 
+            consectetur adipiscing elit.
+             Nunc vulputate libero et velit interdum,
+             ac aliquet odio mattis.    </Description>
             <ActionRow>
               <Button>Get Started</Button>
               <Icon src={image} alt="Arrow" />
@@ -71,9 +78,32 @@ const Home = () => {
             <ResponsiveImage src={image1} alt="SEO Impact" />
           </ImageColumn>
         </HeroSection>
+ 
+        {/* <TestimonialSection> */}
+          {/* <TestimonialImage src={image2} alt="SEO Tool" /> */}
+          {/* <SeeInsideContainer> */}
+      {/* <BlueBackground> */}
+        {/* <DashedCircle role="presentation" /> */}
+        {/* <DashedCircle src={Home1} alt="Home1" />
 
-        <TestimonialSection>
-          <TestimonialImage src={image2} alt="SEO Tool" />
+        <SectionTitle>"See What's Inside"</SectionTitle>
+        <FloatingImage src={Home3} alt="Home1" />
+      </BlueBackground> */}
+ <BlueSection>
+    <BlueBackground>
+      <TopImage
+       src={Home1} alt="Home1"
+      />
+      {/* <SectionTitle>"See What's Inside"</SectionTitle> */}
+    </BlueBackground>
+    
+    <BottomImage
+     src={Home3} alt="Home1"
+    />
+  </BlueSection>
+
+    {/* </SeeInsideContainer> */}
+
           <TestimonialContent>
             <TestimonialText>
               <Highlight>“SEO Impact</Highlight> - a Keyword Research tool like Google Trends, Woorank, Seobility”
@@ -85,74 +115,115 @@ const Home = () => {
               <SourceText>Source: SEO Impact Reviews</SourceText>
             </ProfileInfo>
           </TestimonialContent>
-        </TestimonialSection>
+        {/* </TestimonialSection> */}
 
         <TrustedCompaniesSection>
           <SectionHeader>
-            Trusted <Highlight>By Many Companies</Highlight>
+            Trusted By Many Companies
           </SectionHeader>
-          <LogoGrid>
+          {/* <LogoGrid>
             <CompanyLogo src={image4} alt="Apple" />
             <CompanyLogo src={image7} alt="Microsoft" />
             <CompanyLogo src={image6} alt="Samsung" />
             <CompanyLogo src={image5} alt="Nvidia" />
-          </LogoGrid>
+          </LogoGrid> */}
+<PartnerLogos>
+      <PartnerLogosContainer>
+        <PartnerLogosWrapper>
+          <PartnerLogo1
+            src={image4} alt="Apple" />
+          <PartnerLogo2
+            src={image7} alt="Microsoft" />
+          <PartnerLogo3
+           src={image6} alt="Samsung" />
+          <PartnerLogo4
+           src={image5} alt="Nvidia" />
+        </PartnerLogosWrapper>
+      </PartnerLogosContainer>
+    </PartnerLogos>
+
         </TrustedCompaniesSection>
 
-        <StatisticsSection>
-          <Statistic>
-            <StatValue>5M</StatValue>
-            <StatDescription>
-              Marketing professionals <Highlight>are using SEO Impact!</Highlight>
-            </StatDescription>
-          </Statistic>
-          <Statistic>
-            <StatValue>21</StatValue>
-            <StatDescription>
-              International Awards <Highlight>as best SEO suite software</Highlight>
-            </StatDescription>
-          </Statistic>
-          <Statistic>
-            <StatValue>30%</StatValue>
-            <StatDescription>
-              Over 300 Companies <Highlight>use SEO Impact as their Marketing tool!</Highlight>
-            </StatDescription>
-          </Statistic>
-        </StatisticsSection>
+      
+<MarketingStats>
+  <StatsRow>
+    <StatItem>
+      <StatIcon bgColor="rgba(249, 47, 96, 1)">
+        <StatIconImg
+          loading="lazy"
+          src={icon1}          alt="Marketing professionals icon"
+        />
+      </StatIcon>
+      <StatNumber bgColor="rgba(249, 47, 96, 0.1)">5M</StatNumber>
+      <Bold>
+        Marketing professions <StatsTextLight>are using SEO Impact!</StatsTextLight>
+      </Bold>
+    </StatItem>
+
+    <StatItem>
+      <StatIcon bgColor="rgba(255, 92, 0, 1)">
+        <StatIconImg
+          loading="lazy"
+          src={icon2}            alt="International awards icon"
+        />
+      </StatIcon>
+      <StatNumber bgColor="rgba(255, 92, 0, 0.3)">21</StatNumber>
+      <Bold>
+        International Awards <StatsTextLight>as best SEO suite software</StatsTextLight>
+      </Bold>
+    </StatItem>
+
+    <StatItem>
+      <StatIcon bgColor="rgba(0, 123, 254, 1)">
+        <StatIconImg
+          loading="lazy"
+          src={icon3}            alt="Companies using SEO Impact icon"
+        />
+      </StatIcon>
+      <StatNumber bgColor="rgba(235, 245, 255, 1)">30%</StatNumber>
+      <Bold>
+        Over 300 Companies <StatsTextLight>use SEO Impact as their Marketing tool!</StatsTextLight>
+      </Bold>
+    </StatItem>
+  </StatsRow>
+</MarketingStats>
+  
 
         <CallToAction>
-          Unlock your success now with our <Highlight>SEO Tools</Highlight>
+          Unlock your success now with our <Seo>SEO Tools</Seo>
         </CallToAction>
 
         <FeaturesSection>
           <Feature>
             <FeatureIcon src={image8} alt="Quick" />
-            <FeatureText>Quick</FeatureText>
-          </Feature>
-          <Feature>
-            <FeatureIcon src={image9} alt="Actionable" />
-            <FeatureText>Actionable</FeatureText>
+            {/* <FeatureText>Quick</FeatureText> */}
           </Feature>
           <Feature>
             <FeatureIcon src={image10} alt="Focused" />
-            <FeatureText>Focused</FeatureText>
+            {/* <FeatureText>Focused</FeatureText> */}
           </Feature>
+          <Feature>
+            <FeatureIcon src={image9} alt="Actionable" />
+            {/* <FeatureText>Actionable</FeatureText> */}
+          </Feature>
+         
         </FeaturesSection>
 
         <InsightsSection>
-          <InsightsContent>
-            <InsightsTitle>Increase your Market Insights</InsightsTitle>
-            <InsightsDescription>
-              Lorem ipsum dolor sit amet consectetur. Quis eget vivamus neque
-              velit enim id urna pharetra vel. Sapien ut natoque facilisi tortor
-              viverra eget. Amet rhoncus leo sed nulla est senectus morbi tellus
-              ornare. Justo curabitur iaculis id senectus sodales mattis sed
-              mattis nisl. Phasellus ipsum ultricies.
-            </InsightsDescription>
-            <LearnMoreButton>Learn More</LearnMoreButton>
-          </InsightsContent>
-          <InsightsImage src={image11} alt="Insights" />
-        </InsightsSection>
+  <InsightsContent>
+    <InsightsTitle>Increase your Market Insights</InsightsTitle>
+    <InsightsDescription>
+      Lorem ipsum dolor sit amet consectetur. Quis eget vivamus neque velit
+      enim id urna pharetra vel. Sapien ut natoque facilisi tortor viverra
+      eget. Amet rhoncus leo sed nulla est senectus morbi tellus ornare.
+      Justo curabitur iaculis id senectus sodales mattis sed mattis nisl.
+      Phasellus ipsum ultricies.
+    </InsightsDescription>
+    <LearnMoreButton>Learn More</LearnMoreButton>
+  </InsightsContent>
+  <InsightsImage src={image11} alt="Insights" />
+</InsightsSection>
+
 
         <FooterCallToAction>
           <CallToActionText>Get Started with SEO Impact today!</CallToActionText>
@@ -176,6 +247,8 @@ const HeroSection = styled.div`
   align-items: center;
 `;
 
+
+
 const HeroContent = styled.div`
   flex: 1;
   padding: 20px;
@@ -184,23 +257,33 @@ const HeroContent = styled.div`
 
 const TitleSection = styled.div`
   margin-bottom: 16px;
+  margin-top: -5rem;
 `;
 
 const Title = styled.h1`
-  font-size: 50px;
-  color: #212121;
-  margin: 0;
+  font-family: 'Waltograph', cursive; /* or your chosen fallback font */
+  font-size: 3.5rem; /* Adjust as needed */
+  color: #000; /* Choose your color */
+  margin-left: 6rem; 
+  
+  margin-bottom: 1.5rem;
+  /* Center the text if desired */
+  /* margin: 20px 0; Adjust margin as needed */
 `;
 
 const Subtitle = styled.h2`
-  font-size: 42px;
+  font-size: 62px;
+  font-weight: 600;
   color: #379fff;
-  margin: 0;
+  margin: -20px -5px;
+  margin-bottom: 1rem;
+  margin-left: 6rem;
 `;
-
 const Description = styled.p`
   font-size: 20px;
   color: grey;
+  margin-left: 6rem;
+  /* text-align: center; */
   margin-bottom: 20px;
 `;
 
@@ -209,6 +292,7 @@ const ActionRow = styled.div`
   align-items: center;
   gap: 16px;
   margin-bottom: 20px;
+  margin-left: 6rem;
 `;
 
 const Button = styled.button`
@@ -220,7 +304,8 @@ const Button = styled.button`
 `;
 
 const Icon = styled.img`
-  width: 20px;
+  width: 50;
+  height: 20px;
 `;
 
 const MoreInfo = styled.span`
@@ -233,8 +318,9 @@ const InputField = styled.div`
   gap: 6px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 12px;
-  padding: 16px 18px;
+  padding: 16px 16px;
   margin-bottom: 20px;
+  margin-left: 6rem;
 
   input {
     flex: 1;
@@ -245,6 +331,7 @@ const InputField = styled.div`
 
 const CheckScoreButton = styled(Button)`
   align-self: center;
+  margin-left: 14rem;
 `;
 
 const ImageColumn = styled.div`
@@ -255,7 +342,7 @@ const ImageColumn = styled.div`
 `;
 
 const ResponsiveImage = styled.img`
-  max-width: 100%;
+  max-width: 55rem;
   height: auto;
 `;
 
@@ -266,12 +353,87 @@ const TestimonialSection = styled.div`
   gap: 40px;
   padding: 40px 20px;
 `;
+const Image = styled.div`
+ height: 60px;
+ width: 50px;
 
-const TestimonialImage = styled.img`
+`;
+
+const SectionTitle = styled.h2`
+  margin-top: 27px;
+  margin-left: 50rem;
+  color: white;
+  flex-grow: 1;
+  width: 995px;
+
+  @media (max-width: 991px) {
+    max-width: 100%;
+    font-size: 40px;
+  }
+`;
+
+const SeeInsideContainer = styled.section`
+border-radius: 0;
+display: flex;
+flex-direction: column;
+color: #f5f5f7;
+font: 600 48px Lato, sans-serif;
+
+@media (max-width: 991px) {
+  font-size: 40px;
+}
+`;
+
+
+const BlueSection = styled.section`
+  display: flex;
+  /* padding-left: 1px; */
+  flex-direction: column;
+  border-radius: 0;
+`;
+
+const BlueBackground = styled.div`
+  background-color: #007bfe;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px 0 296px;
+
+  @media (max-width: 991px) {
+    max-width: 100%;
+    padding: 0 20px 100px 0;
+  }
+`;
+
+const TopImage = styled.img`
+  aspect-ratio: 1.52;
+  object-fit: contain;
+  object-position: center;
+  width: 394px;
+  border-radius: 0;
+  margin-bottom: -59px;
+  max-width: 100%;
+
+  @media (max-width: 991px) {
+    margin-bottom: 10px;
+  }
+`;
+
+const BottomImage = styled.img`
+  aspect-ratio: 1.39;
+  object-fit: contain;
+  object-position: center;
   width: 100%;
-  max-width: 800px;
-  border-radius: 40px;
-  box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.16);
+  border-radius: 0;
+  align-self: center;
+  z-index: 10;
+  margin-top: -313px;
+  max-width: 1580px;
+
+  @media (max-width: 991px) {
+    max-width: 100%;
+    margin-top: -200px;
+  }
 `;
 
 const TestimonialContent = styled.div`
@@ -279,18 +441,24 @@ const TestimonialContent = styled.div`
 `;
 
 const TestimonialText = styled.p`
-  font-size: 40px;
-  font-weight: 600;
-  padding: 0 20px;
+  font-size: 45px;
+  align-items: center;
+margin-left: 5rem;
+margin-right: 2rem;
+  font-weight: 625;
+  padding: 0 25px;
+  /* padding-left: 30px; */
 `;
 
 const Highlight = styled.span`
   color: #379fff;
+  /* font-size: 55px;
+  font-weight: 500; */
 `;
 
 const ProfileImage = styled.img`
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   margin-top: 40px;
 `;
@@ -301,16 +469,22 @@ const ProfileInfo = styled.div`
 `;
 
 const ProfileName = styled.p`
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 32px;
+  font-weight: 600;
 `;
 
 const ProfileTitle = styled.p`
-  color: #a4a4a4;
+  color: #7a7a7b;
+  font-size: 24px;
+  margin-top: -1rem;
+  font-weight: 500;
 `;
 
 const SourceText = styled.p`
-  color: #7a7a7b;
+  color: #a4a4a4;
+  font-size: 24px;
+  margin-top: -1rem;
+  font-weight: 500;
 `;
 
 const TrustedCompaniesSection = styled.div`
@@ -320,52 +494,84 @@ const TrustedCompaniesSection = styled.div`
 
 const SectionHeader = styled.h2`
   font-size: 52px;
-  font-weight: 300;
+  font-weight: 600;
   color: #212121;
 `;
 
-const LogoGrid = styled.div`
+
+const PartnerLogos = styled.section`
   display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  margin-top: 40px;
+  flex-direction: column;
 `;
 
-const CompanyLogo = styled.img`
-  width: 170px;
-  height: auto;
-`;
-
-const StatisticsSection = styled.div`
-  display: flex;
-  justify-content: space-around;
-  padding: 60px 20px;
+const PartnerLogosContainer = styled.div`
   background-color: #ebf5ff;
-  flex-wrap: wrap;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 73px;
+
+  @media (max-width: 991px) {
+    max-width: 100%;
+    padding: 73px 20px;
+  }
+`;
+
+const PartnerLogosWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  max-width: 1238px;
   gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media (max-width: 991px) {
+    max-width: 100%;
+  }
 `;
 
-const Statistic = styled.div`
-  text-align: center;
-  flex: 1;
-  max-width: 200px;
+const PartnerLogo = styled.img`
+  object-fit: contain;
+  object-position: center;
+  max-width: 100%;
 `;
 
-const StatValue = styled.h3`
-  font-size: 48px;
-  color: #212121;
+const PartnerLogo1 = styled(PartnerLogo)`
+  aspect-ratio: 2.9;
+  width: 174px;
+  align-self: start;
 `;
 
-const StatDescription = styled.p`
-  font-size: 20px;
-  color: grey;
+const PartnerLogo2 = styled(PartnerLogo)`
+  aspect-ratio: 4.72;
+  width: 255px;
+  align-self: start;
+`;
+
+const PartnerLogo3 = styled(PartnerLogo)`
+  aspect-ratio: 3.01;
+  width: 196px;
+`;
+
+const PartnerLogo4 = styled(PartnerLogo)`
+  aspect-ratio: 5.32;
+  width: 197px;
+  margin: auto 0;
 `;
 
 const CallToAction = styled.div`
   text-align: center;
-  padding: 40px 20px;
-  font-size: 36px;
+  padding: 100px 50px;
+  font-size: 56px;
+  font-weight: 500;
+`;
+const Seo = styled.div`
+  text-align: center;
+  padding: 0px 50px;
+  font-size: 56px;
+  font-weight: 500;
 `;
 
 const FeaturesSection = styled.div`
@@ -375,15 +581,74 @@ const FeaturesSection = styled.div`
   gap: 40px;
   padding: 60px 20px;
 `;
+const MarketingStats = styled.section`
+  display: flex;
+  justify-content: center;
+  padding-left: 2rem; /* Add padding from the left */
+`;
 
+const StatsRow = styled.div`
+  display: flex;
+  gap: 20px; /* Space between the items */
+`;
+
+const StatItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  text-align: center; /* Center text */
+`;
+
+const StatIcon = styled.div`
+  border-radius: 50%;
+  display: flex;
+  width: 5rem;
+  height: 5rem;
+  margin-left: 15rem;
+  justify-content: center;
+  align-items: center;
+  background-color: ${(props) => props.bgColor};
+`;
+
+const StatIconImg = styled.img`
+  aspect-ratio: 1;
+  object-fit: contain;
+  width: 60%;
+`;
+
+const StatNumber = styled.div`
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(0, 0, 0, 1);
+  width: 300px; /* Adjust circle size */
+  height: 300px; /* Make it a circle */
+  font-size: 56px;
+  background-color: ${(props) => props.bgColor};
+  margin-top: 1rem;
+`;
+
+const StatsTextLight = styled.span`
+  font-weight: 500;
+  color: rgba(117, 117, 117, 1);
+`;
+
+const Bold = styled.span`
+  font-weight: 600;
+  font-size: 32px;
+  padding: 0 2rem; /* Applies padding of 2rem to the left and right */
+  margin-top: 1rem;
+  text-align: center;
+`;
 const Feature = styled.div`
   text-align: center;
   flex: 1;
-  max-width: 200px;
+  max-width: 500px;
 `;
 
 const FeatureIcon = styled.img`
-  width: 100px;
+  width: 300px;
   height: auto;
 `;
 
@@ -392,27 +657,29 @@ const FeatureText = styled.p`
   font-weight: 600;
   margin-top: 20px;
 `;
-
 const InsightsSection = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row; /* Changed to row for left-right alignment */
+  align-items: center; /* Center items vertically */
   padding: 60px 20px;
   background-color: #f7f7f7;
-  gap: 20px;
+  gap: 20px; /* Space between content and image */
 `;
 
 const InsightsContent = styled.div`
-  text-align: center;
-  max-width: 600px;
+  text-align: left; /* Changed to left for better readability */
+  max-width: 500px;
+  margin-left: 10rem;
 `;
 
 const InsightsTitle = styled.h2`
-  font-size: 36px;
+  font-size: 52px;
+  /* margin-left: 5rem; */
+  /* margin-right: 5rem; */
 `;
 
 const InsightsDescription = styled.p`
-  font-size: 20px;
+  font-size: 25px;
   color: grey;
   margin-top: 20px;
 `;
@@ -422,10 +689,12 @@ const LearnMoreButton = styled(Button)`
 `;
 
 const InsightsImage = styled.img`
-  width: 100%;
-  max-width: 800px;
+  width: 600px;
+  /* max-width: 800px; */
+  margin-left: 15rem;
   height: auto;
 `;
+
 
 const FooterCallToAction = styled.div`
   text-align: center;
@@ -435,7 +704,7 @@ const FooterCallToAction = styled.div`
 `;
 
 const CallToActionText = styled.h3`
-  font-size: 36px;
+  font-size: 40px;
 `;
 
 const TrialOffer = styled.p`

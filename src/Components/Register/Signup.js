@@ -95,7 +95,7 @@ const Signup = () => {
           </InputField>
           <Actions>
             <SignupPrompt>
-              <span style={{ fontWeight: 500, color: "rgba(0,0,0,1)" }}>
+              <span style={{ fontWeight: 500, color: "rgba(0,0,0,0.5)" }}>
                I agree to all 
               </span>{" "}
               <span style={{ fontWeight: 700, color: "rgba(0,123,254,1)" }} onClick={navigateToLogin}>
@@ -140,7 +140,7 @@ const Signup = () => {
 
   const Image = styled.img`
     width: 100%;
-    max-width: 500px;
+    /* max-width: 500px; */
 
     @media (max-width: 768px) {
       max-width: 300px;

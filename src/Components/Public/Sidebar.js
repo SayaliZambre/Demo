@@ -13,10 +13,12 @@ function Sidebar({ activeSection, onSectionClick }) {
 
   return (
     <Wrapper>
+      {/* Logo that triggers the sidebar toggle */}
       <LogoContainer onClick={toggleSidebar}>
         <LogoImg src={image2} alt="Logo" />
       </LogoContainer>
 
+      {/* Sidebar container */}
       <SidebarContainer isSidebarOpen={isSidebarOpen}>
         <Section
           isActive={activeSection === 'My Projects'}
@@ -88,13 +90,11 @@ const Wrapper = styled.div`
 `;
 
 const LogoContainer = styled.div`
-  display: none;
   padding: 16px;
   cursor: pointer;
 
-  @media (max-width: 768px) {
-    display: block;
-  }
+  /* Always display logo */
+  display: block;
 `;
 
 const LogoImg = styled.img`
