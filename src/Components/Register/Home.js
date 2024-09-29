@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import styled from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 import image from '../../Images/carbon_arrow-up.png';
 import image1 from '../../Images/Group 11.png';
-import image2 from '../../Images/homeimage.png';
 import image3 from '../../Images/Homeprofile.png';
 import image4 from '../../Images/Apple logo.png';
 import image5 from '../../Images/Nvidia logo.png';
@@ -18,16 +18,14 @@ import icon2 from '../../Images/daimond.png';
 import icon3 from '../../Images/starhome.png';
 import Home1 from '../../Images/Homeicon.png';
 import Home3 from '../../Images/Home3.png';
-
-import Sidebar from '../Public/Sidebar';
+import intro from '../../Images/Introducing.png';
 
 import Navbar from "../Public/Navbar";
 import Footer from './Footer';
 
 const Home = () => {
-
   const [activeSection, setActiveSection] = useState('My Projects');
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const handleSectionClick = (section) => {
     setActiveSection(section);
@@ -35,42 +33,32 @@ const Home = () => {
   };
 
   const handleClick = () => {
-    navigate('/KeywordResearchToolmain');  
+    navigate('/KeywordResearchToolmain');
   };
-
-  console.log('Rendering Project with handleSectionClick:', handleSectionClick);
-
-
 
   return (
     <>
       <Navbar />
-      {/* <Sidebar activeSection={activeSection} onSectionClick={handleSectionClick}/> */}
       <Main>
-
         <HeroSection>
           <HeroContent>
             <TitleSection>
-              <Title>Introducing</Title>
+            <GlobalStyle />
+            {/* <Image1 src={intro} alt="Arrow" /> */}
+              <Title style={{ fontFamily: 'Waltograph' }}>Introducing</Title>
               <Subtitle>SEO Impact</Subtitle>
             </TitleSection>
             <Description>
-            Korem ipsum dolor sit amet, 
-            consectetur adipiscing elit.
-             Nunc vulputate libero et velit interdum,
-             ac aliquet odio mattis.    </Description>
+              Korem ipsum dolor sit amet, consectetur adipiscing elit. 
+              Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+            </Description>
             <ActionRow>
               <Button>Get Started</Button>
               <Icon src={image} alt="Arrow" />
               <MoreInfo>Click here to know more!</MoreInfo>
             </ActionRow>
             <InputField>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Enter your website here..."
-              />
+              <input type="email" name="email" id="email" placeholder="Enter your website here..." />
             </InputField>
             <CheckScoreButton>Check Score</CheckScoreButton>
           </HeroContent>
@@ -78,152 +66,92 @@ const Home = () => {
             <ResponsiveImage src={image1} alt="SEO Impact" />
           </ImageColumn>
         </HeroSection>
- 
-        {/* <TestimonialSection> */}
-          {/* <TestimonialImage src={image2} alt="SEO Tool" /> */}
-          {/* <SeeInsideContainer> */}
-      {/* <BlueBackground> */}
-        {/* <DashedCircle role="presentation" /> */}
-        {/* <DashedCircle src={Home1} alt="Home1" />
 
-        <SectionTitle>"See What's Inside"</SectionTitle>
-        <FloatingImage src={Home3} alt="Home1" />
-      </BlueBackground> */}
- <BlueSection>
-    <BlueBackground>
-      <TopImage
-       src={Home1} alt="Home1"
-      />
-      {/* <SectionTitle>"See What's Inside"</SectionTitle> */}
-    </BlueBackground>
-    
-    <BottomImage
-     src={Home3} alt="Home1"
-    />
-  </BlueSection>
+        <BlueSection>
+          <BlueBackground>
+            <TopImage src={Home1} alt="Home1" />
+          </BlueBackground>
+          <BottomImage src={Home3} alt="Home1" />
+        </BlueSection>
 
-    {/* </SeeInsideContainer> */}
-
-          <TestimonialContent>
-            <TestimonialText>
-              <Highlight>“SEO Impact</Highlight> - a Keyword Research tool like Google Trends, Woorank, Seobility”
-            </TestimonialText>
-            <ProfileImage src={image3} alt="Profile" />
-            <ProfileInfo>
-              <ProfileName>Emily Brown</ProfileName>
-              <ProfileTitle>SEO Impact, Marketing Specialist</ProfileTitle>
-              <SourceText>Source: SEO Impact Reviews</SourceText>
-            </ProfileInfo>
-          </TestimonialContent>
-        {/* </TestimonialSection> */}
+        <TestimonialContent>
+          <TestimonialText>
+            <Highlight>“SEO Impact</Highlight> - a Keyword Research tool like Google Trends, Woorank, Seobility”
+          </TestimonialText>
+          <ProfileImage src={image3} alt="Profile" />
+          <ProfileInfo>
+            <ProfileName>Emily Brown</ProfileName>
+            <ProfileTitle>SEO Impact, Marketing Specialist</ProfileTitle>
+            <SourceText>Source: SEO Impact Reviews</SourceText>
+          </ProfileInfo>
+        </TestimonialContent>
 
         <TrustedCompaniesSection>
-          <SectionHeader>
-            Trusted By Many Companies
-          </SectionHeader>
-          {/* <LogoGrid>
-            <CompanyLogo src={image4} alt="Apple" />
-            <CompanyLogo src={image7} alt="Microsoft" />
-            <CompanyLogo src={image6} alt="Samsung" />
-            <CompanyLogo src={image5} alt="Nvidia" />
-          </LogoGrid> */}
-<PartnerLogos>
-      <PartnerLogosContainer>
-        <PartnerLogosWrapper>
-          <PartnerLogo1
-            src={image4} alt="Apple" />
-          <PartnerLogo2
-            src={image7} alt="Microsoft" />
-          <PartnerLogo3
-           src={image6} alt="Samsung" />
-          <PartnerLogo4
-           src={image5} alt="Nvidia" />
-        </PartnerLogosWrapper>
-      </PartnerLogosContainer>
-    </PartnerLogos>
-
+          <SectionHeader>Trusted By Many Companies</SectionHeader>
+          <PartnerLogos>
+            <PartnerLogosContainer>
+              <PartnerLogosWrapper>
+                <PartnerLogo src={image4} alt="Apple" />
+                <PartnerLogo src={image7} alt="Microsoft" />
+                <PartnerLogo src={image6} alt="Samsung" />
+                <PartnerLogo src={image5} alt="Nvidia" />
+              </PartnerLogosWrapper>
+            </PartnerLogosContainer>
+          </PartnerLogos>
         </TrustedCompaniesSection>
 
-      
-<MarketingStats>
-  <StatsRow>
-    <StatItem>
-      <StatIcon bgColor="rgba(249, 47, 96, 1)">
-        <StatIconImg
-          loading="lazy"
-          src={icon1}          alt="Marketing professionals icon"
-        />
-      </StatIcon>
-      <StatNumber bgColor="rgba(249, 47, 96, 0.1)">5M</StatNumber>
-      <Bold>
-        Marketing professions <StatsTextLight>are using SEO Impact!</StatsTextLight>
-      </Bold>
-    </StatItem>
-
-    <StatItem>
-      <StatIcon bgColor="rgba(255, 92, 0, 1)">
-        <StatIconImg
-          loading="lazy"
-          src={icon2}            alt="International awards icon"
-        />
-      </StatIcon>
-      <StatNumber bgColor="rgba(255, 92, 0, 0.3)">21</StatNumber>
-      <Bold>
-        International Awards <StatsTextLight>as best SEO suite software</StatsTextLight>
-      </Bold>
-    </StatItem>
-
-    <StatItem>
-      <StatIcon bgColor="rgba(0, 123, 254, 1)">
-        <StatIconImg
-          loading="lazy"
-          src={icon3}            alt="Companies using SEO Impact icon"
-        />
-      </StatIcon>
-      <StatNumber bgColor="rgba(235, 245, 255, 1)">30%</StatNumber>
-      <Bold>
-        Over 300 Companies <StatsTextLight>use SEO Impact as their Marketing tool!</StatsTextLight>
-      </Bold>
-    </StatItem>
-  </StatsRow>
-</MarketingStats>
-  
+        <MarketingStats>
+          <StatsRow>
+            <StatItem>
+              <StatIcon bgColor="rgba(249, 47, 96, 1)">
+                <StatIconImg src={icon1} alt="Marketing professionals icon" />
+              </StatIcon>
+              <StatNumber bgColor="rgba(249, 47, 96, 0.1)">5M</StatNumber>
+              <Bold>
+                Marketing professionals <StatsTextLight>are using SEO Impact!</StatsTextLight>
+              </Bold>
+            </StatItem>
+            <StatItem>
+              <StatIcon bgColor="rgba(255, 92, 0, 1)">
+                <StatIconImg src={icon2} alt="International awards icon" />
+              </StatIcon>
+              <StatNumber bgColor="rgba(255, 92, 0, 0.3)">21</StatNumber>
+              <Bold>
+                International Awards <StatsTextLight>as best SEO suite software</StatsTextLight>
+              </Bold>
+            </StatItem>
+            <StatItem>
+              <StatIcon bgColor="rgba(0, 123, 254, 1)">
+                <StatIconImg src={icon3} alt="Companies using SEO Impact icon" />
+              </StatIcon>
+              <StatNumber bgColor="rgba(235, 245, 255, 1)">30%</StatNumber>
+              <Bold>
+                Over 300 Companies <StatsTextLight>use SEO Impact as their Marketing tool!</StatsTextLight>
+              </Bold>
+            </StatItem>
+          </StatsRow>
+        </MarketingStats>
 
         <CallToAction>
           Unlock your success now with our <Seo>SEO Tools</Seo>
         </CallToAction>
 
         <FeaturesSection>
-          <Feature>
-            <FeatureIcon src={image8} alt="Quick" />
-            {/* <FeatureText>Quick</FeatureText> */}
-          </Feature>
-          <Feature>
-            <FeatureIcon src={image10} alt="Focused" />
-            {/* <FeatureText>Focused</FeatureText> */}
-          </Feature>
-          <Feature>
-            <FeatureIcon src={image9} alt="Actionable" />
-            {/* <FeatureText>Actionable</FeatureText> */}
-          </Feature>
-         
+          <Feature><FeatureIcon src={image8} alt="Quick" /></Feature>
+          <Feature><FeatureIcon src={image10} alt="Focused" /></Feature>
+          <Feature><FeatureIcon src={image9} alt="Actionable" /></Feature>
         </FeaturesSection>
 
         <InsightsSection>
-  <InsightsContent>
-    <InsightsTitle>Increase your Market Insights</InsightsTitle>
-    <InsightsDescription>
-      Lorem ipsum dolor sit amet consectetur. Quis eget vivamus neque velit
-      enim id urna pharetra vel. Sapien ut natoque facilisi tortor viverra
-      eget. Amet rhoncus leo sed nulla est senectus morbi tellus ornare.
-      Justo curabitur iaculis id senectus sodales mattis sed mattis nisl.
-      Phasellus ipsum ultricies.
-    </InsightsDescription>
-    <LearnMoreButton>Learn More</LearnMoreButton>
-  </InsightsContent>
-  <InsightsImage src={image11} alt="Insights" />
-</InsightsSection>
-
+          <InsightsContent>
+            <InsightsTitle>Increase your Market Insights</InsightsTitle>
+            <InsightsDescription>
+              Lorem ipsum dolor sit amet consectetur. Quis eget vivamus neque velit enim id urna pharetra vel.
+            </InsightsDescription>
+            <LearnMoreButton>Learn More</LearnMoreButton>
+          </InsightsContent>
+          <InsightsImage src={image11} alt="Insights" />
+        </InsightsSection>
 
         <FooterCallToAction>
           <CallToActionText>Get Started with SEO Impact today!</CallToActionText>
@@ -247,8 +175,6 @@ const HeroSection = styled.div`
   align-items: center;
 `;
 
-
-
 const HeroContent = styled.div`
   flex: 1;
   padding: 20px;
@@ -260,15 +186,20 @@ const TitleSection = styled.div`
   margin-top: -5rem;
 `;
 
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+`;
+
 const Title = styled.h1`
-  font-family: 'Waltograph', cursive; /* or your chosen fallback font */
-  font-size: 3.5rem; /* Adjust as needed */
-  color: #000; /* Choose your color */
-  margin-left: 6rem; 
-  
-  margin-bottom: 1.5rem;
-  /* Center the text if desired */
-  /* margin: 20px 0; Adjust margin as needed */
+  font-family: 'Waltograph', sans-serif;
+  font-size: 5rem;
+  font-weight: 700;
+  margin-left: 6rem;
+  margin-bottom: -0.5rem;
 `;
 
 const Subtitle = styled.h2`
@@ -279,11 +210,11 @@ const Subtitle = styled.h2`
   margin-bottom: 1rem;
   margin-left: 6rem;
 `;
+
 const Description = styled.p`
   font-size: 20px;
   color: grey;
   margin-left: 6rem;
-  /* text-align: center; */
   margin-bottom: 20px;
 `;
 
@@ -304,7 +235,7 @@ const Button = styled.button`
 `;
 
 const Icon = styled.img`
-  width: 50;
+  width: 50px;
   height: 20px;
 `;
 
@@ -341,10 +272,20 @@ const ImageColumn = styled.div`
   align-items: center;
 `;
 
+const Image1 = styled.div`
+  /* flex: 1; */
+  /* display: flex; */
+  /* justify-content: center; */
+  width: 100px;
+  align-items: center;
+`;
+
 const ResponsiveImage = styled.img`
   max-width: 55rem;
   height: auto;
 `;
+
+// Continue adding styled-components for the remaining sections...
 
 const TestimonialSection = styled.div`
   display: flex;

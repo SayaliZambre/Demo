@@ -3,9 +3,9 @@ import styled from "styled-components";
 import image1 from '../../Images/career1.png';
 import image2 from '../../Images/career2.png';
 import image3 from '../../Images/career3.png';
-import star from '../../Images/Star 1.png';
+import last from '../../Images/lastcareer.png';
 import back from '../../Images/careereback.png';
-import vector from '../../Images/Vector 9.png';
+import star from '../../Images/career.png';
 import icon from '../../Images/solar_user-bold.png';
 import Navbar from "../Public/Navbar";
 import Footer from './Footer';
@@ -14,14 +14,17 @@ const Careers = () => {
   return (
     <>
       <Navbar />
+      <Heading1>Careers</Heading1>
       <Main>
         <MainContainer>
-          <Heading1>Careers</Heading1>
-          <Heading2>Join Us</Heading2>
-          <Description>
-            Lorem ipsum dolor sit amet consectetur. Luctus in convallis odio eu egestas lectus.
-          </Description>
-          <Button>More about us</Button>
+          <Head>
+            <Heading2>Join Us</Heading2>
+            <Description>
+              Lorem ipsum dolor sit amet consectetur.
+              <P> Luctus in convallis odio eu egestas lectus.</P>
+            </Description>
+            <Button>More about us</Button>
+          </Head>
           <ContentWrapper>
             {jobCards.map(({ image, title, description }, index) => (
               <Card key={index}>
@@ -38,31 +41,82 @@ const Careers = () => {
           </ContentWrapper>
         </MainContainer>
 
-        <BenefitsSection>
-          {benefits.map(({ icon, title, subtitle }, index) => (
-            <Benefit key={index}>
-              <BenefitIcon src={icon} alt={title} />
-              <BenefitText>
-                <Title>{title}</Title>
-                <Subtitle>{subtitle}</Subtitle>
-              </BenefitText>
-            </Benefit>
-          ))}
-          <StyledImage src={vector} alt="Decorative vector" />
-        </BenefitsSection>
+<Blue>
+<Benifit>
+Benifit
+</Benifit>
 
+</Blue>
+
+
+<Tittl>Job Openings</Tittl>
         <JobOpeningsContainer>
-          {jobOpenings.map(({ category, positions }, index) => (
-            <JobCategory key={index}>
-              <CategoryTitle>{category}</CategoryTitle>
-              {positions.map((position, posIndex) => (
-                <Position key={posIndex}>{position}</Position>
-              ))}
-            </JobCategory>
-          ))}
+          <JobOpeningsContent>
+            {jobOpenings.map(({ category, positions }, index) => (
+              <JobCategory key={index}>
+                <CategoryTitle>{category}</CategoryTitle>
+                {positions.map((position, posIndex) => (
+                  <Position key={posIndex}>{position}</Position>
+                ))}
+              </JobCategory>
+            ))}
+            
+          </JobOpeningsContent>
+          <JobOpeningsContent>
+            {jobOpenings1.map(({ category, positions }, index) => (
+              <JobCategory key={index}>
+                <CategoryTitle>{category}</CategoryTitle>
+                {positions.map((position, posIndex) => (
+                  <Position key={posIndex}>{position}</Position>
+                ))}
+              </JobCategory>
+            ))}
+            
+          </JobOpeningsContent>
+          <JobOpeningsContent>
+            {jobOpenings2.map(({ category, positions }, index) => (
+              <JobCategory key={index}>
+                <CategoryTitle>{category}</CategoryTitle>
+                {positions.map((position, posIndex) => (
+                  <Position key={posIndex}>{position}</Position>
+                ))}
+              </JobCategory>
+            ))}
+          </JobOpeningsContent>
+          <JobOpeningsContent>
+            {jobOpenings3.map(({ category, positions }, index) => (
+              <JobCategory key={index}>
+                <CategoryTitle>{category}</CategoryTitle>
+                {positions.map((position, posIndex) => (
+                  <Position key={posIndex}>{position}</Position>
+                ))}
+              </JobCategory>
+            ))}
+          </JobOpeningsContent>
         </JobOpeningsContainer>
+
+        <ImageGallery>
+      <GalleryContainer>
+        <ImageRow>
+          {/* <ImageColumn left> */}
+            <GalleryImage
+              className="gallery-image-left"
+              src={star} 
+            />
+          {/* </ImageColumn> */}
+        
+        </ImageRow>
+      </GalleryContainer>
+    </ImageGallery>
+
+        
       </Main>
-      <Footer />
+
+
+
+      <FooterContainer>
+        <Footer />
+      </FooterContainer>
     </>
   );
 };
@@ -72,26 +126,18 @@ const jobCards = [
   {
     image: image1,
     title: "Product Designer",
-    description: "Lorem ipsum dolor sit amet consectetur. In rhoncus aliquet nunc cursus.",
+    description: "Lorem ipsum dolor sit amet consectetur. SEO, or Search Engine Optimization, is the practice of enhancing a website's visibility on search engines like Google, Bing, and Yahoo. The main goal of SEO Impact is to improve a site's ranking in search.",
   },
   {
     image: image2,
     title: "Production Development",
-    description: "Lorem ipsum dolor sit amet consectetur. In rhoncus aliquet nunc cursus.",
+    description: "Lorem ipsum dolor sit amet consectetur. SEO, or Search Engine Optimization, is the practice of enhancing a website's visibility on search engines like Google, Bing, and Yahoo. The main goal of SEO Impact is to improve a site's ranking in search.",
   },
   {
     image: image3,
     title: "Marketing",
-    description: "Lorem ipsum dolor sit amet consectetur. In rhoncus aliquet nunc cursus.",
+    description: "Lorem ipsum dolor sit amet consectetur. SEO, or Search Engine Optimization, is the practice of enhancing a website's visibility on search engines like Google, Bing, and Yahoo. The main goal of SEO Impact is to improve a site's ranking in search.",
   }
-];
-
-// Benefits data
-const benefits = [
-  { icon: star, title: "Competitive Salary", subtitle: "Work From Home" },
-  { icon: star, title: "Incentives", subtitle: "Bonuses and Rewards" },
-  { icon: star, title: "Healthcare", subtitle: "Full coverage" },
-  { icon: star, title: "Flexible Hours", subtitle: "Work-life balance" }
 ];
 
 // Job openings data
@@ -104,21 +150,51 @@ const jobOpenings = [
     category: "Software Development",
     positions: ["Software Developer", "Software Analyst", "UX Designer"],
   },
+];
+const jobOpenings1 = [
   {
     category: "Design",
-    positions: ["Director, Research"],
+    positions: ["Director,Research"],
   },
   {
     category: "Cloud Operations",
     positions: ["Azure Specialist", "Amazon Cloud Operations", "AWS Key 2 Specialist"],
-  }
+  },
 ];
-
+const jobOpenings2 = [
+  {
+    category: " Producr",
+    positions: [" Product Designer","Product Manager"],
+  },
+  {
+    category: "Lorem ipsum dolor",
+    positions: ["Azure Specialist", "Amazon Cloud Operations", "AWS Key 2 Specialist"],
+  },
+];
+const jobOpenings3 = [
+  {
+    category: "Lorem ipsum ",
+    positions: ["Lorem ipsum dolor","Lorem ipsum dolor"],
+  },
+  {
+    category: "Lorem ipsum dolor",
+    positions: ["Horem ipsum", "Yorem ipsum", "Lorem ipsum dolor"],
+  },
+];
 // Styled components
-const Main = styled.div``;
+const Main = styled.div`
+  width: 100rem;
+  height: auto; /* Change height to auto to adapt to content */
+`;
 
 const MainContainer = styled.div`
   padding: 0 80px;
+  background-image: url(${back});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 90rem;
+  height: auto; /* Change height to auto to adapt to content */
   @media (max-width: 991px) {
     padding: 0 20px;
   }
@@ -135,20 +211,40 @@ const Heading1 = styled.h1`
 `;
 
 const Heading2 = styled.h2`
-  text-align: center;
-  font-size: 48px;
-  font-weight: 700;
+  font-size: 52px;
+  font-weight: 650;
   margin-top: 20px;
+  margin-left: 1rem;
+  margin-bottom: -0.5rem;
   @media (max-width: 991px) {
     font-size: 32px;
   }
 `;
 
-const Description = styled.p`
-  text-align: center;
+const Head = styled.p`
   font-size: 24px;
-  margin: 20px auto;
   max-width: 600px;
+  @media (max-width: 991px) {
+    font-size: 18px;
+  }
+`;
+
+const Description = styled.p`
+  font-size: 26px;
+  padding: 1rem;
+  margin-top: -1rem;
+  color: lightgrey;
+  max-width: 600px;
+  @media (max-width: 991px) {
+    font-size: 20px;
+    padding: 0.75rem;
+  }
+`;
+
+const P = styled.p`
+  font-size: 26px;
+  margin-top: -0.3rem;
+  color: lightgrey;
   @media (max-width: 991px) {
     font-size: 18px;
   }
@@ -170,7 +266,8 @@ const Button = styled.button`
 const ContentWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-top: 50px;
+  margin-top: 30rem;
+  margin-right: 3rem;
   gap: 20px;
   flex-wrap: wrap;
   @media (max-width: 991px) {
@@ -192,32 +289,48 @@ const Card = styled.div`
 `;
 
 const Image = styled.img`
-  width: 100%;
-  height: auto;
+  width: 300px;
+  align-items: center;
+  padding-left: 3rem;
+  height: 300px;
   border-radius: 8px;
 `;
 
 const JobTitle = styled.h3`
-  font-size: 24px;
-  margin: 20px 0 10px;
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
 `;
 
 const Divider = styled.hr`
-  width: 50px;
-  border: 2px solid #007bfe;
+  width: 400px;
+  margin-top: -0.5rem;
+  border: 2px solid #D3D3D3;
   margin-bottom: 10px;
 `;
 
+const Blue = styled.span`
+  color: blue;
+  width: 20rem;
+  height: 20rem;
+`;
+const Benifit = styled.span`
+ color: white;
+`;
+
+
+
 const JobDescription = styled.p`
   font-size: 16px;
-  color: #555;
+  color: #d3d3d3;
 `;
 
 const ApplyButton = styled.button`
   display: flex;
+  margin-left: 7rem;
   align-items: center;
-  padding: 10px 20px;
-  background-color: #007bfe;
+  padding: 15px 20px;
+  background-color: #F1F8FF;
   color: #fff;
   font-size: 16px;
   border: none;
@@ -231,75 +344,97 @@ const ApplyImage = styled.img`
   margin-right: 10px;
 `;
 
-const ApplyText = styled.span``;
-
-const BenefitsSection = styled.div`
-  background-color: #f9f9f9;
-  padding: 50px 80px;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
+const ApplyText = styled.span`
+  color: black;
+`;
+const Tittl = styled.h2`
+  font-size: 52px;
+  font-weight: 600;
+  margin-top: 50px;
+  margin-left: 20rem;
+  margin-bottom: -1rem;
+  color: #007BFE;
   @media (max-width: 991px) {
-    flex-direction: column;
-    padding: 50px 20px;
+    font-size: 32px;
   }
 `;
-
-const Benefit = styled.div`
-  display: flex;
-  align-items: center;
-  max-width: 25%;
-  @media (max-width: 991px) {
-    max-width: 100%;
-    margin-bottom: 20px;
-  }
-`;
-
-const BenefitIcon = styled.img`
-  width: 40px;
-  height: 40px;
-  margin-right: 20px;
-`;
-
-const BenefitText = styled.div``;
-
-const Title = styled.h4`
-  font-size: 20px;
-`;
-
-const Subtitle = styled.p`
-  font-size: 16px;
-  color: #555;
-`;
-
-const StyledImage = styled.img`
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 200px;
-  height: auto;
-`;
-
 const JobOpeningsContainer = styled.div`
   padding: 50px 80px;
+  margin-bottom: 100px; /* Add margin at the bottom to separate from the footer */
   @media (max-width: 991px) {
     padding: 50px 20px;
   }
+`;
+
+const JobOpeningsContent = styled.div`
+  display: flex;
+  padding-left: 15rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Aligns items to the left */
 `;
 
 const JobCategory = styled.div`
   margin-bottom: 30px;
+  flex: 1; 
+  min-width: 200px; /* Set a minimum width for each category */
 `;
 
 const CategoryTitle = styled.h3`
-  font-size: 24px;
+  font-size: 32px;
+  font-weight: 500;
   margin-bottom: 15px;
 `;
 
 const Position = styled.p`
   font-size: 18px;
   color: #007bfe;
+  font-weight: 500;
   margin-bottom: 10px;
+`;
+
+const ImageGallery = styled.section`
+  display: flex;
+  flex-direction: column;
+  border-radius: 0;
+  margin-left: 8rem;
+`;
+
+const GalleryContainer = styled.div`
+  width: 70rem;
+  padding: 60px;
+
+  @media (max-width: 991px) {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+`;
+
+const ImageRow = styled.div`
+  display: flex;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 991px) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+`;
+
+const ImageColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: ${({ left }) => (left ? '46%' : '54%')};
+`;
+
+const GalleryImage = styled.img`
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+`;
+const FooterContainer = styled.div`
+  background-color: #f8f9fa; /* Optional: Add a background color to the footer area */
 `;
 
 export default Careers;

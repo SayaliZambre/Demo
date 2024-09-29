@@ -27,6 +27,7 @@ function Navbar() {
         <NavLeft>
           <Logo 
             src={image1} 
+            onClick={handleLogoClick} // Added functionality to open sidebar on logo click
           />
           <Divider />
           <HamburgerIcon onClick={toggleMobileMenu}>
@@ -66,9 +67,9 @@ const Nav = styled.div`
   justify-content: space-between;
   padding: 20px 62px;
 
-  @media (max-width: 991px) {
+  @media (max-width: 768px) {
+    padding: 10px 20px; /* Adjust padding for smaller screens */
     flex-wrap: wrap;
-    padding: 20px;
   }
 `;
 
@@ -80,7 +81,7 @@ const NavLeft = styled.div`
   color: #000;
   font-weight: 300;
 
-  @media (max-width: 991px) {
+  @media (max-width: 768px) {
     width: 100%;
     justify-content: space-between;
   }
@@ -91,54 +92,47 @@ const Logo = styled.img`
   height: auto;
   cursor: pointer;
 
-  @media (max-width: 991px) {
+  @media (max-width: 768px) {
     width: 80px;
   }
 `;
 
 const Divider = styled.div`
   border-width: 0.5px;
-  margin-left: 5rem;
   background-color: grey;
   align-self: stretch;
   width: 1px;
   height: 38px;
+  margin-left: 20px;
 
-  @media (max-width: 991px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;
 
 const HamburgerIcon = styled.div`
   display: none;
-  font-size: 28px; /* Increased font size */
-  font-weight: bold; /* Set font weight to bold */
+  font-size: 28px;
+  font-weight: bold;
   cursor: pointer;
-  text-align: center; /* Center align the icon */
 
-  @media (max-width: 991px) {
+  @media (max-width: 768px) {
     display: block;
-    width: 100%; /* Ensure it takes full width to center properly */
   }
 `;
 
 const NavLinks = styled.div`
   display: flex;
   gap: 25px;
-  padding-top: 1rem;
-  padding-right: 1rem;
-  padding-left: 22rem;
-  justify-content: space-between;
+  align-items: center;
 
-  @media (max-width: 991px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     width: 100%;
-    padding-left: 0;
     display: ${({ isMobileMenuOpen }) => (isMobileMenuOpen ? 'flex' : 'none')};
-    align-items: center;
     background-color: rgba(255, 255, 255, 0.9);
     position: absolute;
-    top: 70px;
+    top: 60px;
     left: 0;
     right: 0;
     z-index: 10;
@@ -149,9 +143,8 @@ const NavLinks = styled.div`
 const StyledNavLink = styled(RouterNavLink)`
   font-family: 'Lato', sans-serif;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
   color: grey;
-  padding-left: ${(props) => (props.to === '/' ? '10px' : '0')}; // Adjusted padding for Home link
 
   &:hover {
     color: blue;
@@ -162,10 +155,10 @@ const StyledNavLink = styled(RouterNavLink)`
     color: blue;
   }
 
-  @media (max-width: 991px) {
+  @media (max-width: 768px) {
     padding: 10px 0;
-    width: 100%; // Make it full width in mobile
-    text-align: center; // Center align text
+    width: 100%; 
+    text-align: center;
   }
 `;
 
@@ -173,13 +166,17 @@ const StyledNavLink = styled(RouterNavLink)`
 const FloatingSidebar = styled.div`
   position: fixed;
   top: 0;
-  left: ${({ isSidebarOpen }) => (isSidebarOpen ? '0' : '-300px')}; // Move in/out of view
+  left: ${({ isSidebarOpen }) => (isSidebarOpen ? '0' : '-300px')}; 
   width: 300px;
   height: 100%;
   background-color: #fff;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
   transition: left 0.3s ease;
   z-index: 1000;
+
+  @media (max-width: 768px) {
+    width: 250px;
+  }
 `;
 
 const CloseButton = styled.button`
@@ -194,14 +191,13 @@ const CloseButton = styled.button`
 
 const Login = styled.div`
   border-radius: 12px;
-  padding-left: 2rem;
   background-color: #007bfe;
   color: #f5f5f7;
-  justify-content: center;
-  padding: 13px 21px;
-  font: 16px 'Lato', sans-serif;
+  padding: 12px 24px;
+  font-size: 16px;
+  text-align: center;
 
-  @media (max-width: 991px) {
+  @media (max-width: 768px) {
     padding: 10px 20px;
   }
 `;
@@ -211,14 +207,12 @@ const Signup = styled.div`
   border: 1px solid rgba(0, 0, 0, 1);
   background-color: #f5f5f7;
   color: #000;
-  white-space: nowrap;
-  justify-content: center;
-  padding: 14px 19px;
-  font: 14px 'Lato', sans-serif;
+  padding: 12px 24px;
+  font-size: 16px;
+  text-align: center;
 
-  @media (max-width: 991px) {
+  @media (max-width: 768px) {
     padding: 10px 20px;
-    white-space: initial;
   }
 `;
 

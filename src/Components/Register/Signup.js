@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import styled from "styled-components";
+// import image1 from '../../Images/ careereback.png';
 import image5 from '../../Images/Group 3.png';
 import image4 from '../../Images/Group 1000001806.png';
 
